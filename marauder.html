@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marauder Project - Cybersecurity Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0f172a',
+                        darker: '#020617',
+                        accent: '#10b981', // Emerald green
+                        accentHover: '#059669',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #020617;
+            color: #f8fafc;
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        .glow {
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.15);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        .glow:hover {
+            box-shadow: 0 0 30px rgba(16, 185, 129, 0.4);
+            transform: translateY(-5px);
+        }
+        .text-glow {
+            text-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+        }
+        
+        /* Grid background pattern */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="min-h-screen font-sans selection:bg-accent selection:text-white bg-grid relative flex flex-col">
+    <!-- Overlay gradient -->
+    <div class="fixed inset-0 bg-gradient-to-b from-transparent to-darker pointer-events-none -z-10"></div>
+
+    <!-- Header/Nav -->
+    <header class="border-b border-gray-800 bg-darker/80 backdrop-blur-md fixed w-full top-0 z-50 transition-all">
+        <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold font-mono tracking-tighter cursor-pointer hover:text-accent transition-colors">
+                <span class="text-accent">&gt;</span> cd <span class="text-gray-500">..</span><span class="animate-pulse text-accent">_</span>
+            </a>
+            <nav class="hidden md:flex space-x-6 text-sm font-medium font-mono">
+                <a href="about.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/about</a>
+                <a href="projects.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/projects</a>
+                <a href="tuto.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/tuto</a>
+                <a href="blog.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/blog</a>
+                <a href="contact.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/contact</a>
+            </nav>
+            <button class="md:hidden text-gray-400 hover:text-accent">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-32 pb-24">
+        <article class="max-w-4xl mx-auto px-6">
+            <!-- Project Header -->
+            <header class="mb-16">
+                <div class="inline-flex items-center space-x-2 px-3 py-1 bg-accent/10 border border-accent/30 rounded-full text-accent font-mono text-sm mb-6">
+                    <i class="fa-solid fa-wifi"></i>
+                    <span>Offensive / Audit Tool</span>
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-6">Marauder</h1>
+                <p class="text-xl text-gray-400 leading-relaxed mb-8">
+                    Development of a portable hardware Wi-Fi audit device (wardriving, deauth, packet capture) in C/C++ on an ESP32 microcontroller.
+                </p>
+                <div class="flex flex-wrap gap-4 font-mono text-sm">
+                    <span class="px-4 py-2 bg-dark border border-gray-800 rounded-lg text-gray-300"><i class="fa-solid fa-microchip mr-2 text-blue-500"></i>ESP32 WROOM</span>
+                    <span class="px-4 py-2 bg-dark border border-gray-800 rounded-lg text-gray-300"><i class="fa-solid fa-wifi mr-2 text-accent"></i>802.11 Protocols</span>
+                    <span class="px-4 py-2 bg-dark border border-gray-800 rounded-lg text-gray-300"><i class="fa-solid fa-code mr-2 text-yellow-500"></i>C++ (Arduino Core)</span>
+                </div>
+            </header>
+
+            <!-- Project Image/Dashboard mock -->
+            <div class="w-full bg-darker border border-gray-800 rounded-xl overflow-hidden mb-16 glow">
+                <div class="bg-gray-900 border-b border-gray-800 px-4 py-2 flex justify-between items-center">
+                    <div class="flex space-x-2">
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    </div>
+                    <div class="font-mono text-xs text-gray-500">Marauder CLI via Serial (115200 baud)</div>
+                    <div></div>
+                </div>
+                <div class="p-6 font-mono text-sm sm:text-base text-gray-300 space-y-2 overflow-x-auto">
+                    <p class="text-accent font-bold">~ Marauder CLI Firmware v1.2 ~</p>
+                    <p><span class="text-blue-400">> scan ap</span></p>
+                    <p><span class="text-gray-400">Scanning in promiscuous mode (Ch 1-13)... DONE.</span></p>
+                    <p class="text-white">Found 3 Access Points:</p>
+                    <table class="w-full text-left mt-2 mb-4 border-collapse">
+                        <tr class="text-gray-500 border-b border-gray-800">
+                            <th class="py-1">BSSID</th>
+                            <th class="py-1">CH</th>
+                            <th class="py-1">RSSI</th>
+                            <th class="py-1">ENC</th>
+                            <th class="py-1">SSID</th>
+                        </tr>
+                        <tr>
+                            <td class="text-blue-300">00:1A:2B:3C:4D:5E</td>
+                            <td>6</td>
+                            <td class="text-green-500">-52</td>
+                            <td>WPA2</td>
+                            <td>Corp_WiFi_Guest</td>
+                        </tr>
+                        <tr>
+                            <td class="text-blue-300">A1:B2:C3:D4:E5:F6</td>
+                            <td>11</td>
+                            <td class="text-yellow-500">-76</td>
+                            <td>WPA/WPA2</td>
+                            <td>CoffeeShop_Free</td>
+                        </tr>
+                        <tr>
+                            <td class="text-blue-300">11:22:33:44:55:66</td>
+                            <td>1</td>
+                            <td class="text-red-500">-89</td>
+                            <td>WEP</td>
+                            <td class="text-gray-500">&lt;hidden&gt;</td>
+                        </tr>
+                    </table>
+                    <p><span class="text-blue-400">> sniff beacon -w sniff_log.pcap</span></p>
+                    <p><span class="text-accent">Starting packet capture on channels 1,6,11...</span></p>
+                    <p><span class="animate-pulse">_</span></p>
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div class="prose prose-invert prose-emerald max-w-none space-y-8 text-gray-300 leading-relaxed">
+                <h2 class="text-2xl font-bold text-white font-mono border-b border-gray-800 pb-2"><span class="text-accent">#</span> Why the ESP32?</h2>
+                <p>
+                    Unlike traditional Wi-Fi dongles requiring a Kali Linux host machine (like Alfa Network chips), the ESP32 offers the advantage of absolute compactness and low power consumption. By modifying the SDK to allow <em>promiscuous</em> mode, the ESP32 can listen to all raw 802.11 frames passing through the air. This project leverages this feature for passive reconnaissance (wardriving) and active operations.
+                </p>
+
+                <h2 class="text-2xl font-bold text-white font-mono border-b border-gray-800 pb-2"><span class="text-accent">#</span> Key Features Implemented</h2>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li><strong class="text-white">Passive Analysis (Sniffing):</strong> Network scanning (Hidden SSIDs, WEP, WPA), EAPOL handshake capture saved in PCAP format on SD card.</li>
+                    <li><strong class="text-white">Deauthentication Attacks:</strong> Targeted transmission of deauth frames to force a specific client's disconnection in order to capture the WPA handshake upon reconnection.</li>
+                    <li><strong class="text-white">Beacon Spamming:</strong> Ability to flood the environment with fake networks (thousands of SSIDs generated per second) to test the resilience of surrounding Wi-Fi clients.</li>
+                </ul>
+
+                <h2 class="text-2xl font-bold text-white font-mono border-b border-gray-800 pb-2"><span class="text-accent">#</span> Precautions and Ethics</h2>
+                <div class="bg-red-900/20 border border-red-900/50 p-6 rounded-lg">
+                    <p class="text-red-200">
+                        <strong class="text-red-400">Warning:</strong> This device was designed for educational and internal audit purposes with explicit authorization. Intercepting wireless communications or disrupting networks (such as denial of service / deauth attacks) on unowned infrastructures is illegal. 
+                    </p>
+                </div>
+                <p>
+                    During testing, the tool is configured to only interact with filtered BSSIDs (those of my own test labs), ensuring complete isolation to avoid affecting neighborhood networks.
+                </p>
+
+                <h2 class="text-2xl font-bold text-white font-mono border-b border-gray-800 pb-2"><span class="text-accent">#</span> Skills Acquired</h2>
+                <p>
+                    Writing low-level <strong>C++</strong> firmware, in-depth understanding of <strong>IEEE 802.11</strong> standards (MAC Header, Frame Control, Management Frames), and rigorous memory management in constrained embedded systems (FIFO queue management for packet capture to SD).
+                </p>
+            </div>
+
+            <div class="mt-16 pt-8 border-t border-gray-800 flex justify-between items-center">
+                <a href="index.html" class="text-gray-400 hover:text-white transition-colors flex items-center space-x-2">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span>Back to Portfolio</span>
+                </a>
+                <a href="https://github.com" target="_blank" class="px-6 py-3 bg-accent/10 text-accent border border-accent/50 rounded hover:bg-accent hover:text-darker transition-all duration-300 font-bold flex items-center space-x-2">
+                    <i class="fa-brands fa-github"></i>
+                    <span>Source Code</span>
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-darker border-t border-gray-800/50 text-center">
+        <p class="font-mono text-sm text-gray-600">
+            [ <span class="text-accent">&copy; 2024 Portfolio OS</span> ]
+        </p>
+    </footer>
+</body>
+</html>

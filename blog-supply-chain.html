@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog: Supply Chain Attack - Cybersecurity Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0f172a',
+                        darker: '#020617',
+                        accent: '#10b981', // Emerald green
+                        accentHover: '#059669',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #020617;
+            color: #f8fafc;
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        .glow {
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.15);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        
+        /* Grid background pattern */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="min-h-screen font-sans selection:bg-accent selection:text-white bg-grid relative flex flex-col">
+    <!-- Overlay gradient -->
+    <div class="fixed inset-0 bg-gradient-to-b from-transparent to-darker pointer-events-none -z-10"></div>
+
+    <!-- Header/Nav -->
+    <header class="border-b border-gray-800 bg-darker/80 backdrop-blur-md fixed w-full top-0 z-50 transition-all">
+        <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold font-mono tracking-tighter cursor-pointer hover:text-accent transition-colors">
+                <span class="text-accent">&gt;</span> cd <span class="text-gray-500">..</span><span class="animate-pulse text-accent">_</span>
+            </a>
+            <nav class="hidden md:flex space-x-6 text-sm font-medium font-mono">
+                <a href="about.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/about</a>
+                <a href="projects.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/projects</a>
+                <a href="tuto.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/tuto</a>
+                <a href="blog.html" class="text-accent transition-colors duration-300">~/blog</a>
+                <a href="contact.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/contact</a>
+            </nav>
+            <button class="md:hidden text-gray-400 hover:text-accent">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-32 pb-24">
+        <article class="max-w-4xl mx-auto px-6">
+            <!-- Documentation Header -->
+            <header class="mb-16">
+                <div class="flex items-center space-x-4 mb-6 border-b border-gray-800 pb-4">
+                    <div class="flex flex-col items-center justify-center w-16 h-16 rounded-lg bg-gray-900 border border-gray-800 text-gray-400 shrink-0 shadow-lg">
+                        <span class="text-xl font-bold text-white">Oct</span>
+                        <span class="text-xs font-mono text-accent">2024</span>
+                    </div>
+                    <div class="flex gap-2 font-mono text-xs">
+                        <span class="px-2 py-1 bg-gray-900 border border-gray-800 rounded text-gray-400 uppercase tracking-widest">Threat Intel</span>
+                        <span class="px-2 py-1 bg-gray-900 border border-gray-800 rounded text-gray-400 uppercase tracking-widest">Supply Chain</span>
+                    </div>
+                </div>
+                
+                <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-8">The rise of supply chain attacks</h1>
+                
+                <p class="text-xl text-gray-400 leading-relaxed font-light">
+                    How SolarWinds and NPM attacks transformed our approach to implicit trust in third-party code.
+                </p>
+            </header>
+
+            <!-- Article Content -->
+            <div class="prose prose-invert prose-emerald max-w-none space-y-8 text-gray-300 leading-relaxed text-lg">
+                <p>
+                    Historically, when a company wanted to secure its infrastructure, it installed firewalls, NDR/EDRs on endpoints, and created an impenetrable defense perimeter. But what happens when the enemy doesn't force the front door, but is invited inside, disguised as a valuable security update?
+                </p>
+
+                <h2 class="text-2xl font-bold text-white border-b border-gray-800 pb-2 mt-12 mb-6">The SolarWinds textbook case</h2>
+                <p>
+                    The SolarWinds Orion attack (late 2020) will go down in history. Attackers (APTs, most likely based in Russia) compromised SolarWinds' code repositories. As a result, every time a customer downloaded an Orion update, it was digitally signed using valid SolarWinds certificates, but it embedded the Sunburst malware.
+                </p>
+                
+                <blockquote class="bg-gray-900 border-l-4 border-accent p-6 rounded italic text-gray-400 my-8 shadow-inner">
+                    "A supply chain vulnerability is a security nightmare because it de facto bypasses the implicit trust model: the update comes from the publisher, therefore I accept it."
+                </blockquote>
+
+                <h2 class="text-2xl font-bold text-white border-b border-gray-800 pb-2 mt-12 mb-6">The Open Source world is not spared</h2>
+                <p>
+                    More recently, package registries (NPM for Node.js, PyPI for Python, or RubyGems) have become prime targets. The methods are numerous:
+                </p>
+                <ul class="list-disc pl-6 space-y-4 mb-8">
+                    <li><strong class="text-accent font-mono">Typosquatting:</strong> Placing malware in a package named <code>reqeusts</code> instead of <code>requests</code>. Rushed developers fall into the trap.</li>
+                    <li><strong class="text-accent font-mono">Dependency Confusion:</strong> Pushing a fraudulent package onto a public repo with the same name (but a much higher version) as a private internal company component. The package manager will prioritize downloading the internet version.</li>
+                    <li><strong class="text-accent font-mono">Maintainer Compromise:</strong> Stealing a legitimate developer's NPM token and pushing an infected update to a package with 10 million weekly downloads.</li>
+                </ul>
+
+                <h2 class="text-2xl font-bold text-white border-b border-gray-800 pb-2 mt-12 mb-6">Conclusion: The Zero-Trust Model</h2>
+                <p>
+                    There is no magic solution, but concrete mitigations are emerging: the creation of SBOMs (Software Bill of Materials) to have a complete inventory of software components, signing commits via GPG, and implementing a Zero-Trust approach, even for internal dependencies.
+                </p>
+            </div>
+
+            <!-- Footer Article -->
+            <div class="mt-16 pt-8 border-t border-gray-800 flex justify-between items-center">
+                <a href="blog.html" class="text-gray-400 hover:text-white transition-colors border border-gray-800 px-4 py-2 bg-dark rounded hover:bg-gray-800">
+                    <i class="fa-solid fa-arrow-left mr-2"></i>Back to Blog
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-6 bg-darker border-t border-gray-800 text-center relative z-10">
+        <p class="font-mono text-sm text-gray-600">
+            [ <span class="text-accent">&copy; 2024 Portfolio OS</span> ]
+        </p>
+    </footer>
+</body>
+</html>

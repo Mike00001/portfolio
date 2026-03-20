@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog: Quantum Computing & Crypto - Cybersecurity Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0f172a',
+                        darker: '#020617',
+                        accent: '#10b981', // Emerald green
+                        accentHover: '#059669',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #020617;
+            color: #f8fafc;
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        .glow {
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.15);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        
+        /* Grid background pattern */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="min-h-screen font-sans selection:bg-accent selection:text-white bg-grid relative flex flex-col">
+    <!-- Overlay gradient -->
+    <div class="fixed inset-0 bg-gradient-to-b from-transparent to-darker pointer-events-none -z-10"></div>
+
+    <!-- Header/Nav -->
+    <header class="border-b border-gray-800 bg-darker/80 backdrop-blur-md fixed w-full top-0 z-50 transition-all">
+        <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold font-mono tracking-tighter cursor-pointer hover:text-accent transition-colors">
+                <span class="text-accent">&gt;</span> cd <span class="text-gray-500">..</span><span class="animate-pulse text-accent">_</span>
+            </a>
+            <nav class="hidden md:flex space-x-6 text-sm font-medium font-mono">
+                <a href="about.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/about</a>
+                <a href="projects.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/projects</a>
+                <a href="tuto.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/tuto</a>
+                <a href="blog.html" class="text-accent transition-colors duration-300">~/blog</a>
+                <a href="contact.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/contact</a>
+            </nav>
+            <button class="md:hidden text-gray-400 hover:text-accent">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-32 pb-24">
+        <article class="max-w-4xl mx-auto px-6">
+            <!-- Documentation Header -->
+            <header class="mb-16">
+                <div class="flex items-center space-x-4 mb-6 border-b border-gray-800 pb-4">
+                    <div class="flex flex-col items-center justify-center w-16 h-16 rounded-lg bg-gray-900 border border-gray-800 text-gray-400 shrink-0 shadow-lg">
+                        <span class="text-xl font-bold text-white">Sep</span>
+                        <span class="text-xs font-mono text-accent">2024</span>
+                    </div>
+                    <div class="flex gap-2 font-mono text-xs">
+                        <span class="px-2 py-1 bg-gray-900 border border-gray-800 rounded text-gray-400 uppercase tracking-widest">Crypto</span>
+                        <span class="px-2 py-1 bg-gray-900 border border-gray-800 rounded text-gray-400 uppercase tracking-widest">Quantum</span>
+                    </div>
+                </div>
+                
+                <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-8">The impact of quantum computing on cryptography</h1>
+                
+                <p class="text-xl text-gray-400 leading-relaxed font-light">
+                    Shor's algorithm threatens RSA and ECC. Discovery of post-quantum cryptography and PQC standards.
+                </p>
+            </header>
+
+            <!-- Article Content -->
+            <div class="prose prose-invert prose-emerald max-w-none space-y-8 text-gray-300 leading-relaxed text-lg">
+                <p>
+                    Today, every time you browse via HTTPS, connect via SSH, or send an email, your security relies on math problems that are unsolvable for classical computers (integer factorization or discrete logarithm). This is the foundation of asymmetric cryptography (RSA, Diffie-Hellman, Elliptic Curves).
+                </p>
+
+                <h2 class="text-2xl font-bold text-white border-b border-gray-800 pb-2 mt-12 mb-6">Shor's Algorithm: The Destroyer of Asymmetry</h2>
+                <p>
+                    In the mid-90s, Peter Shor developed a quantum algorithm that solves these mathematical problems exponentially faster. When a functional quantum computer with enough stable qubits emerges, an attacker equipped with Shor's algorithm will be able to decrypt a 2048-bit RSA message in a few hours, where a classical supercomputer would take billions of years.
+                </p>
+                
+                <h2 class="text-2xl font-bold text-white border-b border-gray-800 pb-2 mt-12 mb-6">The "Harvest Now, Decrypt Later"</h2>
+                <p>
+                    Why worry when 'Q-day' quantum computers might only be expected in 5, 10, or 15 years? 
+                </p>
+                <div class="bg-gray-900 border border-gray-800 p-6 rounded-lg text-sm font-mono mt-4">
+                    Because many intelligence agencies are already practicing <span class="text-accent underline">"Harvest Now, Decrypt Later"</span>. 
+                    All encrypted HTTPS communications exchanged today between governments or multinational corporations are potentially collected and stored. The day a quantum machine becomes available, all these archives will be retroactively compromised.
+                </div>
+
+                <h2 class="text-2xl font-bold text-white border-b border-gray-800 pb-2 mt-12 mb-6">PQC (Post-Quantum Cryptography)</h2>
+                <p>
+                    The NIST launched a call a few years ago to standardize new asymmetric algorithms resistant to quantum computers. These algorithms are based on different mathematical principles, including:
+                </p>
+                <ul class="list-disc pl-6 space-y-2 mb-8 text-gray-400">
+                    <li>Lattice-based cryptography - e.g., <strong>Kyber</strong> (for key transmission) and <strong>Dilithium</strong> (for digital signatures).</li>
+                    <li>Multivariate cryptography.</li>
+                    <li>Error-correcting codes, etc.</li>
+                </ul>
+
+                <p>
+                    The deployment of the Kyber-768 algorithm has already begun. Google Chrome, Signal, and Cloudflare are currently implementing hybrid modes (combining a classical algorithm like X25519 with Kyber) to protect themselves from the future, without abandoning the current proven security level.
+                </p>
+            </div>
+
+            <!-- Footer Article -->
+            <div class="mt-16 pt-8 border-t border-gray-800 flex justify-between items-center">
+                <a href="blog.html" class="text-gray-400 hover:text-white transition-colors border border-gray-800 px-4 py-2 bg-dark rounded hover:bg-gray-800">
+                    <i class="fa-solid fa-arrow-left mr-2"></i>Back to Blog
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-6 bg-darker border-t border-gray-800 text-center relative z-10">
+        <p class="font-mono text-sm text-gray-600">
+            [ <span class="text-accent">&copy; 2024 Portfolio OS</span> ]
+        </p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSH Tutorial - Cybersecurity Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0f172a',
+                        darker: '#020617',
+                        accent: '#10b981', // Emerald green
+                        accentHover: '#059669',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #020617;
+            color: #f8fafc;
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        .glow {
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.15);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        
+        /* Grid background pattern */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="min-h-screen font-sans selection:bg-accent selection:text-white bg-grid relative flex flex-col">
+    <!-- Overlay gradient -->
+    <div class="fixed inset-0 bg-gradient-to-b from-transparent to-darker pointer-events-none -z-10"></div>
+
+    <!-- Header/Nav -->
+    <header class="border-b border-gray-800 bg-darker/80 backdrop-blur-md fixed w-full top-0 z-50 transition-all">
+        <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold font-mono tracking-tighter cursor-pointer hover:text-accent transition-colors">
+                <span class="text-accent">&gt;</span> cd <span class="text-gray-500">..</span><span class="animate-pulse text-accent">_</span>
+            </a>
+            <nav class="hidden md:flex space-x-6 text-sm font-medium font-mono">
+                <a href="about.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/about</a>
+                <a href="projects.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/projects</a>
+                <a href="tuto.html" class="text-accent transition-colors duration-300">~/tuto</a>
+                <a href="blog.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/blog</a>
+                <a href="contact.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/contact</a>
+            </nav>
+            <button class="md:hidden text-gray-400 hover:text-accent">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-32 pb-24">
+        <article class="max-w-4xl mx-auto px-6">
+            <!-- Header -->
+            <header class="mb-12 border-b border-gray-800 pb-8">
+                <div class="flex items-center space-x-4 mb-4">
+                    <span class="text-xs font-mono text-blue-400 bg-blue-900/30 border border-blue-900/50 px-3 py-1 rounded-full">Hardening</span>
+                    <span class="text-sm text-gray-400 font-mono"><i class="fa-regular fa-clock mr-2"></i>15 Min Read</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Securing SSH: Beyond Port 22</h1>
+                <p class="text-xl text-gray-400 leading-relaxed">
+                    Ed25519, MFA via Google Authenticator, Fail2Ban, and Port Knocking. A comprehensive guide for bulletproof remote access.
+                </p>
+            </header>
+
+            <!-- Image/Terminal Mock -->
+            <div class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden mb-12 glow font-mono text-sm shadow-2xl">
+                <div class="bg-gray-800 border-b border-gray-700 px-4 py-2 flex text-gray-400 text-xs">
+                    sshd_config
+                </div>
+                <div class="p-6 text-gray-300 overflow-x-auto text-xs leading-relaxed">
+                    <p class="text-gray-500"># Hardened SSH daemon configuration</p>
+                    <p>Port <span class="text-yellow-400">42123</span></p>
+                    <p>AddressFamily inet</p>
+                    <p>ListenAddress <span class="text-accent">0.0.0.0</span></p>
+                    <p>PermitRootLogin <span class="text-red-400">no</span></p>
+                    <p>PasswordAuthentication <span class="text-red-400">no</span></p>
+                    <p>PubkeyAuthentication <span class="text-green-400">yes</span></p>
+                    <p>KbdInteractiveAuthentication <span class="text-green-400">yes</span> <span class="text-gray-500"># Required for PAM MFA</span></p>
+                    <p>AuthenticationMethods <span class="text-accent">publickey,keyboard-interactive</span></p>
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div class="prose prose-invert prose-emerald max-w-none text-gray-300 leading-relaxed space-y-8">
+                <h2 class="text-2xl font-bold text-white font-mono border-l-4 border-blue-500 pl-4">Introduction</h2>
+                <p>
+                    Opening port 22 to the Internet guarantees thousands of bruteforce (dictionary) attempts every hour. Historically, changing the port was enough for "Security by Obscurity", but with massive scanners like Shodan or Zmap, an obscure port is no longer a sufficient barrier.
+                </p>
+                
+                <h2 class="text-2xl font-bold text-white font-mono border-l-4 border-blue-500 pl-4">Step 1: Ed25519 Asymmetric Keys</h2>
+                <p>
+                    RSA 2048 (and even 4096) is heavy and aging. The Ed25519 elliptic curve offers a very high level of security with a short key size and ultra-fast performance.
+                </p>
+                <div class="bg-darker border border-gray-800 p-4 font-mono text-sm overflow-x-auto rounded">
+                    <span class="text-blue-400">ssh-keygen</span> -t ed25519 -C "admin@portfolio"
+                </div>
+
+                <h2 class="text-2xl font-bold text-white font-mono border-l-4 border-blue-500 pl-4">Step 2: MFA via TOTP (Google Authenticator)</h2>
+                <p>
+                    Even if your private key is stolen or extracted, a Time-based One-Time Password (TOTP) will block access. Simply install the PAM module (Pluggable Authentication Modules).
+                </p>
+                <div class="bg-darker border border-gray-800 p-4 font-mono text-sm overflow-x-auto rounded">
+                    <span class="text-blue-400">sudo apt install</span> libpam-google-authenticator<br>
+                    <span class="text-blue-400">google-authenticator</span>
+                </div>
+                <p>
+                    The module will create a QR Code to scan with your mobile app. Then edit `/etc/pam.d/sshd` to require it.
+                </p>
+
+                <h2 class="text-2xl font-bold text-white font-mono border-l-4 border-blue-500 pl-4">Step 3: Fail2Ban</h2>
+                <p>
+                    Fail2Ban reads the history of `/var/log/auth.log` in real-time. If it detects more than X failed attempts from the same IP, it automatically creates a firewall rule (iptables) that bans the attacker for a specified duration. Mandatory on any publicly exposed server.
+                </p>
+            </div>
+
+            <div class="mt-16 pt-8 border-t border-gray-800">
+                <a href="tuto.html" class="text-gray-400 hover:text-white transition-colors border border-gray-800 px-4 py-2 bg-dark rounded hover:bg-gray-800">
+                    <i class="fa-solid fa-arrow-left mr-2"></i>Back to Tutorials
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-6 bg-darker border-t border-gray-800 text-center relative z-10">
+        <p class="font-mono text-sm text-gray-600">
+            [ <span class="text-accent">&copy; 2024 Portfolio OS</span> ]
+        </p>
+    </footer>
+</body>
+</html>

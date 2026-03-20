@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Cybersecurity Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0f172a',
+                        darker: '#020617',
+                        accent: '#10b981', // Emerald green
+                        accentHover: '#059669',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #020617;
+            color: #f8fafc;
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        .glow {
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.15);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        .glow:hover {
+            box-shadow: 0 0 30px rgba(16, 185, 129, 0.4);
+            transform: translateY(-5px);
+        }
+        
+        /* Grid background pattern */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="min-h-screen font-sans selection:bg-accent selection:text-white bg-grid relative flex flex-col">
+    <!-- Overlay gradient -->
+    <div class="fixed inset-0 bg-gradient-to-b from-transparent to-darker pointer-events-none -z-10"></div>
+
+    <!-- Header/Nav -->
+    <header class="border-b border-gray-800 bg-darker/80 backdrop-blur-md fixed w-full top-0 z-50 transition-all">
+        <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold font-mono tracking-tighter cursor-pointer hover:text-accent transition-colors">
+                <span class="text-accent">&gt;</span> root<span class="text-gray-500">@</span>portfolio<span class="animate-pulse text-accent">_</span>
+            </a>
+            <nav class="hidden md:flex space-x-6 text-sm font-medium font-mono">
+                <a href="about.html" class="text-accent transition-colors duration-300">~/about</a>
+                <a href="projects.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/projects</a>
+                <a href="tuto.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/tuto</a>
+                <a href="blog.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/blog</a>
+                <a href="contact.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/contact</a>
+            </nav>
+            <button class="md:hidden text-gray-400 hover:text-accent">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-32 pb-24">
+        <section class="max-w-4xl mx-auto px-6">
+            <h1 class="text-4xl font-bold font-mono mb-12"><span class="text-accent text-2xl mr-2">whoami</span>About</h1>
+            
+            <div class="bg-darker border border-gray-800 rounded-xl p-8 glow mb-12">
+                <h2 class="text-2xl font-bold mb-4">Analyst Profile</h2>
+                <p class="text-gray-400 leading-relaxed mb-6">
+                    I am a cybersecurity specialist, passionate about auditing, network monitoring, and protecting hardware infrastructures. 
+                    My goal is to understand low-level mechanisms to design impenetrable defenses against modern threats.
+                </p>
+                <div class="flex flex-col space-y-3 font-mono text-sm">
+                    <div class="flex"><span class="w-32 text-accent">Preferred OS:</span> <span class="text-gray-300">Arch Linux / Kali</span></div>
+                    <div class="flex"><span class="w-32 text-accent">Languages:</span> <span class="text-gray-300">C/C++, Python, Bash, Rust</span></div>
+                    <div class="flex"><span class="w-32 text-accent">Specialty:</span> <span class="text-gray-300">Blue Team (IDS/IPS) & IoT Security</span></div>
+                </div>
+            </div>
+
+            <!-- Skills Terminal -->
+            <div class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden font-mono text-sm leading-relaxed mb-12">
+                <div class="bg-gray-800 px-4 py-2 flex items-center space-x-2">
+                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    <div class="ml-4 text-gray-400 xs">skills.sh</div>
+                </div>
+                <div class="p-6 text-gray-300">
+                    <p><span class="text-blue-400">root@portfolio</span>:~$ ./load_skills.sh</p>
+                    <p class="text-accent">[+] Loading skills...</p>
+                    <br>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <p class="font-bold text-white mb-2">>> Defensive Security</p>
+                            <p>- Packet Analysis (Wireshark, tcpdump)</p>
+                            <p>- IDS/IPS (Suricata, Snort)</p>
+                            <p>- SIEM (Splunk, ELK)</p>
+                        </div>
+                        <div>
+                            <p class="font-bold text-white mb-2">>> Offensive Security</p>
+                            <p>- Wi-Fi Audit (802.11, WPA2/WPA3)</p>
+                            <p>- Network & Web Pentest</p>
+                            <p>- Hardware Dev (ESP32, Raspberry Pi)</p>
+                        </div>
+                    </div>
+                    <br>
+                    <p><span class="text-blue-400">root@portfolio</span>:~$ <span class="animate-pulse">_</span></p>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-6 bg-darker border-t border-gray-800 text-center relative z-10">
+        <p class="font-mono text-sm text-gray-600">
+            [ <span class="text-accent">&copy; 2024 Portfolio OS</span> ]
+        </p>
+    </footer>
+</body>
+</html>

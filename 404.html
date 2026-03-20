@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error 404 - File Not Found</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0f172a',
+                        darker: '#020617',
+                        accent: '#10b981', // Emerald green
+                        accentHover: '#059669',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #020617;
+            color: #f8fafc;
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        /* Grid background pattern */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        }
+        
+        .typewriter h1 {
+            overflow: hidden; /* Ensures the content is not revealed until the animation */
+            border-right: .15em solid #10b981; /* The typwriter cursor */
+            white-space: nowrap; /* Keeps the content on a single line */
+            margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+            letter-spacing: .15em; /* Adjust as needed */
+            animation: 
+              typing 3.5s steps(40, end),
+              blink-caret .75s step-end infinite;
+        }
+
+        /* The typing effect */
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        /* The typewriter cursor effect */
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #10b981; }
+        }
+        
+        /* CRT Effect */
+        .scanlines {
+            position: relative;
+        }
+        .scanlines::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(18, 16, 16, 0) 50%,
+                rgba(0, 0, 0, 0.25) 50%
+            );
+            background-size: 100% 4px;
+            z-index: 50;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen font-sans selection:bg-accent selection:text-white bg-grid relative flex flex-col items-center justify-center p-6 scanlines">
+    <!-- Overlay gradient -->
+    <div class="fixed inset-0 bg-gradient-to-b from-transparent to-darker pointer-events-none -z-10"></div>
+
+    <div class="w-full max-w-2xl bg-darker border border-accent/20 rounded-lg shadow-[0_0_20px_rgba(16,185,129,0.15)] overflow-hidden relative z-10">
+        <!-- Terminal Header -->
+        <div class="bg-gray-900 border-b border-gray-800 px-4 py-2 flex items-center justify-between">
+            <div class="flex space-x-2">
+                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <div class="font-mono text-xs text-gray-400">root@portfolio:~</div>
+            <div></div>
+        </div>
+        
+        <!-- Terminal Body -->
+        <div class="p-8 font-mono text-gray-300">
+            <div class="text-accent mb-4 text-sm">
+                Linux portfolio 5.15.0-generic #42-Ubuntu SMP x86_64 x86_64 x86_64 GNU/Linux<br>
+                Last login: Wed Oct 18 10:24:32 2024 from 192.168.1.50
+            </div>
+            
+            <p class="mb-2"><span class="text-accent font-bold">root@portfolio</span>:<span class="text-blue-400">~</span>$ wget <span id="current-url" class="text-green-300">/unknown-page</span></p>
+            <p class="text-gray-400 mb-6">--2024-10-18 10:25:01-- HTTP request sent, awaiting response... <span class="text-red-500 font-bold text-xl">404 Not Found</span></p>
+            
+            <div class="typewriter inline-block mb-8">
+                <h1 class="text-xl md:text-2xl text-red-400 font-bold">FATAL ERROR: ROUTE_NOT_FOUND</h1>
+            </div>
+
+            <p class="mb-4 text-gray-400">The requested resource does not exist or access has been restricted by the firewall.</p>
+            
+            <p class="mb-4"><span class="text-accent font-bold">root@portfolio</span>:<span class="text-blue-400">~</span>$ <span class="animate-pulse">_</span></p>
+            
+            <div class="mt-8 pt-6 border-t border-gray-800/50">
+                <a href="index.html" class="inline-flex items-center space-x-2 text-accent hover:text-white transition-colors">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span>cd /home/portfolio</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Set the current requested path for realism
+        window.addEventListener('DOMContentLoaded', () => {
+            const urlElement = document.getElementById('current-url');
+            if (urlElement && window.location.pathname) {
+                const path = window.location.pathname.split('/').pop() || 'resource';
+                urlElement.textContent = '/' + path;
+            }
+        });
+    </script>
+</body>
+</html>
