@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Project title] - Cybersecurity Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0f172a',
+                        darker: '#020617',
+                        accent: '#10b981', // Emerald green
+                        accentHover: '#059669',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #020617;
+            color: #f8fafc;
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        .glow {
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.15);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        
+        /* Grid background pattern */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="min-h-screen font-sans selection:bg-accent selection:text-white bg-grid relative flex flex-col">
+    <!-- Overlay gradient -->
+    <div class="fixed inset-0 bg-gradient-to-b from-transparent to-darker pointer-events-none -z-10"></div>
+
+    <!-- Header/Nav -->
+    <header class="border-b border-gray-800 bg-darker/80 backdrop-blur-md fixed w-full top-0 z-50 transition-all">
+        <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold font-mono tracking-tighter cursor-pointer hover:text-accent transition-colors">
+                <span class="text-accent">&gt;</span> cd <span class="text-gray-500">..</span><span class="animate-pulse text-accent">_</span>
+            </a>
+            <nav class="hidden md:flex space-x-6 text-sm font-medium font-mono">
+                <a href="about.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/about</a>
+                <a href="projects.html" class="text-accent transition-colors duration-300">~/projects</a>
+                <a href="tuto.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/tuto</a>
+                <a href="blog.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/blog</a>
+                <a href="contact.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/contact</a>
+            </nav>
+            <button class="md:hidden text-gray-400 hover:text-accent">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-32 pb-24">
+        <article class="max-w-4xl mx-auto px-6">
+            <!-- Header -->
+            <header class="mb-12 border-b border-gray-800 pb-8 text-center md:text-left">
+                <div class="inline-flex items-center space-x-2 bg-darker border border-gray-800 rounded-full px-4 py-1.5 mb-6">
+                    <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+                    <span class="text-sm font-mono text-gray-300">[Project Status e.g., Active/Completed]</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">[PROJECT TITLE]</h1>
+                <p class="text-xl text-gray-400 mb-8 max-w-2xl">
+                    [A short and catchy description of the project. 1-2 sentences explaining what it does and the problem it solves.]
+                </p>
+                
+                <div class="flex flex-wrap items-center gap-4 text-sm font-mono">
+                    <a href="#" class="px-4 py-2 bg-accent text-white rounded hover:bg-accentHover transition-colors flex items-center">
+                        <i class="fa-brands fa-github mr-2"></i>[Repo / Download Link]
+                    </a>
+                    <span class="px-3 py-1 bg-gray-900 border border-gray-800 rounded text-gray-400">[Tag 1]</span>
+                    <span class="px-3 py-1 bg-gray-900 border border-gray-800 rounded text-gray-400">[Tag 2]</span>
+                    <span class="px-3 py-1 bg-gray-900 border border-gray-800 rounded text-gray-400">[Tag 3]</span>
+                </div>
+            </header>
+
+            <div class="prose prose-invert prose-emerald max-w-none text-gray-300 leading-relaxed space-y-8">
+                <!-- Text section -->
+                <h2 class="text-2xl font-bold text-white border-b border-gray-800 pb-2">Overview</h2>
+                <p>
+                    [Detailed introduction to the project. What is its main purpose? Who is it for? Feel free to add multiple paragraphs.]
+                </p>
+
+                <!-- Image example -->
+                <h2 class="text-2xl font-bold text-white border-b border-gray-800 pb-2">Architecture / Screenshot</h2>
+                <figure class="my-8">
+                    <!-- Standard image tag -->
+                    <img src="https://placehold.co/800x400/1e293b/10b981?text=Project+Screenshot" alt="Project architecture or screenshot" class="w-full rounded-lg border border-gray-800 shadow-2xl">
+                    <figcaption class="text-center text-sm text-gray-500 mt-3 font-mono">[Image caption or diagram explanation goes here]</figcaption>
+                </figure>
+
+                <!-- List example -->
+                <h2 class="text-2xl font-bold text-white border-b border-gray-800 pb-2">Key Features</h2>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li><strong>[Feature 1]:</strong> [Description of feature 1].</li>
+                    <li><strong>[Feature 2]:</strong> [Description of feature 2].</li>
+                    <li><strong>[Feature 3]:</strong> [Description of feature 3].</li>
+                </ul>
+
+                <!-- Video example -->
+                <h2 class="text-2xl font-bold text-white border-b border-gray-800 pb-2">Demo Video</h2>
+                <div class="my-8 relative w-full aspect-video rounded-lg overflow-hidden border border-gray-800 shadow-2xl bg-gray-900 flex items-center justify-center">
+                    <!-- Remove the div below and uncomment the video tag to use an actual video file (MP4/WebM) - OR use an iframe for youtube/vimeo -->
+                    <!-- <video controls class="w-full h-full object-cover"><source src="path/to/video.mp4" type="video/mp4"></video> -->
+                    
+                    <!-- Placeholder UI -->
+                    <div class="text-center text-gray-500 font-mono">
+                        <i class="fa-solid fa-play text-4xl mb-4 opacity-50"></i>
+                        <p>[Video Player Placeholder]</p>
+                        <p class="text-xs mt-2">Replace with &lt;video&gt; or YouTube &lt;iframe&gt;</p>
+                    </div>
+                </div>
+
+                <!-- Terminal Mockup (Command Line) -->
+                <h2 class="text-2xl font-bold text-white border-b border-gray-800 pb-2">Installation & Usage</h2>
+                <p>Follow these steps to deploy the tool:</p>
+                <div class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden my-6 glow font-mono text-sm shadow-2xl">
+                    <div class="bg-gray-800 border-b border-gray-700 px-4 py-2 flex text-gray-400 text-xs">
+                        terminal
+                    </div>
+                    <div class="p-6 text-gray-300 overflow-x-auto">
+                        <p><span class="text-accent">user@host</span>:<span class="text-blue-400">~/projects</span>$ git clone https://github.com/[user]/[project-name].git</p>
+                        <p><span class="text-accent">user@host</span>:<span class="text-blue-400">~/projects</span>$ cd [project-name]</p>
+                        <p><span class="text-accent">user@host</span>:<span class="text-blue-400">~/projects/[project-name]</span>$ ./install.sh</p>
+                        <p class="text-green-500 mt-2">[+] Installation successful!</p>
+                    </div>
+                </div>
+
+                <!-- Source Code block example -->
+                <h2 class="text-2xl font-bold text-white border-b border-gray-800 pb-2">Configuration Example</h2>
+                <p>Modify the <code class="bg-gray-800 px-1 rounded text-accent">config.yaml</code> file as follows:</p>
+                <div class="bg-darker border border-gray-800 rounded p-4 font-mono text-sm overflow-x-auto my-6 text-gray-300 shadow-lg">
+<pre><code>server:
+  host: "0.0.0.0"
+  port: 8080
+security:
+  tls_enabled: true
+  cert_path: "/etc/ssl/certs/server.crt"</code></pre>
+                </div>
+
+                <!-- Callout/Alert -->
+                <div class="bg-blue-900/20 border border-blue-900/50 p-6 rounded-lg my-8">
+                    <p class="text-blue-200">
+                        <strong class="text-blue-400 italic"><i class="fa-solid fa-circle-info mr-2"></i>Note:</strong> [Add any important notices, prerequisites, or legal disclaimers here.]
+                    </p>
+                </div>
+
+                <!-- Link example -->
+                <p>For more detailed documentation, please refer to the <a href="#" class="text-accent hover:underline">official wiki repository</a> or read the <a href="#" class="text-accent hover:underline">developer guide</a>.</p>
+            </div>
+
+            <!-- Footer navigation -->
+            <div class="mt-16 pt-8 border-t border-gray-800 text-center">
+                <a href="projects.html" class="text-gray-400 hover:text-white transition-colors border border-gray-800 px-4 py-2 bg-dark rounded hover:bg-gray-800">
+                    <i class="fa-solid fa-arrow-left mr-2"></i>Back to Projects
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-6 bg-darker border-t border-gray-800 text-center relative z-10">
+        <p class="font-mono text-sm text-gray-600">
+            [ <span class="text-accent">&copy; 2024 Portfolio OS</span> ]
+        </p>
+    </footer>
+</body>
+</html>

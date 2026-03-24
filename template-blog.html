@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Blog Title] - Cybersecurity Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0f172a',
+                        darker: '#020617',
+                        accent: '#10b981', // Emerald green
+                        accentHover: '#059669',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #020617;
+            color: #f8fafc;
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        .glow {
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.15);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        
+        /* Grid background pattern */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="min-h-screen font-sans selection:bg-accent selection:text-white bg-grid relative flex flex-col">
+    <!-- Overlay gradient -->
+    <div class="fixed inset-0 bg-gradient-to-b from-transparent to-darker pointer-events-none -z-10"></div>
+
+    <!-- Header/Nav -->
+    <header class="border-b border-gray-800 bg-darker/80 backdrop-blur-md fixed w-full top-0 z-50 transition-all">
+        <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold font-mono tracking-tighter cursor-pointer hover:text-accent transition-colors">
+                <span class="text-accent">&gt;</span> cd <span class="text-gray-500">..</span><span class="animate-pulse text-accent">_</span>
+            </a>
+            <nav class="hidden md:flex space-x-6 text-sm font-medium font-mono">
+                <a href="about.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/about</a>
+                <a href="projects.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/projects</a>
+                <a href="tuto.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/tuto</a>
+                <a href="blog.html" class="text-accent transition-colors duration-300">~/blog</a>
+                <a href="contact.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/contact</a>
+            </nav>
+            <button class="md:hidden text-gray-400 hover:text-accent">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-32 pb-24">
+        <article class="max-w-4xl mx-auto px-6">
+            <!-- Blog Header -->
+            <header class="mb-16">
+                <!-- Date and Tags -->
+                <div class="flex items-center space-x-4 mb-6 border-b border-gray-800 pb-4">
+                    <div class="flex flex-col items-center justify-center w-16 h-16 rounded-lg bg-gray-900 border border-gray-800 text-gray-400 shrink-0 shadow-lg glow">
+                        <span class="text-xl font-bold text-white">[Mon]</span>
+                        <span class="text-xs font-mono text-accent">[Year]</span>
+                    </div>
+                    <div class="flex gap-2 font-mono text-xs flex-wrap">
+                        <span class="px-2 py-1 bg-gray-900 border border-gray-800 rounded text-gray-400 uppercase tracking-widest">[Tag 1]</span>
+                        <span class="px-2 py-1 bg-gray-900 border border-gray-800 rounded text-gray-400 uppercase tracking-widest">[Tag 2]</span>
+                    </div>
+                </div>
+                
+                <!-- Title -->
+                <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-8 leading-tight">[Blog Article Title: An Analysis on Something]</h1>
+                
+                <!-- Abstract -->
+                <p class="text-xl text-gray-400 leading-relaxed font-light">
+                    [Article summary or abstract. A quick hook to get the reader interested and summarize what the post covers.]
+                </p>
+            </header>
+
+            <!-- Article Content -->
+            <div class="prose prose-invert prose-emerald max-w-none space-y-8 text-gray-300 leading-relaxed text-lg">
+                <!-- Text Intro -->
+                <p>
+                    [First paragraph. Introduction to the topic. Explain the background of the issue, who is affected, and why this article exists.]
+                </p>
+
+                <!-- Blockquote Example -->
+                <blockquote class="bg-gray-900 border-l-4 border-accent p-6 rounded italic text-gray-400 my-8 shadow-inner">
+                    "[An important quote, excerpt from a news site, or key takeaway from the article. Useful to highlight facts.]"
+                </blockquote>
+
+                <!-- Standard Section -->
+                <h2 class="text-2xl font-bold text-white border-b border-gray-800 pb-2 mt-12 mb-6">[Section 1 Title]</h2>
+                <p>
+                    [Body paragraph explaining a concept. You can use <strong class="text-accent font-mono">inline emphasis</strong> or general bold text to highlight certain terms.]
+                </p>
+
+                <!-- Cover Image or Explanatory Diagram -->
+                <figure class="my-10">
+                    <img src="https://placehold.co/800x450/1e293b/10b981?text=Article+Header+Image+or+Diagram" alt="Article image" class="w-full rounded-xl shadow-2xl border border-gray-800">
+                    <figcaption class="text-center text-sm text-gray-500 mt-4 font-mono">[Image caption or source credits goes here]</figcaption>
+                </figure>
+                
+                <!-- Section with lists -->
+                <h2 class="text-2xl font-bold text-white border-b border-gray-800 pb-2 mt-12 mb-6">[Section 2 with Lists and Code]</h2>
+                <p>
+                    [Here is a list of methods, solutions, or bullet points:]
+                </p>
+                <ul class="list-disc pl-6 space-y-4 mb-8">
+                    <li><strong class="text-accent font-mono">[List Item 1]:</strong> [Description with an inline code tag like <code class="bg-gray-800 px-1 rounded text-sm text-pink-400">filename.py</code>.]</li>
+                    <li><strong class="text-accent font-mono">[List Item 2]:</strong> [Description.]</li>
+                </ul>
+
+                <!-- General purpose code block for scripts or configs -->
+                <p>[If you need to show an example script, use a block like this:]</p>
+                <div class="bg-darker border border-gray-800 rounded p-6 font-mono text-sm overflow-x-auto text-gray-300 my-8 shadow-lg">
+<pre><code><span class="text-blue-400">def</span> vulnerability_exploit():
+    <span class="text-gray-500"># This is a sample code block in Python</span>
+    <span class="text-accent">payload</span> = <span class="text-yellow-300">"&lt;script&gt;alert(1)&lt;/script&gt;"</span>
+    <span class="text-blue-400">print</span>(<span class="text-yellow-300">f"Injecting: {payload}"</span>)
+    <span class="text-blue-400">return True</span></code></pre>
+                </div>
+
+                <!-- Embedded Video Optional for Blog format -->
+                <h2 class="text-2xl font-bold text-white border-b border-gray-800 pb-2 mt-12 mb-6">Video Analysis / Teardown</h2>
+                <div class="my-8 relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl border border-gray-800 bg-black">
+                    <!-- Example of an iframe embed (e.g. YouTube). Replace div below with actual iframe -->
+                    <div class="absolute inset-0 flex items-center justify-center flex-col text-gray-600 font-mono text-sm bg-gray-900 hover:bg-gray-800 transition-colors cursor-pointer">
+                        <i class="fa-brands fa-youtube text-5xl mb-3"></i>
+                        <span>[Embed iframe code video here]</span>
+                    </div>
+                </div>
+
+                <!-- Conclusion -->
+                <h2 class="text-2xl font-bold text-white border-b border-gray-800 pb-2 mt-12 mb-6">Conclusion</h2>
+                <p>
+                    [Wrap up the article and provide final thoughts or mitigation strategies.]
+                </p>
+                <p>
+                    You can find more resources on <a href="#" target="_blank" class="text-accent hover:underline">this external link</a> or return to the <a href="index.html" class="text-accent hover:underline">homepage</a>.
+                </p>
+            </div>
+
+            <!-- Footer Article -->
+            <div class="mt-16 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-6">
+                <a href="blog.html" class="text-gray-400 hover:text-white transition-colors border border-gray-800 px-4 py-2 bg-dark rounded hover:bg-gray-800">
+                    <i class="fa-solid fa-arrow-left mr-2"></i>Back to Blog
+                </a>
+                
+                <!-- Share/Tags footer -->
+                <div class="flex gap-4 items-center">
+                    <span class="text-sm font-mono text-gray-500">Share:</span>
+                    <a href="#" class="text-gray-400 hover:text-[#1DA1F2] transition-colors text-xl"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-[#0A66C2] transition-colors text-xl"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-6 bg-darker border-t border-gray-800 text-center relative z-10">
+        <p class="font-mono text-sm text-gray-600">
+            [ <span class="text-accent">&copy; 2024 Portfolio OS</span> ]
+        </p>
+    </footer>
+</body>
+</html>

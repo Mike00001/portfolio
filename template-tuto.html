@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Tutorial Title] - Cybersecurity Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0f172a',
+                        darker: '#020617',
+                        accent: '#10b981', // Emerald green
+                        accentHover: '#059669',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #020617;
+            color: #f8fafc;
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        .glow {
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.15);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        
+        /* Grid background pattern */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="min-h-screen font-sans selection:bg-accent selection:text-white bg-grid relative flex flex-col">
+    <!-- Overlay gradient -->
+    <div class="fixed inset-0 bg-gradient-to-b from-transparent to-darker pointer-events-none -z-10"></div>
+
+    <!-- Header/Nav -->
+    <header class="border-b border-gray-800 bg-darker/80 backdrop-blur-md fixed w-full top-0 z-50 transition-all">
+        <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold font-mono tracking-tighter cursor-pointer hover:text-accent transition-colors">
+                <span class="text-accent">&gt;</span> cd <span class="text-gray-500">..</span><span class="animate-pulse text-accent">_</span>
+            </a>
+            <nav class="hidden md:flex space-x-6 text-sm font-medium font-mono">
+                <a href="about.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/about</a>
+                <a href="projects.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/projects</a>
+                <a href="tuto.html" class="text-accent transition-colors duration-300">~/tuto</a>
+                <a href="blog.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/blog</a>
+                <a href="contact.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/contact</a>
+            </nav>
+            <button class="md:hidden text-gray-400 hover:text-accent">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-32 pb-24">
+        <article class="max-w-4xl mx-auto px-6">
+            <!-- Header -->
+            <header class="mb-12 border-b border-gray-800 pb-8">
+                <div class="flex items-center space-x-4 mb-4">
+                    <!-- Category Badge -->
+                    <span class="text-xs font-mono text-blue-400 bg-blue-900/30 border border-blue-900/50 px-3 py-1 rounded-full">[Category e.g., Blue Team / Hardening]</span>
+                    <span class="text-sm text-gray-400 font-mono"><i class="fa-regular fa-clock mr-2"></i>[XX] Min Read</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">[Tutorial Title: How to Setup XYZ]</h1>
+                <p class="text-xl text-gray-400 leading-relaxed">
+                    [A brief summary of what the reader will learn in this tutorial, what problem it solves, or which tool is being configured.]
+                </p>
+            </header>
+
+            <div class="prose prose-invert prose-emerald max-w-none text-gray-300 leading-relaxed space-y-8">
+                
+                <h2 class="text-2xl font-bold text-white font-mono border-l-4 border-blue-500 pl-4">Introduction</h2>
+                <p>
+                    [Provide context about the vulnerability, tool, protocol, or concept that you are about to demonstrate.]
+                </p>
+                <p>
+                    [Optional text linking to external references or explaining why this tutorial is useful for security professionals.]
+                </p>
+
+                <!-- Warning Alert Box -->
+                <div class="bg-red-900/20 border border-red-900/50 p-6 rounded-lg my-8">
+                    <p class="text-red-200">
+                        <strong class="text-red-400 italic"><i class="fa-solid fa-triangle-exclamation mr-2"></i>Warning:</strong> [Use this block for educational disclaimers. Example: This tutorial is for educational purposes only. Do not execute these steps on networks where you do not have explicit authorization.]
+                    </p>
+                </div>
+
+                <h2 class="text-2xl font-bold text-white font-mono border-l-4 border-blue-500 pl-4">Step 1: Prerequisites & Discovery</h2>
+                <p>
+                    [Explanation of the first step. What needs to be installed or prepared before starting?]
+                </p>
+                
+                <!-- Simple Terminal Command Snippet -->
+                <div class="bg-darker border border-gray-800 rounded p-4 font-mono text-sm overflow-x-auto my-4 shadow-inner">
+                    <span class="text-gray-500"># [Comment describing what the following command does]</span><br>
+                    <span class="text-blue-300">[Command e.g., sudo apt install]</span> <span class="text-accent">[package-name]</span>
+                </div>
+
+                <h2 class="text-2xl font-bold text-white font-mono border-l-4 border-blue-500 pl-4">Step 2: Execution and Demonstration</h2>
+                <p>
+                    [Explanation of the second step. This is usually the core of the tutorial.]
+                </p>
+                
+                <!-- Image Demonstration -->
+                <figure class="my-6">
+                    <img src="https://placehold.co/800x400/1e293b/3b82f6?text=Tutorial+Image+or+Screenshot" alt="Step 2 Screenshot" class="w-full rounded border border-gray-700 shadow-xl">
+                    <figcaption class="text-center text-sm text-gray-500 mt-3 font-mono">Figure 1: [Image description or what to look for in the screenshot]</figcaption>
+                </figure>
+                
+                <!-- List explanation -->
+                <p>Notice the following key points in the process above:</p>
+                <ul class="list-disc pl-5 space-y-2 mb-6">
+                    <li><strong>[Point A]:</strong> [Why 'A' resulted this way].</li>
+                    <li><strong>[Point B]:</strong> [Why 'B' is important to monitor].</li>
+                </ul>
+
+                <h2 class="text-2xl font-bold text-white font-mono border-l-4 border-blue-500 pl-4">Step 3: Verification (Video or Logs)</h2>
+                <p>
+                    [How to verify if the setup or exploit worked. E.g. where to check the logs.]
+                </p>
+                <div class="bg-darker border border-gray-800 rounded p-4 font-mono text-sm overflow-x-auto my-4 shadow-inner text-gray-400">
+                    <span class="text-blue-300">cat</span> <span class="text-white">/var/log/syslog</span> | grep <span class="text-accent">service_name</span>
+                </div>
+
+                <!-- Embedded Video Optional for Tutorials -->
+                <div class="my-8 relative w-full aspect-video rounded-lg overflow-hidden border border-gray-800 bg-black shadow-2xl flex items-center justify-center">
+                    <!-- <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-full"></iframe> -->
+                    <div class="text-center text-gray-500 font-mono">
+                        <i class="fa-brands fa-youtube text-4xl mb-2"></i>
+                        <p>[Optional YouTube/Video iframe Placeholder]</p>
+                    </div>
+                </div>
+
+                <!-- External Links -->
+                <h2 class="text-2xl font-bold text-white font-mono border-l-4 border-blue-500 pl-4">Further Reading</h2>
+                <p>
+                    For a more in-depth look at this subject, read the <a href="#" class="text-accent underline hover:text-accentHover">official documentation</a> or check out <a href="blog.html" class="text-accent underline hover:text-accentHover">my related blog post</a>.
+                </p>
+            </div>
+
+            <div class="mt-16 pt-8 border-t border-gray-800">
+                <a href="tuto.html" class="text-gray-400 hover:text-white transition-colors border border-gray-800 px-4 py-2 bg-dark rounded hover:bg-gray-800">
+                    <i class="fa-solid fa-arrow-left mr-2"></i>Back to Tutorials
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-6 bg-darker border-t border-gray-800 text-center relative z-10">
+        <p class="font-mono text-sm text-gray-600">
+            [ <span class="text-accent">&copy; 2024 Portfolio OS</span> ]
+        </p>
+    </footer>
+</body>
+</html>
