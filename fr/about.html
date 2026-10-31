@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos - Portfolio Cybersécurité</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+    </style>
+</head>
+<body class="bg-[#0d0d0d] text-[#f5f5f5] min-h-screen selection:bg-neutral-800 flex flex-col">
+    <!-- Minimalist Nav -->
+    <nav class="sticky top-0 z-50 w-full bg-[#0d0d0d]/85 backdrop-blur-md border-b border-[#262626] transition-all duration-300">
+        <div class="max-w-4xl mx-auto w-full px-6 py-4 flex justify-between items-center text-sm font-medium tracking-tight gap-4">
+            <a href="index.html" id="nav-logo" class="flex items-center gap-2.5 hover:opacity-85 transition text-white font-semibold text-[15px]">
+                <div class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </div>
+                <span class="font-mono text-[14px] font-bold text-white tracking-tight">~/portfolio</span>
+            </a>
+            <div class="flex items-center gap-5 text-[13px]" id="nav-links">
+                <a href="about.html" id="nav-about" class="text-white font-semibold transition-colors">À propos</a>
+                <a href="projects.html" id="nav-projects" class="text-neutral-400 hover:text-white transition-colors">Projets</a>
+                <a href="contact.html" id="nav-contact" class="bg-white text-[#0d0d0d] hover:bg-neutral-200 px-4 py-1.5 rounded-full text-xs font-semibold transition-colors">Contact</a>
+                <span class="text-[#333333]">|</span>
+                <a href="../about.html" id="lang-toggle" class="text-neutral-400 hover:text-white transition-colors font-mono text-[11px] font-semibold border border-[#333333] rounded px-1.5 py-0.5 bg-[#1a1a1a] hover:bg-[#262626] uppercase">EN</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-4xl w-full mx-auto px-6 py-16">
+        <header class="mb-12 border-b border-[#262626] pb-10">
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-[#161616] border border-[#333333] rounded-full text-xs font-mono text-emerald-400 mb-4">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> BACKGROUND & EXPERTISE
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">Profil de l'analyste</h1>
+            <p class="text-lg text-neutral-400 font-light leading-relaxed max-w-2xl">Parcours technique, compétences d'investigation défensive et historique d'expériences.</p>
+        </header>
+
+        <!-- Profile Bio -->
+        <section class="mb-12 bg-[#161616] border border-[#262626] rounded-2xl p-6 md:p-8">
+            <p class="text-lg md:text-[19px] text-neutral-300 leading-relaxed mb-8 font-light">
+                Passionné de technologie, mon parcours repose sur une conviction simple : pour défendre efficacement une architecture logicielle, il faut d'abord savoir la bâtir. Fort de 6 ans d'expérience en tant que Technical Lead et développeur back-end, je me spécialise aujourd'hui en sécurité défensive, opérations Blue Team et hardware hacking. Ma double expertise en ingénierie bas niveau et en développement sécurisé me permet d'anticiper les menaces avec une compréhension approfondie de la conception applicative.
+            </p>
+            
+            <div class="border-l-2 border-emerald-500 pl-6 py-2 space-y-3 text-[14px]">
+                <div class="flex flex-col sm:flex-row sm:items-center gap-2"><span class="w-44 text-neutral-500 font-mono text-xs uppercase tracking-wider shrink-0">OS de prédilection</span> <span class="text-white font-medium">Linux (Debian, Kali)</span></div>
+                <div class="flex flex-col sm:flex-row sm:items-center gap-2"><span class="w-44 text-neutral-500 font-mono text-xs uppercase tracking-wider shrink-0">Langages clés</span> <span class="text-white font-medium">Python, Bash, PHP (Laravel), SQL, JavaScript</span></div>
+                <div class="flex flex-col sm:flex-row sm:items-center gap-2"><span class="w-44 text-neutral-500 font-mono text-xs uppercase tracking-wider shrink-0">Spécialités</span> <span class="text-white font-medium">Surveillance Blue Team, Analyse de logs & Architecture Web</span></div>
+            </div>
+        </section>
+
+        <!-- Technical Proficiencies Section -->
+        <section class="mb-12">
+            <h2 class="text-[12px] font-mono font-semibold tracking-widest uppercase text-neutral-500 mb-6 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-500/80"></span> COMPÉTENCES TECHNIQUES
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-[#161616] border border-[#262626] rounded-2xl p-6 md:p-8">
+                    <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2"><span class="text-emerald-400 font-mono">&gt;</span> Sécurité défensive</h3>
+                    <ul class="space-y-3 text-[15px] text-neutral-400">
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span> SIEM (Wazuh, Splunk, ELK Stack)</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span> IDS/IPS (Suricata, Snort)</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span> Analyse de trafic (Wireshark, Zeek, tshark)</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span> Forensics & Analyse de malwares</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-[#161616] border border-[#262626] rounded-2xl p-6 md:p-8">
+                    <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2"><span class="text-emerald-400 font-mono">&gt;</span> Offensive & Audits Web</h3>
+                    <ul class="space-y-3 text-[15px] text-neutral-400">
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-white rounded-full"></span> Émulation d'adversaires (Caldera)</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-white rounded-full"></span> Pentest Web (Burp Suite, OWASP)</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-white rounded-full"></span> Admin système & Conteneurisation Docker</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-white rounded-full"></span> Protocoles RF / IoT (ESP32, LoRa, Wi-Fi)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Experience Section -->
+        <section class="mb-12">
+            <h2 class="text-[12px] font-mono font-semibold tracking-widest uppercase text-neutral-500 mb-6 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-500/80"></span> EXPÉRIENCE PROFESSIONNELLE
+            </h2>
+            
+            <div class="space-y-6">
+                <div class="bg-[#161616] border border-[#262626] rounded-2xl p-6 md:p-8">
+                    <div class="flex flex-col sm:flex-row sm:items-baseline justify-between mb-2">
+                        <h3 class="text-xl font-bold text-white">Coach & Formateur Technique</h3>
+                        <span class="text-xs font-mono text-emerald-400 bg-[#222222] border border-[#333333] px-2.5 py-1 rounded-full w-fit mt-1 sm:mt-0">2019 &mdash; 2025</span>
+                    </div>
+                    <div class="text-xs text-neutral-400 font-semibold uppercase tracking-wider mb-4">BeCode &bull; Bruxelles, Belgique</div>
+                    <ul class="list-disc pl-5 space-y-2 text-[15px] text-neutral-400 font-sans">
+                        <li>Responsable des programmes de développement web (front-end & back-end).</li>
+                        <li>Création de modules spécialisés en architecture et sécurité : DevSecOps, DevOps, IoT/5G.</li>
+                        <li>Gestion de projets clients, revues de code et implémentation des bonnes pratiques de développement et de sécurité.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-[#161616] border border-[#262626] rounded-2xl p-6 md:p-8">
+                    <div class="flex flex-col sm:flex-row sm:items-baseline justify-between mb-2">
+                        <h3 class="text-xl font-bold text-white">Stagiaire en Développement Web</h3>
+                        <span class="text-xs font-mono text-neutral-400 bg-[#222222] border border-[#333333] px-2.5 py-1 rounded-full w-fit mt-1 sm:mt-0">Juil &mdash; Déc 2020</span>
+                    </div>
+                    <div class="text-xs text-neutral-400 font-semibold uppercase tracking-wider mb-4">Service Volontaire International</div>
+                    <ul class="list-disc pl-5 space-y-2 text-[15px] text-neutral-400 font-sans">
+                        <li>Développement d'une fonctionnalité critique d'alerte globale en PHP.</li>
+                        <li>Mise en œuvre et automatisation des notifications de sécurité (e-mail, SMS, téléphones satellites) pour les volontaires sur le terrain.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="mb-12">
+            <h2 class="text-[12px] font-mono font-semibold tracking-widest uppercase text-neutral-500 mb-6 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-500/80"></span> FORMATION & CERTIFICATIONS
+            </h2>
+            
+            <div class="bg-[#161616] border border-[#262626] rounded-2xl p-6 md:p-8 space-y-6 divide-y divide-[#262626]">
+                <div class="flex justify-between items-start gap-4 pt-2 first:pt-0">
+                    <div>
+                        <h3 class="text-base font-bold text-white">Formation Cybersécurité (Spécialisation Blue Team)</h3>
+                        <p class="text-[14px] text-neutral-400 mt-1">BeCode Bruxelles &bull; Programme technique intensif sur les architectures sécurisées, l'audit réseau et la réponse aux incidents</p>
+                    </div>
+                    <span class="text-xs font-mono text-emerald-400 shrink-0 mt-1">2026 &mdash; Présent</span>
+                </div>
+                
+                <div class="flex justify-between items-start gap-4 pt-6">
+                    <div>
+                        <h3 class="text-base font-bold text-white">Formation en Développement Web et Mobile</h3>
+                        <p class="text-[14px] text-neutral-400 mt-1">BeCode Bruxelles &bull; Ingénierie full-stack avec focus sur les architectures back-end</p>
+                    </div>
+                    <span class="text-xs font-mono text-neutral-400 shrink-0 mt-1">2017</span>
+                </div>
+
+                <div class="flex justify-between items-start gap-4 pt-6">
+                    <div>
+                        <h3 class="text-base font-bold text-white">CESS</h3>
+                        <p class="text-[14px] text-neutral-400 mt-1">Académie Royale des Beaux-Arts de Bruxelles</p>
+                    </div>
+                    <span class="text-xs font-mono text-neutral-400 shrink-0 mt-1">2009</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-auto py-10 border-t border-[#262626] bg-[#0d0d0d] text-[13px] text-neutral-400 font-sans w-full px-6">
+        <div class="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+            <span>&copy; 2026 Mickaël Van Craenenbroeck</span>
+        </div>
+    </footer>
+    <script src="../js/components.js"></script>
+</body>
+</html>

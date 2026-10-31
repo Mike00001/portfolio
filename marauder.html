@@ -5,108 +5,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marauder Project - Cybersecurity Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        dark: '#0f172a',
-                        darker: '#020617',
-                        accent: '#10b981', // Emerald green
-                        accentHover: '#059669',
-                    }
-                }
-            }
-        }
-    </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            background-color: #020617;
-            color: #f8fafc;
-            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-        }
-        .glow {
-            box-shadow: 0 0 15px rgba(16, 185, 129, 0.15);
-            transition: box-shadow 0.3s ease, transform 0.3s ease;
-        }
-        .glow:hover {
-            box-shadow: 0 0 30px rgba(16, 185, 129, 0.4);
-            transform: translateY(-5px);
-        }
-        .text-glow {
-            text-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
-        }
-        
-        /* Grid background pattern */
-        .bg-grid {
-            background-size: 40px 40px;
-            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-        }
+        body { font-family: 'Inter', sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
     </style>
 </head>
-<body class="min-h-screen font-sans selection:bg-accent selection:text-white bg-grid relative flex flex-col">
-    <!-- Overlay gradient -->
-    <div class="fixed inset-0 bg-gradient-to-b from-transparent to-darker pointer-events-none -z-10"></div>
-
-    <!-- Header/Nav -->
-    <header class="border-b border-gray-800 bg-darker/80 backdrop-blur-md fixed w-full top-0 z-50 transition-all">
-        <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold font-mono tracking-tighter cursor-pointer hover:text-accent transition-colors">
-                <span class="text-accent">&gt;</span> cd <span class="text-gray-500">..</span><span class="animate-pulse text-accent">_</span>
+<body class="bg-[#0d0d0d] text-[#f5f5f5] min-h-screen selection:bg-neutral-800 flex flex-col">
+    <!-- Minimalist Nav -->
+    <nav class="sticky top-0 z-50 w-full bg-[#0d0d0d]/85 backdrop-blur-md border-b border-[#262626] transition-all duration-300">
+        <div class="max-w-4xl mx-auto w-full px-6 py-4 flex justify-between items-center text-sm font-medium tracking-tight gap-4">
+            <a href="index.html" id="nav-logo" class="flex items-center gap-2.5 hover:opacity-85 transition text-white font-semibold text-[15px]">
+                <div class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </div>
+                <span class="font-mono text-[14px] font-bold text-white tracking-tight">~/portfolio</span>
             </a>
-            <nav class="hidden md:flex space-x-6 text-sm font-medium font-mono">
-                <a href="about.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/about</a>
-                <a href="projects.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/projects</a>
-                <a href="tuto.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/tuto</a>
-                <a href="blog.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/blog</a>
-                <a href="contact.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/contact</a>
-            </nav>
-            <button class="md:hidden text-gray-400 hover:text-accent">
-                <i class="fa-solid fa-bars text-xl"></i>
-            </button>
+            <div class="flex items-center gap-5 text-[13px]" id="nav-links">
+                <a href="about.html" id="nav-about" class="text-neutral-400 hover:text-white transition-colors">About</a>
+                <a href="projects.html" id="nav-projects" class="text-white font-semibold transition-colors">Projects</a>
+                <a href="contact.html" id="nav-contact" class="bg-white text-[#0d0d0d] hover:bg-neutral-200 px-4 py-1.5 rounded-full text-xs font-semibold transition-colors">Contact</a>
+                <span class="text-[#333333]">|</span>
+                <a href="fr/marauder.html" id="lang-toggle" class="text-neutral-400 hover:text-white transition-colors font-mono text-[11px] font-semibold border border-[#333333] rounded px-1.5 py-0.5 bg-[#1a1a1a] hover:bg-[#262626] uppercase">FR</a>
+            </div>
         </div>
-    </header>
+    </nav>
 
     <!-- Main Content -->
-    <main class="flex-grow pt-32 pb-24">
-        <article class="max-w-4xl mx-auto px-6">
-            <!-- Project Header -->
-            <header class="mb-16">
-                <div class="inline-flex items-center space-x-2 px-3 py-1 bg-accent/10 border border-accent/30 rounded-full text-accent font-mono text-sm mb-6">
-                    <i class="fa-solid fa-wifi"></i>
-                    <span>Offensive / Audit Tool</span>
-                </div>
-                <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-6">Marauder</h1>
-                <p class="text-xl text-gray-400 leading-relaxed mb-8">
-                    Development of a portable hardware Wi-Fi audit device (wardriving, deauth, packet capture) in C/C++ on an ESP32 microcontroller.
-                </p>
-                <div class="flex flex-wrap gap-4 font-mono text-sm">
-                    <span class="px-4 py-2 bg-dark border border-gray-800 rounded-lg text-gray-300"><i class="fa-solid fa-microchip mr-2 text-blue-500"></i>ESP32 WROOM</span>
-                    <span class="px-4 py-2 bg-dark border border-gray-800 rounded-lg text-gray-300"><i class="fa-solid fa-wifi mr-2 text-accent"></i>802.11 Protocols</span>
-                    <span class="px-4 py-2 bg-dark border border-gray-800 rounded-lg text-gray-300"><i class="fa-solid fa-code mr-2 text-yellow-500"></i>C++ (Arduino Core)</span>
-                </div>
-            </header>
+    <main class="flex-grow max-w-4xl w-full mx-auto px-6 py-16">
+        <header class="mb-12 border-b border-[#262626] pb-10">
+            <div class="flex items-center gap-2 text-xs font-mono text-neutral-400 mb-4 uppercase">
+                <span class="text-emerald-400 font-bold tracking-wider">Offensive Security</span>
+                <span class="text-[#333333]">&bull;</span>
+                <span class="text-neutral-400">Hardware</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight tracking-tight">Project Marauder</h1>
+            <p class="text-lg md:text-xl text-neutral-300 font-light leading-relaxed mb-8">
+                Development of a portable hardware Wi-Fi audit device (wardriving, deauth, packet capture) in C/C++ on an ESP32 microcontroller.
+            </p>
 
-            <!-- Project Image/Dashboard mock -->
-            <div class="w-full bg-darker border border-gray-800 rounded-xl overflow-hidden mb-16 glow">
-                <div class="bg-gray-900 border-b border-gray-800 px-4 py-2 flex justify-between items-center">
-                    <div class="flex space-x-2">
-                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                    </div>
-                    <div class="font-mono text-xs text-gray-500">Marauder CLI via Serial (115200 baud)</div>
-                    <div></div>
+            <div class="mb-8 flex items-center justify-start gap-4">
+                <a href="https://github.com/Mike00001" target="_blank" class="px-6 py-3 bg-white hover:bg-neutral-200 text-[#0d0d0d] rounded-full text-sm font-semibold transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] flex items-center gap-2">
+                    View Source on GitHub <span class="font-mono">↗</span>
+                </a>
+            </div>
+            
+            <!-- Writer Card -->
+            <div class="flex items-center gap-3 border border-[#262626] bg-[#161616] p-4 rounded-xl mb-8">
+                <div class="w-10 h-10 rounded-full bg-[#222222] border border-[#333333] flex items-center justify-center font-bold text-emerald-400 font-mono">M</div>
+                <div class="text-xs font-sans">
+                    <div class="font-bold text-white">Mickaël Van Craenenbroeck</div>
+                    <div class="text-neutral-400 mt-0.5">Oct 2024 &bull; 8 min read</div>
                 </div>
-                <div class="p-6 font-mono text-sm sm:text-base text-gray-300 space-y-2 overflow-x-auto">
-                    <p class="text-accent font-bold">~ Marauder CLI Firmware v1.2 ~</p>
-                    <p><span class="text-blue-400">> scan ap</span></p>
-                    <p><span class="text-gray-400">Scanning in promiscuous mode (Ch 1-13)... DONE.</span></p>
-                    <p class="text-white">Found 3 Access Points:</p>
-                    <table class="w-full text-left mt-2 mb-4 border-collapse">
-                        <tr class="text-gray-500 border-b border-gray-800">
+            </div>
+
+            <!-- Cover Photo -->
+            <figure class="mb-12 border border-[#262626] rounded-2xl p-4 bg-[#161616]">
+                <img src="assets/images/marauder/marauder_device.jpg" alt="Finished Marauder Device" class="w-full h-auto rounded-xl border border-[#262626]">
+                <figcaption class="text-xs text-neutral-400 mt-3 font-mono text-center">
+                    The standalone ESP32 Marauder pocket device with integrated battery shield and antenna.
+                </figcaption>
+            </figure>
+        </header>
+
+        <!-- Article Prose -->
+        <article class="text-[17px] md:text-[18px] text-neutral-300 leading-relaxed max-w-3xl mx-auto space-y-6">
+            
+            <div class="bg-[#161616] border border-[#262626] rounded-2xl p-6 my-8 font-mono text-[12px] text-neutral-300 leading-relaxed overflow-x-auto">
+                <p class="text-neutral-500 mb-2"># LOG_OUTPUT: Marauder CLI Firmware v1.2</p>
+                <p class="text-emerald-400">&gt; scan ap</p>
+                <p class="text-neutral-400">Scanning in promiscuous mode (Ch 1-13)... DONE.</p>
+                <p class="font-bold text-white mt-2">Found 3 Access Points:</p>
+                <div class="overflow-x-auto w-full">
+                    <table class="w-full text-left mt-2 mb-2 border-collapse min-w-[350px]">
+                        <tr class="text-neutral-500 border-b border-[#262626]">
                             <th class="py-1">BSSID</th>
                             <th class="py-1">CH</th>
                             <th class="py-1">RSSI</th>
@@ -114,81 +87,86 @@
                             <th class="py-1">SSID</th>
                         </tr>
                         <tr>
-                            <td class="text-blue-300">00:1A:2B:3C:4D:5E</td>
+                            <td class="text-emerald-400">00:1A:2B:3C:4D:5E</td>
                             <td>6</td>
-                            <td class="text-green-500">-52</td>
+                            <td>-52</td>
                             <td>WPA2</td>
                             <td>Corp_WiFi_Guest</td>
                         </tr>
                         <tr>
-                            <td class="text-blue-300">A1:B2:C3:D4:E5:F6</td>
+                            <td class="text-emerald-400">A1:B2:C3:D4:E5:F6</td>
                             <td>11</td>
-                            <td class="text-yellow-500">-76</td>
+                            <td>-76</td>
                             <td>WPA/WPA2</td>
                             <td>CoffeeShop_Free</td>
                         </tr>
                         <tr>
-                            <td class="text-blue-300">11:22:33:44:55:66</td>
+                            <td class="text-emerald-400">11:22:33:44:55:66</td>
                             <td>1</td>
-                            <td class="text-red-500">-89</td>
+                            <td>-89</td>
                             <td>WEP</td>
-                            <td class="text-gray-500">&lt;hidden&gt;</td>
+                            <td class="text-neutral-500">&lt;hidden&gt;</td>
                         </tr>
                     </table>
-                    <p><span class="text-blue-400">> sniff beacon -w sniff_log.pcap</span></p>
-                    <p><span class="text-accent">Starting packet capture on channels 1,6,11...</span></p>
-                    <p><span class="animate-pulse">_</span></p>
                 </div>
+                <p class="text-emerald-400 mt-2">&gt; sniff beacon -w sniff_log.pcap</p>
+                <p class="text-neutral-400">Starting packet capture on channels 1,6,11...</p>
             </div>
 
-            <!-- Content -->
-            <div class="prose prose-invert prose-emerald max-w-none space-y-8 text-gray-300 leading-relaxed">
-                <h2 class="text-2xl font-bold text-white font-mono border-b border-gray-800 pb-2"><span class="text-accent">#</span> Why the ESP32?</h2>
-                <p>
-                    Unlike traditional Wi-Fi dongles requiring a Kali Linux host machine (like Alfa Network chips), the ESP32 offers the advantage of absolute compactness and low power consumption. By modifying the SDK to allow <em>promiscuous</em> mode, the ESP32 can listen to all raw 802.11 frames passing through the air. This project leverages this feature for passive reconnaissance (wardriving) and active operations.
-                </p>
+            <h3 class="text-2xl font-bold text-white pt-6 border-t border-[#262626]">Project Concept & Comparison with Standard Dongles</h3>
+            <p>
+                Standard Wi-Fi auditing environments typically rely on heavy external USB wireless adapters (such as Alfa Network cards) connected to a laptop running Kali Linux. This hardware stack is bulky, draws significant power, and is difficult to deploy discreetly.
+            </p>
+            <p>
+                The <strong class="text-white">Project Marauder</strong> is an ultra-portable, standalone pocket device running custom C/C++ firmware directly on an ESP32 microcontroller:
+            </p>
+            <ul class="list-disc pl-6 space-y-3 text-[16px] text-neutral-400 leading-relaxed mb-6">
+                <li><strong class="text-white">Pocket Form Factor</strong>: Fits in the palm of a hand, requiring no external computer or monitor to operate.</li>
+                <li><strong class="text-white">Promiscuous Mode Interception</strong>: Intercepts raw 802.11 management and data frames straight out of the air.</li>
+                <li><strong class="text-white">Onboard Storage Logging</strong>: Writes captured EAPOL handshakes directly to physical MicroSD cards in standard PCAP format.</li>
+            </ul>
 
-                <h2 class="text-2xl font-bold text-white font-mono border-b border-gray-800 pb-2"><span class="text-accent">#</span> Key Features Implemented</h2>
-                <ul class="list-disc pl-5 space-y-2">
-                    <li><strong class="text-white">Passive Analysis (Sniffing):</strong> Network scanning (Hidden SSIDs, WEP, WPA), EAPOL handshake capture saved in PCAP format on SD card.</li>
-                    <li><strong class="text-white">Deauthentication Attacks:</strong> Targeted transmission of deauth frames to force a specific client's disconnection in order to capture the WPA handshake upon reconnection.</li>
-                    <li><strong class="text-white">Beacon Spamming:</strong> Ability to flood the environment with fake networks (thousands of SSIDs generated per second) to test the resilience of surrounding Wi-Fi clients.</li>
-                </ul>
+            <h3 class="text-2xl font-bold text-white pt-6 border-t border-[#262626]">Hardware Adaptations: Taming the ESP32 Board</h3>
+            <p>
+                Building a miniature wireless audit tool requires optimizing peripheral buses, memory constraints, and RF range on a low-cost microcontroller development board:
+            </p>
 
-                <h2 class="text-2xl font-bold text-white font-mono border-b border-gray-800 pb-2"><span class="text-accent">#</span> Precautions and Ethics</h2>
-                <div class="bg-red-900/20 border border-red-900/50 p-6 rounded-lg">
-                    <p class="text-red-200">
-                        <strong class="text-red-400">Warning:</strong> This device was designed for educational and internal audit purposes with explicit authorization. Intercepting wireless communications or disrupting networks (such as denial of service / deauth attacks) on unowned infrastructures is illegal. 
-                    </p>
-                </div>
-                <p>
-                    During testing, the tool is configured to only interact with filtered BSSIDs (those of my own test labs), ensuring complete isolation to avoid affecting neighborhood networks.
-                </p>
+            <h4 class="text-xl font-bold text-emerald-400 pt-4 font-mono">&gt; 1. Chip Selection & Low-Power Operations</h4>
+            <p>
+                The core utilizes an ESP32-WROOM-32D module. Its dual-core processor allows separating the RF sniffing tasks from the I/O interface tasks. Under deep sleep states, it draws less than 15µA, enabling prolonged operational shelf-life, and runs on a single 18650 lithium battery.
+            </p>
 
-                <h2 class="text-2xl font-bold text-white font-mono border-b border-gray-800 pb-2"><span class="text-accent">#</span> Skills Acquired</h2>
-                <p>
-                    Writing low-level <strong>C++</strong> firmware, in-depth understanding of <strong>IEEE 802.11</strong> standards (MAC Header, Frame Control, Management Frames), and rigorous memory management in constrained embedded systems (FIFO queue management for packet capture to SD).
-                </p>
-            </div>
+            <!-- Image: Hardware Setup -->
+            <figure class="my-8 border border-[#262626] rounded-2xl p-4 bg-[#161616]">
+                <img src="assets/images/marauder/marauder_assembly.jpg" alt="Marauder Hardware Assembly & Wiring" class="w-full h-auto rounded-xl border border-[#262626]">
+                <figcaption class="text-xs text-neutral-400 mt-3 font-mono text-center">
+                    The internal hardware assembly showing the ESP32 connection to the lithium battery cell and SMA antenna.
+                </figcaption>
+            </figure>
 
-            <div class="mt-16 pt-8 border-t border-gray-800 flex justify-between items-center">
-                <a href="index.html" class="text-gray-400 hover:text-white transition-colors flex items-center space-x-2">
-                    <i class="fa-solid fa-arrow-left"></i>
-                    <span>Back to Portfolio</span>
-                </a>
-                <a href="https://github.com" target="_blank" class="px-6 py-3 bg-accent/10 text-accent border border-accent/50 rounded hover:bg-accent hover:text-darker transition-all duration-300 font-bold flex items-center space-x-2">
-                    <i class="fa-brands fa-github"></i>
-                    <span>Source Code</span>
-                </a>
-            </div>
+            <h4 class="text-xl font-bold text-emerald-400 pt-4 font-mono">&gt; 2. SPI Peripheral Storage Integration</h4>
+            <p>
+                Microcontrollers lack large memory buffers. To capture packet streams, a physical MicroSD card slot was integrated over the <strong class="text-white">SPI bus</strong>. The firmware allocates dedicated GPIO pins (MISO/MOSI/SCK/CS) and uses hardware SPI drivers to achieve fast write speeds without dropping packets.
+            </p>
+
+            <h4 class="text-xl font-bold text-emerald-400 pt-4 font-mono">&gt; 3. RF Range Modification (SMA Antenna)</h4>
+            <p>
+                Standard ESP32 boards rely on small PCB trace antennas, which have limited range. The board's trace was physically modified: the on-board antenna path was severed, and an external <strong class="text-white">SMA antenna connector</strong> was soldered, allowing the connection of a high-gain +5dBi antenna for long-range wardriving.
+            </p>
+
+            <h4 class="text-xl font-bold text-emerald-400 pt-4 font-mono">&gt; 4. Standalone UI Controls (TFT Screen & Joystick)</h4>
+            <p>
+                To enable on-the-fly configuration without requiring a terminal interface, a SPI-driven TFT screen and a miniature analog joystick were wired to the GPIO headers. This configuration allows selecting targets and firing attacks directly from the device screen.
+            </p>
         </article>
     </main>
 
     <!-- Footer -->
-    <footer class="py-8 bg-darker border-t border-gray-800/50 text-center">
-        <p class="font-mono text-sm text-gray-600">
-            [ <span class="text-accent">&copy; 2024 Portfolio OS</span> ]
-        </p>
+    <footer class="mt-auto py-10 border-t border-[#262626] bg-[#0d0d0d] text-[13px] text-neutral-400 font-sans w-full px-6">
+        <div class="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+            <span>&copy; 2026 Mickaël Van Craenenbroeck</span>
+        </div>
     </footer>
+    <script src="js/components.js"></script>
 </body>
 </html>

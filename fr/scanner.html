@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scanner de Ports Réseau - Portfolio Cybersécurité</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+    </style>
+</head>
+<body class="bg-[#0d0d0d] text-[#f5f5f5] min-h-screen selection:bg-neutral-800 flex flex-col">
+    <!-- Minimalist Nav -->
+    <nav class="sticky top-0 z-50 w-full bg-[#0d0d0d]/85 backdrop-blur-md border-b border-[#262626] transition-all duration-300">
+        <div class="max-w-4xl mx-auto w-full px-6 py-4 flex justify-between items-center text-sm font-medium tracking-tight gap-4">
+            <a href="index.html" id="nav-logo" class="flex items-center gap-2.5 hover:opacity-85 transition text-white font-semibold text-[15px]">
+                <div class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </div>
+                <span class="font-mono text-[14px] font-bold text-white tracking-tight">~/portfolio</span>
+            </a>
+            <div class="flex items-center gap-5 text-[13px]" id="nav-links">
+                <a href="about.html" id="nav-about" class="text-neutral-400 hover:text-white transition-colors">À propos</a>
+                <a href="projects.html" id="nav-projects" class="text-white font-semibold transition-colors">Projets</a>
+                <a href="contact.html" id="nav-contact" class="bg-white text-[#0d0d0d] hover:bg-neutral-200 px-4 py-1.5 rounded-full text-xs font-semibold transition-colors">Contact</a>
+                <span class="text-[#333333]">|</span>
+                <a href="../scanner.html" id="lang-toggle" class="text-neutral-400 hover:text-white transition-colors font-mono text-[11px] font-semibold border border-[#333333] rounded px-1.5 py-0.5 bg-[#1a1a1a] hover:bg-[#262626] uppercase">EN</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-4xl w-full mx-auto px-6 py-16">
+        <header class="mb-12 border-b border-[#262626] pb-10">
+            <div class="flex items-center gap-2 text-xs font-mono text-neutral-400 mb-4 uppercase">
+                 <span class="text-emerald-400 font-bold tracking-wider">Dév Outils & Sécu Réseau</span>
+                 <span class="text-[#333333]">&bull;</span>
+                 <span class="text-neutral-400">Logiciel</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight tracking-tight">Scanner de Ports Réseau & Analyseur de Vulnérabilités</h1>
+            <p class="text-lg md:text-xl text-neutral-300 font-light leading-relaxed mb-8">
+                Un outil de cartographie réseau et d'analyse de vulnérabilités multithread écrit en Python. Il prend en charge les scans TCP connect, les scans furtifs SYN basés sur Scapy, la détection d'OS et l'interrogation automatique de l'API NVD du NIST.
+            </p>
+
+            <div class="mb-8 flex items-center justify-start gap-4">
+                <a href="https://github.com/Mike00001" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-white hover:bg-neutral-200 text-[#0d0d0d] rounded-full text-sm font-semibold transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] flex items-center gap-2">
+                    View Source on GitHub <span class="font-mono">↗</span>
+                </a>
+            </div>
+            
+            <!-- Writer Card -->
+            <div class="flex items-center gap-3 border border-[#262626] bg-[#161616] p-4 rounded-xl mb-8">
+                <div class="w-10 h-10 rounded-full bg-[#222222] border border-[#333333] flex items-center justify-center font-bold text-emerald-400 font-mono">M</div>
+                <div class="text-xs font-sans">
+                    <div class="font-bold text-white">Mickaël Van Craenenbroeck</div>
+                    <div class="text-neutral-400 mt-0.5">Déc 2025 &bull; 6 min de lecture</div>
+                </div>
+            </div>
+
+            <!-- Image de couverture -->
+            <div class="w-full rounded-2xl overflow-hidden border border-[#262626] bg-[#161616] p-4 mb-10">
+                <img src="../assets/images/scanner/scanner_cover.png" alt="Couverture du scanner de ports réseau" class="w-full h-auto rounded-xl border border-[#262626]">
+            </div>
+        </header>
+
+        <!-- Article Prose -->
+        <article class="text-[17px] md:text-[18px] text-neutral-300 leading-relaxed max-w-3xl mx-auto space-y-6">
+            <h3 class="text-2xl font-bold text-white pt-6 border-t border-[#262626]">Concept du Projet & Comparaison avec les Scanners Standards</h3>
+            <p>
+                Dans l'audit de sécurité, la cartographie de la surface d'attaque est la première étape critique. Les outils standard comme Nmap sont puissants, mais ils fonctionnent comme des binaires compilés lourds, difficiles à scripter de manière dynamique, à personnaliser pour des formats d'exportation spécifiques ou à interfacer directement avec des bases de données web en temps réel.
+            </p>
+            <p>
+                Le <strong class="text-white">Scanner de Ports Réseau & Analyseur de Vulnérabilités</strong> est un outil de reconnaissance réseau écrit en Python. Il associe la cartographie réseau via des sockets bruts à un enrichissement asynchrone des vulnérabilités :
+            </p>
+            <ul class="list-disc pl-6 space-y-3 text-[16px] text-neutral-400 leading-relaxed mb-6">
+                <li><strong class="text-white">Double modèle de scan</strong> : Takes TCP Connect sockets et Scapy SYN stealth scans.</li>
+                <li><strong class="text-white">Requêtes intégrées de bases de données de menaces</strong> : Récupère les bannières de service et les associe de manière asynchrone à la base de données NVD du NIST.</li>
+                <li><strong class="text-white">Contrôles d'évasion intégrés</strong> : Limitations de débit de paquets et délais aléatoires (jitter) pour contourner les IDS.</li>
+            </ul>
+
+            <!-- Console du Scanner -->
+            <figure class="my-8 border border-[#262626] rounded-2xl p-4 bg-[#161616] text-center">
+                <img src="../assets/images/scanner/scanner_console.png" alt="Sortie CLI du scanner de ports" class="w-full h-auto rounded-xl border border-[#262626]">
+                <figcaption class="text-xs text-neutral-400 mt-3 font-mono text-center">
+                    Le scanner en ligne de commande affichant la cartographie des services et les vulnérabilités découvertes.
+                </figcaption>
+            </figure>
+
+            <h3 class="text-2xl font-bold text-white pt-6 border-t border-[#262626]">Optimisations Réseau & Performance des Protocoles</h3>
+            <p>
+                L'exécution de scans simultanés sur de grands sous-réseaux nécessite d'optimiser les E/S réseau, les paramètres de cycle de vie des sockets et les débits de paquets :
+            </p>
+
+            <h4 class="text-xl font-bold text-emerald-400 pt-4 font-mono">&gt; 1. Gestion du Processeur & Pool de Threads Simultanés</h4>
+            <p>
+                Pour scanner de grands réseaux sans saturer le processeur ou épuiser la mémoire, l'outil utilise un <code>ThreadPoolExecutor</code>. Il découpe les sous-réseaux en blocs et limite les threads actifs.
+            </p>
+
+            <!-- Rapport de Performance -->
+            <figure class="my-8 border border-[#262626] rounded-2xl p-4 bg-[#161616] text-center">
+                <img src="../assets/images/scanner/scanner_performance.png" alt="Rapport de scan HTML" class="w-full h-auto rounded-xl border border-[#262626]">
+                <figcaption class="text-xs text-neutral-400 mt-3 font-mono text-center">
+                    Rapport de scan HTML affichant les cibles, la configuration des ports et la liste des vulnérabilités.
+                </figcaption>
+            </figure>
+
+            <h4 class="text-xl font-bold text-emerald-400 pt-4 font-mono">&gt; 2. Optimisation des Sockets et Réutilisation d'Adresses</h4>
+            <p>
+                L'analyse de milliers de ports dans un court intervalle laisse de nombreux sockets à l'état <code>TIME_WAIT</code>. Le moteur configure <code>SO_REUSEADDR</code> et applique des délais de connexion agressifs pour libérer les sockets immédiatement.
+            </p>
+
+            <h4 class="text-xl font-bold text-emerald-400 pt-4 font-mono">&gt; 3. Limitation de Débit & Jitter d'Évasion</h4>
+            <p>
+                Pour éviter de déclencher les pare-feux des IDS, le script implémente <code>threading.Lock</code> pour imposer une limite de débit globale et randomise l'ordre d'analyse des ports.
+            </p>
+
+            <h4 class="text-xl font-bold text-emerald-400 pt-4 font-mono">&gt; 4. Construction de Paquets Bruts (Scapy L3 Injection)</h4>
+            <p>
+                Pour les scans furtifs, le scanner assemble des en-têtes IP/TCP personnalisés via <strong class="text-white">Scapy</strong>, en envoyant un paquet <code>SYN</code> brut et en écoutant le retour <code>SYN-ACK</code> sans finaliser la connexion.
+            </p>
+
+            <h3 class="text-2xl font-bold text-white pt-6 border-t border-[#262626]">Référence des Commandes CLI</h3>
+            <div class="bg-[#161616] border border-[#262626] rounded-2xl p-6 my-8 font-mono text-[13px] text-neutral-300 leading-relaxed space-y-3">
+                <p><span class="text-emerald-400 font-bold">python3 main.py --target 192.168.1.0/24 --mode syn</span> &mdash; Scan furtif SYN sur le sous-réseau local.</p>
+                <p><span class="text-emerald-400 font-bold">python3 main.py --target 10.0.2.15 --ports 22,80,443 --enrich</span> &mdash; Scan des ports spécifiés & enrichissement NIST API.</p>
+                <p><span class="text-emerald-400 font-bold">python3 main.py --help</span> &mdash; Affichage des options d'exportation (HTML, JSON, CSV, XML).</p>
+            </div>
+
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-auto py-10 border-t border-[#262626] bg-[#0d0d0d] text-[13px] text-neutral-400 font-sans w-full px-6">
+        <div class="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+            <span>&copy; 2026 Mickaël Van Craenenbroeck</span>
+        </div>
+    </footer>
+    <script src="../js/components.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Scan — 127.0.0.1</title>
+<style>
+  body { font-family: monospace; background: #1a1a2e; color: #eee; padding: 2rem; }
+  h1 { color: #00d4ff; }
+  .meta { color: #aaa; margin-bottom: 1rem; }
+  .stats { margin-bottom: 1rem; }
+  .stat-open { color: #2ecc71; } .stat-closed { color: #e74c3c; } .stat-filtered { color: #95a5a6; }
+  .stat-vuln { color: #ff4757; font-weight: bold; margin-left: 15px; border: 1px solid #ff4757; padding: 2px 6px; border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; }
+  th { background: #16213e; padding: 8px 12px; text-align: left; }
+  td { padding: 6px 12px; border-bottom: 1px solid #333; vertical-align: top; }
+  .cve-badge { display: inline-block; background: #ff4757; color: white; padding: 2px 6px; margin: 2px 0; border-radius: 3px; font-size: 0.85em; cursor: help; position: relative; }
+  .cve-badge .tooltip { visibility: hidden; opacity: 0; position: absolute; bottom: 125%; left: 0; min-width: 320px; max-width: 450px; background: #0f0f23; color: #eee; border: 1px solid #ff4757; border-radius: 6px; padding: 8px 10px; font-size: 0.82em; line-height: 1.4; z-index: 100; box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: opacity 0.15s; white-space: normal; }
+  .cve-badge .tooltip::after { content: ""; position: absolute; top: 100%; left: 20px; border-width: 6px; border-style: solid; border-color: #ff4757 transparent transparent transparent; }
+  .cve-badge:hover .tooltip { visibility: visible; opacity: 1; }
+</style>
+</head>
+<body>
+<h1>Scan Report</h1>
+<div class="meta">Target: <strong>127.0.0.1</strong> | Type: connect | Date: 2026-06-18 09:09:48</div>
+<div class="stats">
+  <span class="stat-open">open: 3</span> &nbsp;
+  <span class="stat-closed">closed: 1</span> &nbsp;
+  <span class="stat-filtered">filtered: 0</span>
+  
+</div>
+<table>
+<tr><th>Port</th><th>Service</th><th>Status</th><th>Banner</th><th>Version</th><th>Firewall</th><th>Vulnerabilities</th></tr>
+<tr style='background:#2ecc7122'><td>22</td><td>SSH</td><td style='color:#2ecc71;font-weight:bold'>open</td><td>SSH-2.0-OpenSSH_9.6p1 Ubuntu-3ubuntu13.16</td><td>SSH-2.0-OpenSSH_9.6p1 Ubuntu-3ubuntu13.16</td><td>—</td><td>—</td></tr>
+<tr style='background:#2ecc7122'><td>80</td><td>HTTP</td><td style='color:#2ecc71;font-weight:bold'>open</td><td>—</td><td>nginx</td><td>—</td><td>—</td></tr>
+<tr style='background:#e74c3c22'><td>443</td><td>HTTPS</td><td style='color:#e74c3c;font-weight:bold'>closed</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+<tr style='background:#2ecc7122'><td>8080</td><td>HTTP Proxy</td><td style='color:#2ecc71;font-weight:bold'>open</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+
+</table>
+</body>
+</html>

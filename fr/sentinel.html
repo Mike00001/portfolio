@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentinel Drop Box v2.0 - Portfolio Cybersécurité</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+    </style>
+</head>
+<body class="bg-[#0d0d0d] text-[#f5f5f5] min-h-screen selection:bg-neutral-800 flex flex-col">
+    <!-- Minimalist Nav -->
+    <nav class="sticky top-0 z-50 w-full bg-[#0d0d0d]/85 backdrop-blur-md border-b border-[#262626] transition-all duration-300">
+        <div class="max-w-4xl mx-auto w-full px-6 py-4 flex justify-between items-center text-sm font-medium tracking-tight gap-4">
+            <a href="index.html" id="nav-logo" class="flex items-center gap-2.5 hover:opacity-85 transition text-white font-semibold text-[15px]">
+                <div class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </div>
+                <span class="font-mono text-[14px] font-bold text-white tracking-tight">~/portfolio</span>
+            </a>
+            <div class="flex items-center gap-5 text-[13px]" id="nav-links">
+                <a href="about.html" id="nav-about" class="text-neutral-400 hover:text-white transition-colors">À propos</a>
+                <a href="projects.html" id="nav-projects" class="text-white font-semibold transition-colors">Projets</a>
+                <a href="contact.html" id="nav-contact" class="bg-white text-[#0d0d0d] hover:bg-neutral-200 px-4 py-1.5 rounded-full text-xs font-semibold transition-colors">Contact</a>
+                <span class="text-[#333333]">|</span>
+                <a href="../sentinel.html" id="lang-toggle" class="text-neutral-400 hover:text-white transition-colors font-mono text-[11px] font-semibold border border-[#333333] rounded px-1.5 py-0.5 bg-[#1a1a1a] hover:bg-[#262626] uppercase">EN</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-4xl w-full mx-auto px-6 py-16">
+        <header class="mb-12 border-b border-[#262626] pb-10">
+            <div class="flex items-center gap-2 text-xs font-mono text-neutral-400 mb-4 uppercase">
+                <span class="text-emerald-400 font-bold tracking-wider">Audit & Défense</span>
+                <span class="text-[#333333]">&bull;</span>
+                <span class="text-neutral-400">Étude de Cas</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight tracking-tight">Sentinel Drop Box v2.0</h1>
+            <p class="text-lg md:text-xl text-neutral-300 font-light leading-relaxed mb-8">
+                Une sonde matérielle et logicielle conçue pour les audits de sécurité et les opérations de Red Teaming. Entièrement autonome en énergie et en prise de décision pour une surveillance furtive ou une reconnaissance active de vulnérabilités sur des réseaux isolés (air-gapped).
+            </p>
+
+            <div class="mb-8 flex items-center justify-start gap-4">
+                <a href="https://github.com/Mike00001" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-white hover:bg-neutral-200 text-[#0d0d0d] rounded-full text-sm font-semibold transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] flex items-center gap-2">
+                    View Source on GitHub <span class="font-mono">↗</span>
+                </a>
+            </div>
+            
+            <!-- Writer Card -->
+            <div class="flex items-center gap-3 border border-[#262626] bg-[#161616] p-4 rounded-xl mb-8">
+                <div class="w-10 h-10 rounded-full bg-[#222222] border border-[#333333] flex items-center justify-center font-bold text-emerald-400 font-mono">M</div>
+                <div class="text-xs font-sans">
+                    <div class="font-bold text-white">Mickaël Van Craenenbroeck</div>
+                    <div class="text-neutral-400 mt-0.5">Oct 2024 &bull; 10 min de lecture</div>
+                </div>
+            </div>
+
+            <!-- Image de couverture -->
+            <div class="w-full rounded-2xl overflow-hidden border border-[#262626] bg-[#161616] mb-10">
+                <img src="../assets/images/sentinel/sentinel_device_active.jpg" alt="Écran OLED actif du Projet Sentinel" class="w-full h-auto">
+            </div>
+        </header>
+
+        <!-- Article Prose -->
+        <article class="text-[17px] md:text-[18px] text-neutral-300 leading-relaxed max-w-3xl mx-auto space-y-6">
+            <h3 class="text-2xl font-bold text-white pt-6 border-t border-[#262626]">Concept du Projet & Comparaison avec les Configurations Standards</h3>
+            <p>
+                Lors des audits physiques et des missions de Red Teaming, l'accès physique est parfois la seule porte d'entrée viable. Les audits standard nécessitent généralement le déploiement d'un ordinateur portable encombrant sous Kali Linux (très visible) ou l'utilisation d'appliances personnalisées coûteuses manquant de flexibilité pour la redirection en coupure (inline).
+            </p>
+            <p>
+                Le <strong class="text-white">Projet Sentinel v2.0</strong> est une sonde autonome intégrée (« Drop Box »). Elle est conçue pour être déployée physiquement derrière une station de travail ou un téléphone VoIP afin de mener une surveillance réseau furtive ou un scan actif :
+            </p>
+            <ul class="list-disc pl-6 space-y-3 text-[16px] text-neutral-400 leading-relaxed mb-6">
+                <li><strong class="text-white">Interception furtive en coupure</strong> : Fonctionne de manière inline entre le périphérique cible et le routeur, dupliquant le trafic de manière transparente sans générer d'alertes de changement d'état de lien.</li>
+                <li><strong class="text-white">Double profil réseau</strong> : Fonctionne entièrement hors bande (out-of-band), offrant un point d'accès Wi-Fi masqué pour le pilotage par l'auditeur, tandis que l'interface physique d'écoute est isolée sur le réseau cible.</li>
+                <li><strong class="text-white">Logique autonome multimode</strong> : Bascule entre l'écoute passive (sniffing) et la corrélation active de vulnérabilités, de manière automatique ou via des commandes de contrôle.</li>
+            </ul>
+
+            <!-- Déploiement de Project Sentinel -->
+            <figure class="my-8 border border-[#262626] rounded-2xl p-4 bg-[#161616]">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <img src="../assets/images/sentinel/sentinel_side_ports.jpg" alt="Câblage latéral Sentinel" class="w-full h-auto rounded-xl border border-[#262626]">
+                    <img src="../assets/images/sentinel/sentinel_back_power.jpg" alt="Alimentation arrière Sentinel" class="w-full h-auto rounded-xl border border-[#262626]">
+                </div>
+                <figcaption class="text-xs text-neutral-400 mt-3 font-mono text-center">
+                    À gauche : Câblage latéral montrant les connexions du Pi. À droite : Vue arrière détaillant le régulateur step-up et le testeur USB.
+                </figcaption>
+            </figure>
+
+            <h3 class="text-2xl font-bold text-white pt-6 border-t border-[#262626]">Adaptations Matérielles : Dompter le Raspberry Pi 3A+</h3>
+            <p>
+                L'exploitation d'une drop box physique sur le terrain impose des contraintes strictes en termes de consommation électrique, de conflits matériels et de synchronisation temporelle hors-ligne. Les solutions personnalisées suivantes ont été développées :
+            </p>
+
+            <h4 class="text-xl font-bold text-emerald-400 pt-4 font-mono">&gt; 1. Consommation Électrique : Le Choix Stratégique du Pi 3A+</h4>
+            <p>
+                Un Raspberry Pi 3B+ standard consomme environ 500mA à plus de 1,2A en charge en raison de son hub USB et de son contrôleur Ethernet intégrés. Pour maximiser la durée de vie de la batterie, le <strong class="text-white">Raspberry Pi 3A+</strong> a été sélectionné. Dépourvu de ces puces énergivores, il réduit la consommation électrique de moitié (200 à 300mA sous charge), étendant grandement l'autonomie sur le terrain.
+            </p>
+
+            <!-- Configuration Matérielle -->
+            <figure class="my-8 border border-[#262626] rounded-2xl p-4 bg-[#161616]">
+                <img src="../assets/images/sentinel/sentinel_top_wiring.jpg" alt="Détail du câblage supérieur Sentinel" class="w-full h-auto rounded-xl border border-[#262626]">
+                <figcaption class="text-xs text-neutral-400 mt-3 font-mono text-center">
+                    Vue de dessus de l'assemblage montrant les connexions I2C partagées entre l'écran OLED, le module RTC DS3231 et le Raspberry Pi.
+                </figcaption>
+            </figure>
+
+            <h4 class="text-xl font-bold text-emerald-400 pt-4 font-mono">&gt; 2. Interception en Coupure (Switch Netgear & Câble Convertisseur Step-Up)</h4>
+            <p>
+                Pour analyser les paquets réseau sans interrompre le trafic du périphérique cible, la sonde utilise un switch administrable Netgear configuré en <strong class="text-white">Port Mirroring (SPAN)</strong>. Pour alimenter à la fois le Pi (5V) et le switch (12V) avec une seule batterie USB 5V standard, un câble convertisseur de tension <strong class="text-white">Step-Up</strong> a été conçu, permettant un déploiement compact.
+            </p>
+
+            <h4 class="text-xl font-bold text-emerald-400 pt-4 font-mono">&gt; 3. Horodatage Forensics (Module RTC DS3231)</h4>
+            <p>
+                La drop box fonctionnant hors-ligne sur des réseaux cibles isolés, elle ne peut pas synchroniser son heure via NTP. Au démarrage, l'heure système retombe par défaut à l'epoch Unix, corrompant l'horodatage des fichiers PCAP. Pour y remédier, un module matériel <strong class="text-white">RTC DS3231</strong> a été connecté au bus I2C (0x68), garantissant des dates de captures précises pour l'analyse forensics.
+            </p>
+
+            <h4 class="text-xl font-bold text-emerald-400 pt-4 font-mono">&gt; 4. Partage de Bus de l'Interface Tactique (Écran OLED & RTC)</h4>
+            <p>
+                Pour vérifier l'adresse IP et l'état de la sonde sans connecter d'ordinateur, un écran OLED 0,96" a été ajouté. Afin d'éviter la saturation des broches GPIO, l'écran et le module RTC partagent le même <strong class="text-white">bus I2C</strong> physique. Le noyau Linux (<code>/boot/config.txt</code>) a été configuré pour gérer simultanément les adresses 0x3C et 0x68.
+            </p>
+
+            <h3 class="text-2xl font-bold text-white pt-6 border-t border-[#262626]">Architecture Logicielle et Fonctionnalités Clés</h3>
+            
+            <h4 class="text-xl font-bold text-emerald-400 pt-4 font-mono">&gt; 1. Isolation de la Pile Réseau Out-of-Band</h4>
+            <p>
+                Pour garantir la furtivité, l'adaptateur USB-Ethernet connecté au réseau cible (<code>eth0</code>) est isolé. Les requêtes DHCP standard sont désactivées et le service <code>wpa_supplicant</code> de Debian est masqué. L'accès d'administration s'effectue hors bande en transformant l'interface Wi-Fi interne (<code>wlan0</code>) en point d'accès masqué piloté par <code>hostapd</code> et <code>dnsmasq</code>.
+            </p>
+
+            <h4 class="text-xl font-bold text-emerald-400 pt-4 font-mono">&gt; 2. Orchestration de Sécurité Multimode (<code>switch.sh</code>)</h4>
+            <p>
+                Le comportement de la sonde est régi par un script d'orchestration en Bash (<code>switch.sh</code>) qui gère les règles iptables, l'état des interfaces réseau et les démons de capture. Il permet de basculer dynamiquement entre l'écoute passive, le scan actif et l'enrichissement de vulnérabilités.
+            </p>
+
+            <h4 class="text-xl font-bold text-emerald-400 pt-4 font-mono">&gt; 3. Capture Furtive Économe en Mémoire & Protection du Stockage</h4>
+            <p>
+                L'écoute passive (Mode 1) est gérée par un démon Python s'appuyant sur Scapy. Le Pi 3A+ étant limité à 512 Mo de RAM, le script écrit les paquets en temps réel sur la carte SD (via le paramètre <code>store=0</code> de Scapy) pour éviter le gel du système. Un thread parallèle surveille l'espace disque, coupant la capture à 90 % d'utilisation pour préserver le système de fichiers.
+            </p>
+
+            <h3 class="text-2xl font-bold text-white pt-6 border-t border-[#262626]">Référence des Commandes CLI</h3>
+            <p>
+                L'orchestrateur se pilote par ligne de commande depuis la session SSH d'administration :
+            </p>
+            <div class="bg-[#161616] border border-[#262626] rounded-2xl p-6 my-8 font-mono text-[13px] text-neutral-300 leading-relaxed space-y-3">
+                <p><span class="text-emerald-400 font-bold">switch.sh --mode passive</span> &mdash; Active le mode promiscuité sur eth0 et démarre le démon de capture Scapy.</p>
+                <p><span class="text-emerald-400 font-bold">switch.sh --mode active</span> &mdash; Sort de la furtivité, lance des balayages ARP/ICMP et des scans de ports SYN.</p>
+                <p><span class="text-emerald-400 font-bold">switch.sh --mode enrich</span> &mdash; Analyse les résultats hors-ligne, interroge l'API du NIST et corrèle les CVE.</p>
+                <p><span class="text-emerald-400 font-bold">switch.sh --status</span> &mdash; Affiche l'état de la batterie, la température CPU et l'état de la liaison cible.</p>
+            </div>
+
+            <div class="bg-[#161616] border-l-4 border-emerald-500 p-6 my-8 text-[15px] text-neutral-300 leading-relaxed rounded-r-2xl border-y border-r border-[#262626]">
+                <strong class="text-white font-bold">Mise en valeur :</strong> Le projet Sentinel démontre une maîtrise complète de la chaîne offensive : de l'ingénierie matérielle (conversion de tension, bus I2C) et de l'administration système Linux au scripting d'automatisation réseau avancé en Python.
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-auto py-10 border-t border-[#262626] bg-[#0d0d0d] text-[13px] text-neutral-400 font-sans w-full px-6">
+        <div class="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+            <span>&copy; 2026 Mickaël Van Craenenbroeck</span>
+        </div>
+    </footer>
+    <script src="../js/components.js"></script>
+</body>
+</html>

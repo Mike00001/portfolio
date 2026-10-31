@@ -5,126 +5,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Cybersecurity Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        dark: '#0f172a',
-                        darker: '#020617',
-                        accent: '#10b981', // Emerald green
-                        accentHover: '#059669',
-                    }
-                }
-            }
-        }
-    </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            background-color: #020617;
-            color: #f8fafc;
-            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-        }
-        .glow {
-            box-shadow: 0 0 15px rgba(16, 185, 129, 0.15);
-            transition: box-shadow 0.3s ease, transform 0.3s ease;
-        }
-        
-        /* Grid background pattern */
-        .bg-grid {
-            background-size: 40px 40px;
-            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-        }
+        body { font-family: 'Inter', sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
     </style>
 </head>
-<body class="min-h-screen font-sans selection:bg-accent selection:text-white bg-grid relative flex flex-col">
-    <!-- Overlay gradient -->
-    <div class="fixed inset-0 bg-gradient-to-b from-transparent to-darker pointer-events-none -z-10"></div>
-
-    <!-- Header/Nav -->
-    <header class="border-b border-gray-800 bg-darker/80 backdrop-blur-md fixed w-full top-0 z-50 transition-all">
-        <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold font-mono tracking-tighter cursor-pointer hover:text-accent transition-colors">
-                <span class="text-accent">&gt;</span> root<span class="text-gray-500">@</span>portfolio<span class="animate-pulse text-accent">_</span>
+<body class="bg-[#0d0d0d] text-[#f5f5f5] min-h-screen selection:bg-neutral-800 flex flex-col">
+    <!-- Minimalist Nav -->
+    <nav class="sticky top-0 z-50 w-full bg-[#0d0d0d]/85 backdrop-blur-md border-b border-[#262626] transition-all duration-300">
+        <div class="max-w-4xl mx-auto w-full px-6 py-4 flex justify-between items-center text-sm font-medium tracking-tight gap-4">
+            <a href="index.html" id="nav-logo" class="flex items-center gap-2.5 hover:opacity-85 transition text-white font-semibold text-[15px]">
+                <div class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </div>
+                <span class="font-mono text-[14px] font-bold text-white tracking-tight">~/portfolio</span>
             </a>
-            <nav class="hidden md:flex space-x-6 text-sm font-medium font-mono">
-                <a href="about.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/about</a>
-                <a href="projects.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/projects</a>
-                <a href="tuto.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/tuto</a>
-                <a href="blog.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/blog</a>
-                <a href="contact.html" class="text-accent transition-colors duration-300">~/contact</a>
-            </nav>
-            <button class="md:hidden text-gray-400 hover:text-accent">
-                <i class="fa-solid fa-bars text-xl"></i>
-            </button>
+            <div class="flex items-center gap-5 text-[13px]" id="nav-links">
+                <a href="about.html" id="nav-about" class="text-neutral-400 hover:text-white transition-colors">About</a>
+                <a href="projects.html" id="nav-projects" class="text-neutral-400 hover:text-white transition-colors">Projects</a>
+                <a href="contact.html" id="nav-contact" class="bg-white text-[#0d0d0d] hover:bg-neutral-200 px-4 py-1.5 rounded-full text-xs font-semibold transition-colors">Contact</a>
+                <span class="text-[#333333]">|</span>
+                <a href="fr/contact.html" id="lang-toggle" class="text-neutral-400 hover:text-white transition-colors font-mono text-[11px] font-semibold border border-[#333333] rounded px-1.5 py-0.5 bg-[#1a1a1a] hover:bg-[#262626] uppercase">FR</a>
+            </div>
         </div>
-    </header>
+    </nav>
 
     <!-- Main Content -->
-    <main class="flex-grow pt-32 pb-24 flex items-center justify-center">
-        <section class="max-w-3xl w-full mx-auto px-6 text-center">
-            <div class="inline-block px-3 py-1 bg-accent/10 border border-accent/30 rounded-full text-accent font-mono text-sm mb-6">
-                <i class="fa-solid fa-satellite-dish animate-pulse mr-2 text-xs"></i> Secure Channel
+    <main class="flex-grow max-w-4xl w-full mx-auto px-6 py-16">
+        <header class="mb-12 border-b border-[#262626] pb-10">
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-[#161616] border border-[#333333] rounded-full text-xs font-mono text-emerald-400 mb-4">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> SECURE CHANNELS
             </div>
-            <h1 class="text-4xl md:text-5xl font-bold font-mono mb-6">Initiate a Connection</h1>
-            <p class="text-gray-400 mb-12 max-w-xl mx-auto leading-relaxed">
-                Do you have a project in mind or want to discuss offensive/defensive security? Feel free to reach out via the channels below.
-            </p>
+            <h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">Contact & PGP Key</h1>
+            <p class="text-lg text-neutral-400 font-light leading-relaxed max-w-2xl">For professional inquiries, Blue Team opportunities, or encrypted communications.</p>
+        </header>
 
-            <div class="flex flex-col sm:flex-row justify-center items-center gap-6 mb-16">
-                <!-- GitHub -->
-                <a href="https://github.com" target="_blank" class="w-full sm:w-auto px-8 py-4 bg-darker border border-gray-800 rounded-lg flex items-center justify-center space-x-4 hover:border-accent hover:text-accent glow transition-all duration-300 group">
-                    <i class="fa-brands fa-github text-3xl text-gray-400 group-hover:text-accent transition-colors"></i>
-                    <div class="text-left">
-                        <div class="font-bold text-gray-200 group-hover:text-white">GitHub</div>
-                        <div class="text-xs text-gray-500 font-mono">/root-portfolio</div>
-                    </div>
-                </a>
-
-                <!-- LinkedIn -->
-                <a href="https://linkedin.com" target="_blank" class="w-full sm:w-auto px-8 py-4 bg-darker border border-gray-800 rounded-lg flex items-center justify-center space-x-4 hover:border-accent hover:text-accent glow transition-all duration-300 group">
-                    <i class="fa-brands fa-linkedin text-3xl text-gray-400 group-hover:text-accent transition-colors"></i>
-                    <div class="text-left">
-                        <div class="font-bold text-gray-200 group-hover:text-white">LinkedIn</div>
-                        <div class="text-xs text-gray-500 font-mono">/in/cyber-analyst</div>
-                    </div>
-                </a>
-
-                <!-- Email -->
-                <a href="mailto:contact@example.com" class="w-full sm:w-auto px-8 py-4 bg-darker border border-gray-800 rounded-lg flex items-center justify-center space-x-4 hover:border-accent hover:text-accent glow transition-all duration-300 group">
-                    <i class="fa-solid fa-envelope text-3xl text-gray-400 group-hover:text-accent transition-colors"></i>
-                    <div class="text-left">
-                        <div class="font-bold text-gray-200 group-hover:text-white">Email</div>
-                        <div class="text-xs text-gray-500 font-mono">PGP Transmission</div>
-                    </div>
-                </a>
-            </div>
-
-            <!-- PGP Key / Terminal Block -->
-            <div class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden font-mono text-sm leading-relaxed text-left max-w-2xl mx-auto shadow-2xl">
-                <div class="bg-gray-800 px-4 py-2 text-gray-400 text-xs">
-                    cat public_key.asc
+        <section class="mb-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Contact Methods -->
+                <div class="bg-[#161616] border border-[#262626] rounded-2xl p-6 md:p-8">
+                    <h2 class="text-[12px] font-mono font-semibold tracking-widest uppercase text-neutral-500 mb-6 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500/80"></span> COMMUNICATION CHANNELS
+                    </h2>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="mailto:mickael.vc@gmail.com" class="flex items-center gap-4 text-neutral-300 hover:text-white transition group p-4 border border-[#262626] rounded-xl bg-[#0d0d0d] hover:border-neutral-500">
+                                <svg class="w-5 h-5 text-neutral-400 group-hover:text-emerald-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                <div>
+                                    <div class="font-bold text-white text-sm">Direct Email</div>
+                                    <div class="text-xs font-mono text-neutral-400 mt-0.5">mickael.vc@gmail.com</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/m01m/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 text-neutral-300 hover:text-white transition group p-4 border border-[#262626] rounded-xl bg-[#0d0d0d] hover:border-neutral-500">
+                                <svg class="w-5 h-5 text-neutral-400 group-hover:text-emerald-400 transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                                <div>
+                                    <div class="font-bold text-white text-sm">LinkedIn</div>
+                                    <div class="text-xs font-mono text-neutral-400 mt-0.5">linkedin.com/in/m01m</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/Mike00001" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 text-neutral-300 hover:text-white transition group p-4 border border-[#262626] rounded-xl bg-[#0d0d0d] hover:border-neutral-500">
+                                <svg class="w-5 h-5 text-neutral-400 group-hover:text-emerald-400 transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                <div>
+                                    <div class="font-bold text-white text-sm">GitHub</div>
+                                    <div class="text-xs font-mono text-neutral-400 mt-0.5">@Mike00001</div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-                <div class="p-6 text-gray-500 text-xs sm:text-sm overflow-x-auto whitespace-pre">
+                
+                <!-- PGP Key -->
+                <div class="bg-[#161616] border border-[#262626] rounded-2xl p-6 md:p-8">
+                    <h2 class="text-[12px] font-mono font-semibold tracking-widest uppercase text-neutral-500 mb-6 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500/80"></span> PUBLIC PGP KEY
+                    </h2>
+                    <div class="bg-[#0d0d0d] border border-[#262626] rounded-xl text-[11px] font-mono text-emerald-400/90 overflow-x-auto p-4 leading-relaxed">
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 
 mQINBGFpZ14BEAC/9XbJ...
-[PGP Key Truncated for display]
+[PGP Key Block - Security Communications]
 ...1aB2c3d4E5f6G7h8I9j0
 =abcd
 -----END PGP PUBLIC KEY BLOCK-----
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="py-6 bg-darker border-t border-gray-800 text-center relative z-10">
-        <p class="font-mono text-sm text-gray-600">
-            [ <span class="text-accent">&copy; 2024 Portfolio OS</span> ] --- Status: <span class="text-accent">ONLINE</span>
-        </p>
+    <footer class="mt-auto py-10 border-t border-[#262626] bg-[#0d0d0d] text-[13px] text-neutral-400 font-sans w-full px-6">
+        <div class="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+            <span>&copy; 2026 Mickaël Van Craenenbroeck</span>
+        </div>
     </footer>
+    <script src="js/components.js"></script>
 </body>
 </html>

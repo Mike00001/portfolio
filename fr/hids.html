@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet HIDS - Portfolio Cybersécurité</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+    </style>
+</head>
+<body class="bg-[#0d0d0d] text-[#f5f5f5] min-h-screen selection:bg-neutral-800 flex flex-col">
+    <!-- Minimalist Nav -->
+    <nav class="sticky top-0 z-50 w-full bg-[#0d0d0d]/85 backdrop-blur-md border-b border-[#262626] transition-all duration-300">
+        <div class="max-w-4xl mx-auto w-full px-6 py-4 flex justify-between items-center text-sm font-medium tracking-tight gap-4">
+            <a href="index.html" id="nav-logo" class="flex items-center gap-2.5 hover:opacity-85 transition text-white font-semibold text-[15px]">
+                <div class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </div>
+                <span class="font-mono text-[14px] font-bold text-white tracking-tight">~/portfolio</span>
+            </a>
+            <div class="flex items-center gap-5 text-[13px]" id="nav-links">
+                <a href="about.html" id="nav-about" class="text-neutral-400 hover:text-white transition-colors">À propos</a>
+                <a href="projects.html" id="nav-projects" class="text-white font-semibold transition-colors">Projets</a>
+                <a href="contact.html" id="nav-contact" class="bg-white text-[#0d0d0d] hover:bg-neutral-200 px-4 py-1.5 rounded-full text-xs font-semibold transition-colors">Contact</a>
+                <span class="text-[#333333]">|</span>
+                <a href="../hids.html" id="lang-toggle" class="text-neutral-400 hover:text-white transition-colors font-mono text-[11px] font-semibold border border-[#333333] rounded px-1.5 py-0.5 bg-[#1a1a1a] hover:bg-[#262626] uppercase">EN</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-4xl w-full mx-auto px-6 py-16">
+        <header class="mb-12 border-b border-[#262626] pb-10">
+            <div class="flex items-center gap-2 text-xs font-mono text-neutral-400 mb-4 uppercase">
+                 <span class="text-emerald-400 font-bold tracking-wider">Défense Hôte</span>
+                 <span class="text-[#333333]">&bull;</span>
+                 <span class="text-neutral-400">Logiciel</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight tracking-tight">Système de Détection d'Intrusions Hôte (HIDS)</h1>
+            <p class="text-lg md:text-xl text-neutral-300 font-light leading-relaxed mb-8">
+                Un démon de sécurité modulaire écrit en Bash et en Python pour surveiller les machines Linux. Il audite l'activité des utilisateurs, valide l'intégrité des fichiers et isole les connexions réseau et les processus suspects.
+            </p>
+
+            <div class="mb-8 flex items-center justify-start gap-4">
+                <a href="https://github.com/Mike00001/hids_project" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-white hover:bg-neutral-200 text-[#0d0d0d] rounded-full text-sm font-semibold transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] flex items-center gap-2">
+                    View Source on GitHub <span class="font-mono">↗</span>
+                </a>
+            </div>
+            
+            <!-- Writer Card -->
+            <div class="flex items-center gap-3 border border-[#262626] bg-[#161616] p-4 rounded-xl mb-8">
+                <div class="w-10 h-10 rounded-full bg-[#222222] border border-[#333333] flex items-center justify-center font-bold text-emerald-400 font-mono">M</div>
+                <div class="text-xs font-sans">
+                    <div class="font-bold text-white">Mickaël Van Craenenbroeck</div>
+                    <div class="text-neutral-400 mt-0.5">Fév 2026 &bull; 7 min de lecture</div>
+                </div>
+            </div>
+
+            <!-- Image de couverture -->
+            <div class="w-full rounded-2xl overflow-hidden border border-[#262626] bg-[#161616] p-4 mb-10">
+                <img src="../assets/images/hids/hids_cover.png" alt="Couverture du système de détection d'intrusions HIDS" class="w-full h-auto rounded-xl border border-[#262626]">
+            </div>
+        </header>
+
+        <!-- Article Prose -->
+        <article class="text-[17px] md:text-[18px] text-neutral-300 leading-relaxed max-w-3xl mx-auto space-y-6">
+            <h3 class="text-2xl font-bold text-white pt-6 border-t border-[#262626]">Concept du Projet & Comparaison avec les HIDS Standards</h3>
+            <p>
+                Les systèmes de détection d'intrusions hôte (HIDS) comme Wazuh ou OSSEC sont des outils défensifs puissants, mais ils nécessitent des bases de données lourdes, des gestionnaires centralisés et une mémoire système conséquente. Cette empreinte les rend inadaptés pour les micro-instances cloud à faibles ressources, les conteneurs Docker ou les passerelles IoT minimales.
+            </p>
+            <p>
+                Le <strong class="text-white">Système de Détection d'Intrusions Hôte (HIDS)</strong> est un agent de surveillance modulaire et sans dépendance. Écrit en Bash et en Python, il opère directement sur les ressources du système hôte et génère des alertes JSON structurées :
+            </p>
+            <ul class="list-disc pl-6 space-y-3 text-[16px] text-neutral-400 leading-relaxed mb-6">
+                <li><strong class="text-white">Audit POSIX natif</strong> : S'appuie exclusivement sur des appels système et commandes Unix natifs.</li>
+                <li><strong class="text-white">Audit proactif des chemins d'accès</strong> : Signale l'exécution depuis les répertoires temporaires et traque les usurpations de noms de processus.</li>
+                <li><strong class="text-white">Boucles d'intégrité compactes</strong> : Surveille les fichiers d'authentification critiques contre toute modification non autorisée.</li>
+            </ul>
+
+            <!-- HIDS Alerts -->
+            <figure class="my-8 border border-[#262626] rounded-2xl p-4 bg-[#161616] text-center">
+                <img src="../assets/images/hids/hids_dashboard.png" alt="Console de gestion HIDS" class="w-full h-auto rounded-xl border border-[#262626]">
+                <figcaption class="text-xs text-neutral-400 mt-3 font-mono text-center">
+                    Le flux d'alertes JSON capturant les événements de sécurité et les anomalies d'intégrité système.
+                </figcaption>
+            </figure>
+
+            <h3 class="text-2xl font-bold text-white pt-6 border-t border-[#262626]">Durcissement Système & Optimisations des Ressources</h3>
+            <p>
+                L'exécution en continu d'un agent d'audit sur des machines de production nécessite de minimiser les cycles CPU et les accès disque (I/O) :
+            </p>
+
+            <h4 class="text-xl font-bold text-emerald-400 pt-4 font-mono">&gt; 1. Empreinte Zéro Dépendance (Commandes POSIX)</h4>
+            <p>
+                L'agent est conçu pour s'exécuter sur des distributions Linux minimales, utilisant des utilitaires POSIX intégrés (comme <code>ps</code>, <code>ss</code>, et <code>readlink</code>).
+            </p>
+
+            <!-- Systemd Setup -->
+            <figure class="my-8 border border-[#262626] rounded-2xl p-4 bg-[#161616] text-center">
+                <img src="../assets/images/hids/hids_systemd.png" alt="Isolation du service systemd HIDS" class="w-full h-auto rounded-xl border border-[#262626]">
+                <figcaption class="text-xs text-neutral-400 mt-3 font-mono text-center">
+                    Arborescence montrant l'orchestration des services systemd et la surveillance des processus.
+                </figcaption>
+            </figure>
+
+            <h4 class="text-xl font-bold text-emerald-400 pt-4 font-mono">&gt; 2. Intégration Sécurisée dans Systemd</h4>
+            <p>
+                Les modules sont packagés sous forme de démons gérés par <code>systemd</code> (avec <code>ProtectSystem=full</code> et <code>PrivateTmp=true</code>).
+            </p>
+
+            <h4 class="text-xl font-bold text-emerald-400 pt-4 font-mono">&gt; 3. FIM (File Integrity Monitoring) Économe en I/O</h4>
+            <p>
+                Le démon FIM calcule les empreintes et surveille uniquement les fichiers sensibles (comme <code>/etc/passwd</code> et <code>/etc/shadow</code>).
+            </p>
+
+            <h3 class="text-2xl font-bold text-white pt-6 border-t border-[#262626]">Architecture Logicielle et Code</h3>
+            <div class="bg-[#161616] border border-[#262626] rounded-2xl p-6 my-8 font-mono text-[13px] text-neutral-300 overflow-x-auto leading-relaxed">
+<pre><code># Trace and validate executables
+ps -eo pid,user,comm,%cpu,%mem --no-headers | while read pid user comm cpu mem; do
+    exe=$(readlink -f /proc/$pid/exe 2>/dev/null)
+    [ -z "$exe" ] && continue
+
+    # Flag execution from transient paths
+    if echo "$exe" | grep -qE "/tmp|/dev/shm|/var/tmp"; then
+        msg="Process $comm (PID $pid) executing from transient directory: $exe"
+        write_alert "CRITICAL" "$msg"
+    fi
+done</code></pre>
+            </div>
+
+            <h3 class="text-2xl font-bold text-white pt-6 border-t border-[#262626]">Référence des Commandes & Logs</h3>
+            <div class="bg-[#161616] border border-[#262626] rounded-2xl p-6 my-8 font-mono text-[13px] text-neutral-300 leading-relaxed space-y-3">
+                <p><span class="text-emerald-400 font-bold">systemctl start hids-audit.service</span> &mdash; Démarre le démon HIDS.</p>
+                <p><span class="text-emerald-400 font-bold">tail -f /var/log/hids/alerts.json</span> &mdash; Affiche le flux d'alertes JSON structurées.</p>
+            </div>
+
+            <div class="bg-[#161616] border-l-4 border-emerald-500 p-6 my-8 text-[15px] text-neutral-300 leading-relaxed rounded-r-2xl border-y border-r border-[#262626]">
+                <strong class="text-white font-bold">Mise en valeur :</strong> Le système HIDS propose un audit d'hôte léger et sans dépendance, offrant une visibilité défensive pour les micro-instances, conteneurs et passerelles IoT.
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-auto py-10 border-t border-[#262626] bg-[#0d0d0d] text-[13px] text-neutral-400 font-sans w-full px-6">
+        <div class="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+            <span>&copy; 2026 Mickaël Van Craenenbroeck</span>
+        </div>
+    </footer>
+    <script src="../js/components.js"></script>
+</body>
+</html>

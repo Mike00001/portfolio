@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet Marauder - Portfolio Cybersécurité</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+    </style>
+</head>
+<body class="bg-[#0d0d0d] text-[#f5f5f5] min-h-screen selection:bg-neutral-800 flex flex-col">
+    <!-- Minimalist Nav -->
+    <nav class="sticky top-0 z-50 w-full bg-[#0d0d0d]/85 backdrop-blur-md border-b border-[#262626] transition-all duration-300">
+        <div class="max-w-4xl mx-auto w-full px-6 py-4 flex justify-between items-center text-sm font-medium tracking-tight gap-4">
+            <a href="index.html" id="nav-logo" class="flex items-center gap-2.5 hover:opacity-85 transition text-white font-semibold text-[15px]">
+                <div class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </div>
+                <span class="font-mono text-[14px] font-bold text-white tracking-tight">~/portfolio</span>
+            </a>
+            <div class="flex items-center gap-5 text-[13px]" id="nav-links">
+                <a href="about.html" id="nav-about" class="text-neutral-400 hover:text-white transition-colors">À propos</a>
+                <a href="projects.html" id="nav-projects" class="text-white font-semibold transition-colors">Projets</a>
+                <a href="contact.html" id="nav-contact" class="bg-white text-[#0d0d0d] hover:bg-neutral-200 px-4 py-1.5 rounded-full text-xs font-semibold transition-colors">Contact</a>
+                <span class="text-[#333333]">|</span>
+                <a href="../marauder.html" id="lang-toggle" class="text-neutral-400 hover:text-white transition-colors font-mono text-[11px] font-semibold border border-[#333333] rounded px-1.5 py-0.5 bg-[#1a1a1a] hover:bg-[#262626] uppercase">EN</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-4xl w-full mx-auto px-6 py-16">
+        <header class="mb-12 border-b border-[#262626] pb-10">
+            <div class="flex items-center gap-2 text-xs font-mono text-neutral-400 mb-4 uppercase">
+                <span class="text-emerald-400 font-bold tracking-wider">Sécurité Offensive</span>
+                <span class="text-[#333333]">&bull;</span>
+                <span class="text-neutral-400">Matériel</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight tracking-tight">Projet Marauder</h1>
+            <p class="text-lg md:text-xl text-neutral-300 font-light leading-relaxed mb-8">
+                Développement d'un appareil matériel portable d'audit Wi-Fi (wardriving, désauthentification, capture de paquets) en C/C++ sur microcontrôleur ESP32.
+            </p>
+
+            <div class="mb-8 flex items-center justify-start gap-4">
+                <a href="https://github.com/Mike00001" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-white hover:bg-neutral-200 text-[#0d0d0d] rounded-full text-sm font-semibold transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] flex items-center gap-2">
+                    View Source on GitHub <span class="font-mono">↗</span>
+                </a>
+            </div>
+            
+            <!-- Writer Card -->
+            <div class="flex items-center gap-3 border border-[#262626] bg-[#161616] p-4 rounded-xl mb-8">
+                <div class="w-10 h-10 rounded-full bg-[#222222] border border-[#333333] flex items-center justify-center font-bold text-emerald-400 font-mono">M</div>
+                <div class="text-xs font-sans">
+                    <div class="font-bold text-white">Mickaël Van Craenenbroeck</div>
+                    <div class="text-neutral-400 mt-0.5">Oct 2024 &bull; 8 min de lecture</div>
+                </div>
+            </div>
+
+            <!-- Photo de Couverture -->
+            <figure class="mb-12 border border-[#262626] rounded-2xl p-4 bg-[#161616]">
+                <img src="../assets/images/marauder/marauder_device.jpg" alt="Appareil Marauder" class="w-full h-auto rounded-xl border border-[#262626]">
+                <figcaption class="text-xs text-neutral-400 mt-3 font-mono text-center">
+                    L'appareil de poche ESP32 Marauder autonome avec batterie et antenne.
+                </figcaption>
+            </figure>
+        </header>
+
+        <!-- Article Prose -->
+        <article class="text-[17px] md:text-[18px] text-neutral-300 leading-relaxed max-w-3xl mx-auto space-y-6">
+            
+            <div class="bg-[#161616] border border-[#262626] rounded-2xl p-6 my-8 font-mono text-[12px] text-neutral-300 leading-relaxed overflow-x-auto">
+                <p class="text-neutral-500 mb-2"># LOG_OUTPUT: Marauder CLI Firmware v1.2</p>
+                <p class="text-emerald-400">&gt; scan ap</p>
+                <p class="text-neutral-400">Scanning in promiscuous mode (Ch 1-13)... DONE.</p>
+                <p class="font-bold text-white mt-2">Found 3 Access Points:</p>
+                <div class="overflow-x-auto w-full">
+                    <table class="w-full text-left mt-2 mb-2 border-collapse min-w-[350px]">
+                        <tr class="text-neutral-500 border-b border-[#262626]">
+                            <th class="py-1">BSSID</th>
+                            <th class="py-1">CH</th>
+                            <th class="py-1">RSSI</th>
+                            <th class="py-1">ENC</th>
+                            <th class="py-1">SSID</th>
+                        </tr>
+                        <tr>
+                            <td class="text-emerald-400">00:1A:2B:3C:4D:5E</td>
+                            <td>6</td>
+                            <td>-52</td>
+                            <td>WPA2</td>
+                            <td>Corp_WiFi_Guest</td>
+                        </tr>
+                        <tr>
+                            <td class="text-emerald-400">A1:B2:C3:D4:E5:F6</td>
+                            <td>11</td>
+                            <td>-76</td>
+                            <td>WPA/WPA2</td>
+                            <td>CoffeeShop_Free</td>
+                        </tr>
+                        <tr>
+                            <td class="text-emerald-400">11:22:33:44:55:66</td>
+                            <td>1</td>
+                            <td>-89</td>
+                            <td>WEP</td>
+                            <td class="text-neutral-500">&lt;hidden&gt;</td>
+                        </tr>
+                    </table>
+                </div>
+                <p class="text-emerald-400 mt-2">&gt; sniff beacon -w sniff_log.pcap</p>
+                <p class="text-neutral-400">Starting packet capture on channels 1,6,11...</p>
+            </div>
+
+            <h3 class="text-2xl font-bold text-white pt-6 border-t border-[#262626]">Concept du Projet & Comparaison avec les Configurations Standards</h3>
+            <p>
+                Les environnements d'audit Wi-Fi standard reposent généralement sur des adaptateurs sans fil USB externes lourds (comme les cartes Alfa Network) connectés à un ordinateur portable exécutant Kali Linux. Cette configuration matérielle est encombrante, consomme beaucoup d'énergie et s'avère difficile à déployer discrètement.
+            </p>
+            <p>
+                Le <strong class="text-white">Projet Marauder</strong> est un appareil de poche ultra-portable et autonome exécutant un firmware personnalisé en C/C++ directement sur un microcontrôleur ESP32 :
+            </p>
+            <ul class="list-disc pl-6 space-y-3 text-[16px] text-neutral-400 leading-relaxed mb-6">
+                <li><strong class="text-white">Format de poche</strong> : Tient dans la paume de la main, ne nécessitant aucun ordinateur ou moniteur externe pour fonctionner.</li>
+                <li><strong class="text-white">Interception en mode promiscuité</strong> : Intercepte les trames brutes de gestion et de données 802.11 directement dans l'air.</li>
+                <li><strong class="text-white">Journalisation sur stockage embarqué</strong> : Enregistre les handshakes capturés directement sur carte MicroSD au format PCAP standard.</li>
+            </ul>
+
+            <h3 class="text-2xl font-bold text-white pt-6 border-t border-[#262626]">Adaptations Matérielles : Dompter la carte ESP32</h3>
+            <p>
+                La création d'un outil d'audit sans fil miniature nécessite d'optimiser les bus périphériques, les contraintes de mémoire et la portée RF sur une carte de développement de faible coût :
+            </p>
+
+            <h4 class="text-xl font-bold text-emerald-400 pt-4 font-mono">&gt; 1. Choix de la Puce & Fonctionnement Basse Consommation</h4>
+            <p>
+                Le cœur du système utilise un module ESP32-WROOM-32D. Son processeur double cœur permet de séparer les tâches d'écoute RF des tâches d'interface d'E/S. En mode veille profonde (deep sleep), il consomme moins de 15µA, offrant une autonomie prolongée sur une simple cellule lithium 18650.
+            </p>
+
+            <!-- Image: Hardware Setup -->
+            <figure class="my-8 border border-[#262626] rounded-2xl p-4 bg-[#161616]">
+                <img src="../assets/images/marauder/marauder_assembly.jpg" alt="Montage matériel de Projet Marauder" class="w-full h-auto rounded-xl border border-[#262626]">
+                <figcaption class="text-xs text-neutral-400 mt-3 font-mono text-center">
+                    Le montage matériel interne montrant la connexion de l'ESP32 à la cellule de batterie lithium et au connecteur d'antenne SMA.
+                </figcaption>
+            </figure>
+
+            <h4 class="text-xl font-bold text-emerald-400 pt-4 font-mono">&gt; 2. Intégration du Stockage Périphérique SPI</h4>
+            <p>
+                Les microcontrôleurs manquent de grands espaces mémoire. Pour capturer des flux de paquets, un emplacement pour carte MicroSD a été intégré via le <strong class="text-white">bus SPI</strong>. Le firmware attribue des broches GPIO dédiées (MISO/MOSI/SCK/CS) et utilise les pilotes SPI matériels pour atteindre des vitesses d'écriture rapides sans perdre de paquets.
+            </p>
+
+            <h4 class="text-xl font-bold text-emerald-400 pt-4 font-mono">&gt; 3. Modification de la Portée RF (Antenne SMA)</h4>
+            <p>
+                Les cartes ESP32 standard s'appuient sur de petites antennes imprimées sur le PCB, qui ont une portée limitée. La piste de la carte a été modifiée : le chemin de l'antenne intégrée a été sectionné, et un connecteur <strong class="text-white">d'antenne SMA</strong> externe a été soudé, permettant de connecter une antenne à gain élevé de +5dBi pour le wardriving à longue distance.
+            </p>
+
+            <h4 class="text-xl font-bold text-emerald-400 pt-4 font-mono">&gt; 4. Contrôles de l'Interface Autonome (Écran TFT & Joystick)</h4>
+            <p>
+                Pour permettre des configurations à la volée sans terminal, un écran TFT piloté en SPI et un joystick analogique miniature ont été connectés aux GPIO. Cela permet de sélectionner les cibles et de lancer les attaques directement depuis l'écran de l'appareil.
+            </p>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-auto py-10 border-t border-[#262626] bg-[#0d0d0d] text-[13px] text-neutral-400 font-sans w-full px-6">
+        <div class="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+            <span>&copy; 2026 Mickaël Van Craenenbroeck</span>
+        </div>
+    </footer>
+    <script src="../js/components.js"></script>
+</body>
+</html>

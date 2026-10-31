@@ -5,133 +5,214 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects - Cybersecurity Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        dark: '#0f172a',
-                        darker: '#020617',
-                        accent: '#10b981', // Emerald green
-                        accentHover: '#059669',
-                    }
-                }
-            }
-        }
-    </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            background-color: #020617;
-            color: #f8fafc;
-            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-        }
-        .glow {
-            box-shadow: 0 0 15px rgba(16, 185, 129, 0.15);
-            transition: box-shadow 0.3s ease, transform 0.3s ease;
-        }
-        .glow:hover {
-            box-shadow: 0 0 30px rgba(16, 185, 129, 0.4);
-            transform: translateY(-5px);
-        }
-        
-        /* Grid background pattern */
-        .bg-grid {
-            background-size: 40px 40px;
-            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-        }
+        body { font-family: 'Inter', sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
     </style>
 </head>
-<body class="min-h-screen font-sans selection:bg-accent selection:text-white bg-grid relative flex flex-col">
-    <!-- Overlay gradient -->
-    <div class="fixed inset-0 bg-gradient-to-b from-transparent to-darker pointer-events-none -z-10"></div>
-
-    <!-- Header/Nav -->
-    <header class="border-b border-gray-800 bg-darker/80 backdrop-blur-md fixed w-full top-0 z-50 transition-all">
-        <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold font-mono tracking-tighter cursor-pointer hover:text-accent transition-colors">
-                <span class="text-accent">&gt;</span> root<span class="text-gray-500">@</span>portfolio<span class="animate-pulse text-accent">_</span>
+<body class="bg-[#0d0d0d] text-[#f5f5f5] min-h-screen selection:bg-neutral-800 flex flex-col">
+    <!-- Minimalist Nav -->
+    <nav class="sticky top-0 z-50 w-full bg-[#0d0d0d]/85 backdrop-blur-md border-b border-[#262626] transition-all duration-300">
+        <div class="max-w-4xl mx-auto w-full px-6 py-4 flex justify-between items-center text-sm font-medium tracking-tight gap-4">
+            <a href="index.html" id="nav-logo" class="flex items-center gap-2.5 hover:opacity-85 transition text-white font-semibold text-[15px]">
+                <div class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </div>
+                <span class="font-mono text-[14px] font-bold text-white tracking-tight">~/portfolio</span>
             </a>
-            <nav class="hidden md:flex space-x-6 text-sm font-medium font-mono">
-                <a href="about.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/about</a>
-                <a href="projects.html" class="text-accent transition-colors duration-300">~/projects</a>
-                <a href="tuto.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/tuto</a>
-                <a href="blog.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/blog</a>
-                <a href="contact.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/contact</a>
-            </nav>
-            <button class="md:hidden text-gray-400 hover:text-accent">
-                <i class="fa-solid fa-bars text-xl"></i>
-            </button>
+            <div class="flex items-center gap-5 text-[13px]" id="nav-links">
+                <a href="about.html" id="nav-about" class="text-neutral-400 hover:text-white transition-colors">About</a>
+                <a href="projects.html" id="nav-projects" class="text-white font-semibold transition-colors">Projects</a>
+                <a href="contact.html" id="nav-contact" class="bg-white text-[#0d0d0d] hover:bg-neutral-200 px-4 py-1.5 rounded-full text-xs font-semibold transition-colors">Contact</a>
+                <span class="text-[#333333]">|</span>
+                <a href="fr/projects.html" id="lang-toggle" class="text-neutral-400 hover:text-white transition-colors font-mono text-[11px] font-semibold border border-[#333333] rounded px-1.5 py-0.5 bg-[#1a1a1a] hover:bg-[#262626] uppercase">FR</a>
+            </div>
         </div>
-    </header>
+    </nav>
 
     <!-- Main Content -->
-    <main class="flex-grow pt-32 pb-24">
-        <section class="max-w-6xl mx-auto px-6">
-            <h1 class="text-4xl font-bold font-mono mb-12"><span class="text-accent text-2xl mr-2">ls -l</span>Key Projects</h1>
+    <main class="flex-grow max-w-4xl w-full mx-auto px-6 py-16">
+        <header class="mb-12 border-b border-[#262626] pb-10">
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-[#161616] border border-[#333333] rounded-full text-xs font-mono text-emerald-400 mb-4">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> REAL-WORLD DEPLOYMENTS
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">Key Projects & Labs</h1>
+            <p class="text-lg text-neutral-400 font-light leading-relaxed max-w-2xl">In-depth technical investigations, infrastructure deployments, and security software developments.</p>
+        </header>
 
-            <div class="grid md:grid-cols-2 gap-8">
+        <section class="mb-16">
+            <div class="space-y-6">
+                
                 <!-- Project 1: Sentinel -->
-                <div class="bg-darker border border-gray-800/60 rounded-xl p-8 glow group relative overflow-hidden flex flex-col h-full">
-                    <div class="absolute -right-10 -top-10 text-gray-800/30 group-hover:text-gray-800/50 transition-colors duration-500 z-0 text-9xl">
-                        <i class="fa-solid fa-server"></i>
-                    </div>
-                    <div class="flex justify-between items-start mb-8 relative z-10">
-                        <div class="p-3 bg-accent/10 rounded-lg text-accent">
-                            <i class="fa-solid fa-network-wired text-3xl"></i>
+                <div class="p-6 md:p-8 bg-[#161616] border border-[#262626] hover:border-neutral-500 rounded-2xl transition-all duration-300 flex flex-col md:flex-row justify-between items-start gap-6 group">
+                    <div class="flex-grow order-2 md:order-1">
+                        <div class="flex items-center gap-2 text-xs font-mono text-neutral-400 mb-3">
+                            <span class="text-emerald-400 font-bold uppercase tracking-wider">Audit & Defense</span>
+                            <span class="text-[#333333]">&bull;</span>
+                            <span class="text-neutral-400">Case Study</span>
                         </div>
-                        <div class="flex space-x-4 text-gray-500">
-                            <a href="https://github.com" target="_blank" class="hover:text-accent transition-colors" title="Source Code"><i class="fa-brands fa-github text-xl"></i></a>
-                            <a href="sentinel.html" class="hover:text-accent transition-colors" title="Details"><i class="fa-solid fa-arrow-up-right-from-square text-xl"></i></a>
+                        <a href="sentinel.html" class="block">
+                            <h3 class="text-2xl font-bold text-white group-hover:text-emerald-400 transition-colors mb-3">Project Sentinel</h3>
+                            <p class="text-[15px] text-neutral-400 font-light leading-relaxed mb-5">
+                                Comprehensive network monitoring system using a Raspberry Pi and a managed switch. Features custom IDS/IPS rule formulation and live dashboard tracking.
+                            </p>
+                        </a>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-[#222222] text-neutral-300 rounded-full text-xs font-mono border border-[#333333]">Raspberry Pi</span>
+                            <span class="px-3 py-1 bg-[#222222] text-neutral-300 rounded-full text-xs font-mono border border-[#333333]">Suricata</span>
                         </div>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 relative z-10 group-hover:text-accent transition-colors"><a href="sentinel.html">Sentinel</a></h3>
-                    <p class="text-gray-400 mb-8 relative z-10 leading-relaxed flex-grow">
-                        Comprehensive network monitoring system using a Raspberry Pi and a managed switch. Implementation of IDS/IPS probes for anomaly detection, real-time traffic analysis, and creation of custom dashboards for threat visualization.
-                    </p>
-                    <div class="flex flex-wrap gap-2 relative z-10 font-mono text-xs mt-auto">
-                        <span class="px-3 py-1 bg-gray-900 text-gray-300 rounded border border-gray-700">Raspberry Pi</span>
-                        <span class="px-3 py-1 bg-gray-900 text-gray-300 rounded border border-gray-700">IDS/IPS</span>
-                        <span class="px-3 py-1 bg-gray-900 text-gray-300 rounded border border-gray-700">Grafana</span>
-                        <span class="px-3 py-1 bg-gray-900 text-gray-300 rounded border border-gray-700">Suricata</span>
-                    </div>
+                    <a href="sentinel.html" class="w-full md:w-48 aspect-video md:aspect-square rounded-xl overflow-hidden shrink-0 order-1 md:order-2 border border-[#262626] bg-[#0d0d0d]">
+                        <img src="assets/images/project_sentinel.png" alt="Project Sentinel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </a>
                 </div>
 
                 <!-- Project 2: Marauder -->
-                <div class="bg-darker border border-gray-800/60 rounded-xl p-8 glow group relative overflow-hidden flex flex-col h-full">
-                    <div class="absolute -right-4 -bottom-4 text-gray-800/30 group-hover:text-gray-800/50 transition-colors duration-500 z-0 text-9xl">
-                        <i class="fa-solid fa-microchip"></i>
-                    </div>
-                    <div class="flex justify-between items-start mb-8 relative z-10">
-                        <div class="p-3 bg-accent/10 rounded-lg text-accent">
-                            <i class="fa-solid fa-wifi text-3xl"></i>
+                <div class="p-6 md:p-8 bg-[#161616] border border-[#262626] hover:border-neutral-500 rounded-2xl transition-all duration-300 flex flex-col md:flex-row justify-between items-start gap-6 group">
+                    <div class="flex-grow order-2 md:order-1">
+                        <div class="flex items-center gap-2 text-xs font-mono text-neutral-400 mb-3">
+                            <span class="text-emerald-400 font-bold uppercase tracking-wider">Offensive Security</span>
+                            <span class="text-[#333333]">&bull;</span>
+                            <span class="text-neutral-400">Hardware</span>
                         </div>
-                        <div class="flex space-x-4 text-gray-500">
-                            <a href="https://github.com" target="_blank" class="hover:text-accent transition-colors" title="Source Code"><i class="fa-brands fa-github text-xl"></i></a>
-                            <a href="marauder.html" class="hover:text-accent transition-colors" title="Details"><i class="fa-solid fa-arrow-up-right-from-square text-xl"></i></a>
+                        <a href="marauder.html" class="block">
+                            <h3 class="text-2xl font-bold text-white group-hover:text-emerald-400 transition-colors mb-3">Project Marauder</h3>
+                            <p class="text-[15px] text-neutral-400 font-light leading-relaxed mb-5">
+                                Compact and standalone hardware Wi-Fi audit tool. Wardriving, packet capture, deauthentication attack testing, and vulnerability analysis.
+                            </p>
+                        </a>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-[#222222] text-neutral-300 rounded-full text-xs font-mono border border-[#333333]">ESP32</span>
+                            <span class="px-3 py-1 bg-[#222222] text-neutral-300 rounded-full text-xs font-mono border border-[#333333]">802.11w</span>
                         </div>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 relative z-10 group-hover:text-accent transition-colors"><a href="marauder.html">Marauder</a></h3>
-                    <p class="text-gray-400 mb-8 relative z-10 leading-relaxed flex-grow">
-                        Compact and standalone hardware Wi-Fi audit tool. Designed for wardriving and local penetration testing, offering packet capture (PCAP) capabilities, vulnerability analysis, and deauthentication attacks in controlled scenarios.
-                    </p>
-                    <div class="flex flex-wrap gap-2 relative z-10 font-mono text-xs mt-auto">
-                        <span class="px-3 py-1 bg-gray-900 text-gray-300 rounded border border-gray-700">ESP32</span>
-                        <span class="px-3 py-1 bg-gray-900 text-gray-300 rounded border border-gray-700">802.11</span>
-                        <span class="px-3 py-1 bg-gray-900 text-gray-300 rounded border border-gray-700">Wardriving</span>
-                        <span class="px-3 py-1 bg-gray-900 text-gray-300 rounded border border-gray-700">C/C++</span>
-                    </div>
+                    <a href="marauder.html" class="w-full md:w-48 aspect-video md:aspect-square rounded-xl overflow-hidden shrink-0 order-1 md:order-2 border border-[#262626] bg-[#0d0d0d]">
+                        <img src="assets/images/project_marauder.png" alt="Project Marauder" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </a>
                 </div>
+
+                <!-- Project 3: Vova -->
+                <div class="p-6 md:p-8 bg-[#161616] border border-[#262626] hover:border-neutral-500 rounded-2xl transition-all duration-300 flex flex-col md:flex-row justify-between items-start gap-6 group">
+                    <div class="flex-grow order-2 md:order-1">
+                        <div class="flex items-center gap-2 text-xs font-mono text-neutral-400 mb-3">
+                            <span class="text-emerald-400 font-bold uppercase tracking-wider">Wireless Audit & RPG</span>
+                            <span class="text-[#333333]">&bull;</span>
+                            <span class="text-neutral-400">Case Study</span>
+                        </div>
+                        <a href="vova.html" class="block">
+                            <h3 class="text-2xl font-bold text-white group-hover:text-emerald-400 transition-colors mb-3">Project Vova: Pwnagotchi RPG Dashboard</h3>
+                            <p class="text-[15px] text-neutral-400 font-light leading-relaxed mb-5">
+                                A custom web-based dashboard and binary PCAP analyzer for Pwnagotchi micro-servers. Parses handshake frames, plots GPS coordinates, and implements a gamified military rank and achievement system.
+                            </p>
+                        </a>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-[#222222] text-neutral-300 rounded-full text-xs font-mono border border-[#333333]">Python</span>
+                            <span class="px-3 py-1 bg-[#222222] text-neutral-300 rounded-full text-xs font-mono border border-[#333333]">Raspberry Pi 3</span>
+                            <span class="px-3 py-1 bg-[#222222] text-neutral-300 rounded-full text-xs font-mono border border-[#333333]">PCAP Parser</span>
+                        </div>
+                    </div>
+                    <a href="vova.html" class="w-full md:w-48 aspect-video md:aspect-square rounded-xl overflow-hidden shrink-0 order-1 md:order-2 border border-[#262626] bg-[#0d0d0d]">
+                        <img src="assets/images/vova/vova_dashboard_interface.png" alt="Project Vova" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </a>
+                </div>
+
+                <!-- Project 4: Scanner -->
+                <div class="p-6 md:p-8 bg-[#161616] border border-[#262626] hover:border-neutral-500 rounded-2xl transition-all duration-300 flex flex-col md:flex-row justify-between items-start gap-6 group">
+                    <div class="flex-grow order-2 md:order-1">
+                        <div class="flex items-center gap-2 text-xs font-mono text-neutral-400 mb-3">
+                            <span class="text-emerald-400 font-bold uppercase tracking-wider">Tool Dev & NetSec</span>
+                            <span class="text-[#333333]">&bull;</span>
+                            <span class="text-neutral-400">Software</span>
+                        </div>
+                        <a href="scanner.html" class="block">
+                            <h3 class="text-2xl font-bold text-white group-hover:text-emerald-400 transition-colors mb-3">Network Port Scanner & Vuln Analyzer</h3>
+                            <p class="text-[15px] text-neutral-400 font-light leading-relaxed mb-5">
+                                A fast, multi-threaded Python scanner that implements TCP connect and stealthy raw SYN scans via Scapy. Performs OS detection, banner grabbing, and queries the NIST API to identify known CVE vulnerabilities.
+                            </p>
+                        </a>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-[#222222] text-neutral-300 rounded-full text-xs font-mono border border-[#333333]">Python</span>
+                            <span class="px-3 py-1 bg-[#222222] text-neutral-300 rounded-full text-xs font-mono border border-[#333333]">Scapy</span>
+                            <span class="px-3 py-1 bg-[#222222] text-neutral-300 rounded-full text-xs font-mono border border-[#333333]">NVD API</span>
+                        </div>
+                    </div>
+                    <a href="scanner.html" class="w-full md:w-48 aspect-video md:aspect-square rounded-xl overflow-hidden shrink-0 order-1 md:order-2 border border-[#262626] bg-[#0d0d0d]">
+                        <img src="assets/images/scanner/scanner_cover.png" alt="Project Scanner" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </a>
+                </div>
+
+                <!-- Project 5: HIDS -->
+                <div class="p-6 md:p-8 bg-[#161616] border border-[#262626] hover:border-neutral-500 rounded-2xl transition-all duration-300 flex flex-col md:flex-row justify-between items-start gap-6 group">
+                    <div class="flex-grow order-2 md:order-1">
+                        <div class="flex items-center gap-2 text-xs font-mono text-neutral-400 mb-3">
+                            <span class="text-emerald-400 font-bold uppercase tracking-wider">Host Defense</span>
+                            <span class="text-[#333333]">&bull;</span>
+                            <span class="text-neutral-400">Software</span>
+                        </div>
+                        <a href="hids.html" class="block">
+                            <h3 class="text-2xl font-bold text-white group-hover:text-emerald-400 transition-colors mb-3">Host Intrusion Detection System (HIDS)</h3>
+                            <p class="text-[15px] text-neutral-400 font-light leading-relaxed mb-5">
+                                A modular host monitoring agent that performs real-time checks on file integrity (FIM), login activity, listening ports, and suspicious process executions from ephemeral paths.
+                            </p>
+                        </a>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-[#222222] text-neutral-300 rounded-full text-xs font-mono border border-[#333333]">Bash</span>
+                            <span class="px-3 py-1 bg-[#222222] text-neutral-300 rounded-full text-xs font-mono border border-[#333333]">Linux Security</span>
+                            <span class="px-3 py-1 bg-[#222222] text-neutral-300 rounded-full text-xs font-mono border border-[#333333]">Systemd</span>
+                        </div>
+                    </div>
+                    <a href="hids.html" class="w-full md:w-48 aspect-video md:aspect-square rounded-xl overflow-hidden shrink-0 order-1 md:order-2 border border-[#262626] bg-[#0d0d0d]">
+                        <img src="assets/images/hids/hids_cover.png" alt="Project HIDS" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="mb-16 pt-10 border-t border-[#262626]">
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-[#161616] border border-[#333333] rounded-full text-xs font-mono text-emerald-400 mb-6">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> SOFTWARE ENGINEERING & ARCHITECTURE
+            </div>
+            <div class="space-y-6">
+
+                <!-- Project 6: Trek Organizer -->
+                <div class="p-6 md:p-8 bg-[#161616] border border-[#262626] hover:border-neutral-500 rounded-2xl transition-all duration-300 flex flex-col md:flex-row justify-between items-start gap-6 group">
+                    <div class="flex-grow order-2 md:order-1">
+                        <div class="flex items-center gap-2 text-xs font-mono text-neutral-400 mb-3">
+                            <span class="text-emerald-400 font-bold uppercase tracking-wider">Software Engineering & Architecture</span>
+                            <span class="text-[#333333]">&bull;</span>
+                            <span class="text-neutral-400">Software</span>
+                        </div>
+                        <a href="trek.html" class="block">
+                            <h3 class="text-2xl font-bold text-white group-hover:text-emerald-400 transition-colors mb-3">Trek Organizer</h3>
+                            <p class="text-[15px] text-neutral-400 font-light leading-relaxed mb-5">
+                                A comprehensive web application designed for autonomous mountain trekking management. Built to demonstrate robust backend architecture, secure database interactions, and full-stack deployment capabilities.
+                            </p>
+                        </a>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-[#222222] text-neutral-300 rounded-full text-xs font-mono border border-[#333333]">PHP</span>
+                            <span class="px-3 py-1 bg-[#222222] text-neutral-300 rounded-full text-xs font-mono border border-[#333333]">Laravel</span>
+                            <span class="px-3 py-1 bg-[#222222] text-neutral-300 rounded-full text-xs font-mono border border-[#333333]">SQL</span>
+                            <span class="px-3 py-1 bg-[#222222] text-neutral-300 rounded-full text-xs font-mono border border-[#333333]">Architecture</span>
+                        </div>
+                    </div>
+                    <a href="trek.html" class="w-full md:w-48 aspect-video md:aspect-square rounded-xl overflow-hidden shrink-0 order-1 md:order-2 border border-[#262626] bg-[#0d0d0d]">
+                        <img src="assets/images/trek/dashboard.png" alt="Trek Organizer" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </a>
+                </div>
+
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="py-6 bg-darker border-t border-gray-800 text-center relative z-10">
-        <p class="font-mono text-sm text-gray-600">
-            [ <span class="text-accent">&copy; 2024 Portfolio OS</span> ]
-        </p>
+    <footer class="mt-auto py-10 border-t border-[#262626] bg-[#0d0d0d] text-[13px] text-neutral-400 font-sans w-full px-6">
+        <div class="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+            <span>&copy; 2026 Mickaël Van Craenenbroeck</span>
+        </div>
     </footer>
+    <script src="js/components.js"></script>
 </body>
 </html>

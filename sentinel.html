@@ -3,162 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sentinel Project - Cybersecurity Portfolio</title>
+    <title>Sentinel Drop Box v2.0 - Cybersecurity Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        dark: '#0f172a',
-                        darker: '#020617',
-                        accent: '#10b981', // Emerald green
-                        accentHover: '#059669',
-                    }
-                }
-            }
-        }
-    </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            background-color: #020617;
-            color: #f8fafc;
-            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-        }
-        .glow {
-            box-shadow: 0 0 15px rgba(16, 185, 129, 0.15);
-            transition: box-shadow 0.3s ease, transform 0.3s ease;
-        }
-        .glow:hover {
-            box-shadow: 0 0 30px rgba(16, 185, 129, 0.4);
-            transform: translateY(-5px);
-        }
-        .text-glow {
-            text-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
-        }
-        
-        /* Grid background pattern */
-        .bg-grid {
-            background-size: 40px 40px;
-            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-        }
+        body { font-family: 'Inter', sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
     </style>
 </head>
-<body class="min-h-screen font-sans selection:bg-accent selection:text-white bg-grid relative flex flex-col">
-    <!-- Overlay gradient -->
-    <div class="fixed inset-0 bg-gradient-to-b from-transparent to-darker pointer-events-none -z-10"></div>
-
-    <!-- Header/Nav -->
-    <header class="border-b border-gray-800 bg-darker/80 backdrop-blur-md fixed w-full top-0 z-50 transition-all">
-        <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold font-mono tracking-tighter cursor-pointer hover:text-accent transition-colors">
-                <span class="text-accent">&gt;</span> cd <span class="text-gray-500">..</span><span class="animate-pulse text-accent">_</span>
+<body class="bg-[#0d0d0d] text-[#f5f5f5] min-h-screen selection:bg-neutral-800 flex flex-col">
+    <!-- Minimalist Nav -->
+    <nav class="sticky top-0 z-50 w-full bg-[#0d0d0d]/85 backdrop-blur-md border-b border-[#262626] transition-all duration-300">
+        <div class="max-w-4xl mx-auto w-full px-6 py-4 flex justify-between items-center text-sm font-medium tracking-tight gap-4">
+            <a href="index.html" id="nav-logo" class="flex items-center gap-2.5 hover:opacity-85 transition text-white font-semibold text-[15px]">
+                <div class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </div>
+                <span class="font-mono text-[14px] font-bold text-white tracking-tight">~/portfolio</span>
             </a>
-            <nav class="hidden md:flex space-x-6 text-sm font-medium font-mono">
-                <a href="about.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/about</a>
-                <a href="projects.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/projects</a>
-                <a href="tuto.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/tuto</a>
-                <a href="blog.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/blog</a>
-                <a href="contact.html" class="text-gray-400 hover:text-accent transition-colors duration-300">~/contact</a>
-            </nav>
-            <button class="md:hidden text-gray-400 hover:text-accent">
-                <i class="fa-solid fa-bars text-xl"></i>
-            </button>
+            <div class="flex items-center gap-5 text-[13px]" id="nav-links">
+                <a href="about.html" id="nav-about" class="text-neutral-400 hover:text-white transition-colors">About</a>
+                <a href="projects.html" id="nav-projects" class="text-white font-semibold transition-colors">Projects</a>
+                <a href="contact.html" id="nav-contact" class="bg-white text-[#0d0d0d] hover:bg-neutral-200 px-4 py-1.5 rounded-full text-xs font-semibold transition-colors">Contact</a>
+                <span class="text-[#333333]">|</span>
+                <a href="fr/sentinel.html" id="lang-toggle" class="text-neutral-400 hover:text-white transition-colors font-mono text-[11px] font-semibold border border-[#333333] rounded px-1.5 py-0.5 bg-[#1a1a1a] hover:bg-[#262626] uppercase">FR</a>
+            </div>
         </div>
-    </header>
+    </nav>
 
     <!-- Main Content -->
-    <main class="flex-grow pt-32 pb-24">
-        <article class="max-w-4xl mx-auto px-6">
-            <!-- Project Header -->
-            <header class="mb-16">
-                <div class="inline-flex items-center space-x-2 px-3 py-1 bg-accent/10 border border-accent/30 rounded-full text-accent font-mono text-sm mb-6">
-                    <i class="fa-solid fa-network-wired"></i>
-                    <span>Defensive Project</span>
-                </div>
-                <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-6">Sentinel System</h1>
-                <p class="text-xl text-gray-400 leading-relaxed mb-8">
-                    Development and deployment of a Raspberry Pi-based Intrusion Detection System (IDS/IPS) solution for local network monitoring.
-                </p>
-                <div class="flex flex-wrap gap-4 font-mono text-sm">
-                    <span class="px-4 py-2 bg-dark border border-gray-800 rounded-lg text-gray-300"><i class="fa-brands fa-raspberry-pi mr-2 text-[#C51A4A]"></i>Raspberry Pi 4</span>
-                    <span class="px-4 py-2 bg-dark border border-gray-800 rounded-lg text-gray-300"><i class="fa-solid fa-shield-halved mr-2 text-accent"></i>Suricata</span>
-                    <span class="px-4 py-2 bg-dark border border-gray-800 rounded-lg text-gray-300"><i class="fa-solid fa-chart-line mr-2 text-blue-500"></i>Grafana/ELK</span>
-                </div>
-            </header>
+    <main class="flex-grow max-w-4xl w-full mx-auto px-6 py-16">
+        <header class="mb-12 border-b border-[#262626] pb-10">
+            <div class="flex items-center gap-2 text-xs font-mono text-neutral-400 mb-4 uppercase">
+                <span class="text-emerald-400 font-bold tracking-wider">Audit & Defense</span>
+                <span class="text-[#333333]">&bull;</span>
+                <span class="text-neutral-400">Case Study</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight tracking-tight">Sentinel Drop Box v2.0</h1>
+            <p class="text-lg md:text-xl text-neutral-300 font-light leading-relaxed mb-8">
+                A hardware and software probe designed for security audits and Red Teaming operations. Fully autonomous in power and decision-making for stealthy surveillance or active vulnerability reconnaissance on air-gapped networks.
+            </p>
 
-            <!-- Project Image/Dashboard mock -->
-            <div class="w-full bg-darker border border-gray-800 rounded-xl overflow-hidden mb-16 glow">
-                <div class="bg-gray-900 border-b border-gray-800 px-4 py-2 flex items-center space-x-2">
-                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                    <div class="ml-4 font-mono text-xs text-gray-500">sentinel-dashboard.sh</div>
-                </div>
-                <div class="p-6 font-mono text-sm sm:text-base text-gray-300 space-y-2 overflow-x-auto">
-                    <p><span class="text-accent">[+]</span> Initializing Suricata IDS/IPS engine...</p>
-                    <p><span class="text-accent">[+]</span> Loading rule sets from Emerging Threats Open...</p>
-                    <p><span class="text-accent">[+]</span> Engine started successfully on interface eth0.</p>
-                    <p class="text-gray-500">--- Real-time log monitor ---</p>
-                    <p><span class="text-yellow-500">[WARN]</span> [1:2010935:3] ET SCAN Suspicious inbound routing <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;192.168.1.100:54321 -> 192.168.1.50:22</p>
-                    <p><span class="text-red-500">[ALERT]</span> [1:2013028:2] ET POLICY SSH brute force login attempt <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10.0.0.5:40234 -> 192.168.1.50:22</p>
-                    <p><span class="text-accent">[+]</span> IPS Action: Dropped connection from 10.0.0.5</p>
-                    <span class="animate-pulse">_</span>
+            <div class="mb-8 flex items-center justify-start gap-4">
+                <a href="https://github.com/Mike00001" target="_blank" class="px-6 py-3 bg-white hover:bg-neutral-200 text-[#0d0d0d] rounded-full text-sm font-semibold transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] flex items-center gap-2">
+                    View Source on GitHub <span class="font-mono">↗</span>
+                </a>
+            </div>
+            
+            <!-- Writer Card -->
+            <div class="flex items-center gap-3 border border-[#262626] bg-[#161616] p-4 rounded-xl mb-8">
+                <div class="w-10 h-10 rounded-full bg-[#222222] border border-[#333333] flex items-center justify-center font-bold text-emerald-400 font-mono">M</div>
+                <div class="text-xs font-sans">
+                    <div class="font-bold text-white">Mickaël Van Craenenbroeck</div>
+                    <div class="text-neutral-400 mt-0.5">Oct 2024 &bull; 10 min read</div>
                 </div>
             </div>
 
-            <!-- Content -->
-            <div class="prose prose-invert prose-emerald max-w-none space-y-8 text-gray-300 leading-relaxed">
-                <h2 class="text-2xl font-bold text-white font-mono border-b border-gray-800 pb-2"><span class="text-accent">#</span> The Objective</h2>
-                <p>
-                    The Sentinel project was born from the need to effectively monitor a home network and learn defense-in-depth mechanisms. The goal was to build a network probe capable of analyzing traffic in real-time, identifying malicious packets, and blocking active threats, all on an affordable and low-power device (Raspberry Pi).
-                </p>
+            <!-- Cover Image -->
+            <div class="w-full rounded-2xl overflow-hidden border border-[#262626] bg-[#161616] mb-10">
+                <img src="assets/images/sentinel/sentinel_device_active.jpg" alt="Project Sentinel Active OLED Display" class="w-full h-auto">
+            </div>
+        </header>
 
-                <h2 class="text-2xl font-bold text-white font-mono border-b border-gray-800 pb-2"><span class="text-accent">#</span> Technical Architecture</h2>
-                <ul class="list-disc pl-5 space-y-2">
-                    <li><strong class="text-white">Hardware:</strong> Raspberry Pi 4 (4GB RAM) connected to the mirror port (SPAN) of a managed switch.</li>
-                    <li><strong class="text-white">Analysis Engine:</strong> Suricata configured in IDS mode for detection, and IPS via firewall rules (iptables/nftables) for blocking.</li>
-                    <li><strong class="text-white">Visualization:</strong> ELK Stack (Elasticsearch, Logstash, Kibana) or Prometheus/Grafana to display alerts via comprehensive dashboards.</li>
-                </ul>
+        <!-- Article Prose -->
+        <article class="text-[17px] md:text-[18px] text-neutral-300 leading-relaxed max-w-3xl mx-auto space-y-6">
+            <h3 class="text-2xl font-bold text-white pt-6 border-t border-[#262626]">Project Concept & Comparison with Standard Setups</h3>
+            <p>
+                During red teaming and security audits, physical entry is sometimes the only viable entry point. Standard audits typically require deploying a bulky Kali Linux laptop, which is highly conspicuous, or using expensive custom appliances that lack flexible inline redirection.
+            </p>
+            <p>
+                <strong class="text-white">Project Sentinel v2.0</strong> is a custom, fully integrated "Drop Box" probe. It is designed to be physically deployed behind a target's workstation or VoIP phone to conduct stealthy network surveillance or active scanning:
+            </p>
+            <ul class="list-disc pl-6 space-y-3 text-[16px] text-neutral-400 leading-relaxed mb-6">
+                <li><strong class="text-white">Stealth Bypass Interception</strong>: Operates inline between the client device and the router, duplicating traffic transparently without raising link-state alerts.</li>
+                <li><strong class="text-white">Bilingual Network Persona</strong>: Operates fully out-of-band, offering a hidden wireless management access point for the auditor while running a isolated physical interface on the target network.</li>
+                <li><strong class="text-white">Autonomous Multi-Mode Logic</strong>: Transitioning between passive sniffing and active vulnerability correlation automatically or via physical control interfaces.</li>
+            </ul>
 
-                <h2 class="text-2xl font-bold text-white font-mono border-b border-gray-800 pb-2"><span class="text-accent">#</span> Challenges Faced</h2>
-                <div class="bg-dark p-6 rounded-lg border border-gray-800">
-                    <p class="mb-4">
-                        The main difficulty lay in optimizing Suricata's performance on the Raspberry Pi's ARM architecture. Deep Packet Inspection required:
-                    </p>
-                    <ul class="list-disc pl-5 space-y-2 text-gray-400">
-                        <li>Adjusting Suricata's multi-threading.</li>
-                        <li>Disabling less relevant signatures to free up RAM.</li>
-                        <li>Externalizing log persistence (Elasticsearch) to a separate server to relieve the Pi's SD card.</li>
-                    </ul>
+            <!-- Sentinel Deployment -->
+            <figure class="my-8 border border-[#262626] rounded-2xl p-4 bg-[#161616]">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <img src="assets/images/sentinel/sentinel_side_ports.jpg" alt="Sentinel Side View Cabling" class="w-full h-auto rounded-xl border border-[#262626]">
+                    <img src="assets/images/sentinel/sentinel_back_power.jpg" alt="Sentinel Back View Power Supply" class="w-full h-auto rounded-xl border border-[#262626]">
                 </div>
+                <figcaption class="text-xs text-neutral-400 mt-3 font-mono text-center">
+                    Left: Side-angle cabling showing Pi port connections. Right: Back-angle showing step-up regulator and USB power meter.
+                </figcaption>
+            </figure>
 
-                <h2 class="text-2xl font-bold text-white font-mono border-b border-gray-800 pb-2"><span class="text-accent">#</span> Results and Learnings</h2>
-                <p>
-                    Sentinel is now my primary tool for capturing and understanding common attack patterns. I have deeply improved my skills in TCP/IP packet analysis, writing Suricata rules (Snort syntax), and managing false positives.
-                </p>
+            <h3 class="text-2xl font-bold text-white pt-6 border-t border-[#262626]">Hardware Adaptations: Taming the Raspberry Pi 3A+</h3>
+            <p>
+                Operating a hardware drop box in the field introduces strict constraints on power draw, hardware conflicts, and time synchronizations on offline systems. The following custom solutions were built to address these bottlenecks:
+            </p>
+
+            <h4 class="text-xl font-bold text-emerald-400 pt-4 font-mono">&gt; 1. Power Optimization: The Raspberry Pi 3A+ Advantage</h4>
+            <p>
+                A standard Raspberry Pi 3B+ draws around 500mA–1.2A+ due to its onboard USB hub and Ethernet controller chip. To maximize battery life, a <strong class="text-white">Raspberry Pi 3A+</strong> was chosen. Since the 3A+ lacks these power-hungry integrated circuits, it cuts power consumption in half (drawing only 200–300mA under load), extending deployment autonomy.
+            </p>
+
+            <!-- Hardware Wiring -->
+            <figure class="my-8 border border-[#262626] rounded-2xl p-4 bg-[#161616]">
+                <img src="assets/images/sentinel/sentinel_top_wiring.jpg" alt="Sentinel Top Wiring Detail" class="w-full h-auto rounded-xl border border-[#262626]">
+                <figcaption class="text-xs text-neutral-400 mt-3 font-mono text-center">
+                    Top-down view of the compact wiring assembly showing the I2C connections between the OLED display, DS3231 RTC, and the Raspberry Pi.
+                </figcaption>
+            </figure>
+
+            <h4 class="text-xl font-bold text-emerald-400 pt-4 font-mono">&gt; 2. Inline Interception (Netgear Switch & Step-Up 12V Cable)</h4>
+            <p>
+                To sniff network packets without interrupting the connection of target devices, the probe utilizes a compact Netgear managed switch configured for <strong class="text-white">Port Mirroring (SPAN)</strong>. To power both the Pi (5V) and the switch (12V) off a single standard 5V USB power bank, a custom <strong class="text-white">Step-Up voltage converter cable</strong> was engineered, allowing inline deployment with a single battery.
+            </p>
+
+            <h4 class="text-xl font-bold text-emerald-400 pt-4 font-mono">&gt; 3. Forensic Timekeeping (DS3231 RTC Module)</h4>
+            <p>
+                As the drop box operates offline on air-gapped target networks, it cannot sync system time via NTP. When it boots, the system time defaults to the Unix epoch, which corrupts PCAP packet timestamps. To resolve this, a physical <strong class="text-white">DS3231 RTC module</strong> was connected to the I2C bus (0x68), guaranteeing accurate timestamping for forensic packet analysis.
+            </p>
+
+            <h4 class="text-xl font-bold text-emerald-400 pt-4 font-mono">&gt; 4. Tactical Interface Bus Sharing (OLED Display & RTC)</h4>
+            <p>
+                To check IP configuration and system health in the field without connecting a computer, a 0.96" OLED screen was added. To prevent GPIO pin exhaustion, the screen and the RTC module share the same physical <strong class="text-white">I2C bus</strong>. The Linux kernel configuration (<code>/boot/config.txt</code>) was adjusted to support both addresses (0x3C and 0x68) simultaneously.
+            </p>
+
+            <h3 class="text-2xl font-bold text-white pt-6 border-t border-[#262626]">Software Architecture and Core Features</h3>
+            
+            <h4 class="text-xl font-bold text-emerald-400 pt-4 font-mono">&gt; 1. Out-of-Band Network Stack Isolation</h4>
+            <p>
+                To guarantee stealth, the target-facing USB-Ethernet adapter (<code>eth0</code>) is isolated. Standard DHCP requests are silenced, and Debian's <code>wpa_supplicant</code> service is completely masked to prevent the device from attempting to connect to corporate Wi-Fi. Management access is handled out-of-band by transforming the internal Wi-Fi (<code>wlan0</code>) into a hidden Access Point via <code>hostapd</code> and <code>dnsmasq</code>.
+            </p>
+
+            <h4 class="text-xl font-bold text-emerald-400 pt-4 font-mono">&gt; 2. Multi-Mode Security Orchestration (<code>switch.sh</code>)</h4>
+            <p>
+                The system behavior is governed by a custom bash orchestrator (<code>switch.sh</code>) which manages iptables rules, network interface modes, and scanning daemons. It allows switching dynamically between passive listening, active scanning, and database vulnerability enrichment.
+            </p>
+
+            <h4 class="text-xl font-bold text-emerald-400 pt-4 font-mono">&gt; 3. Memory-Efficient Sniffing & Storage Guard</h4>
+            <p>
+                Passive sniffing (Mode 1) is handled by a Python Scapy daemon. Since the Pi 3A+ is limited to 512MB RAM, the capture writes packets directly to the SD card in real-time (using Scapy's <code>store=0</code> flag) to prevent memory saturation. A background thread monitors storage space, automatically halting captures at 90% disk utilization to prevent filesystem corruption.
+            </p>
+
+            <h3 class="text-2xl font-bold text-white pt-6 border-t border-[#262626]">CLI Command Reference</h3>
+            <p>
+                The orchestrator is controlled via command-line arguments on the out-of-band SSH session:
+            </p>
+            <div class="bg-[#161616] border border-[#262626] rounded-2xl p-6 my-8 font-mono text-[13px] text-neutral-300 leading-relaxed space-y-3">
+                <p><span class="text-emerald-400 font-bold">switch.sh --mode passive</span> &mdash; Activates promisc mode on eth0 and starts Scapy sniffer daemon.</p>
+                <p><span class="text-emerald-400 font-bold">switch.sh --mode active</span> &mdash; Exits stealth mode, runs local ARP/ICMP sweeps and SYN port scans.</p>
+                <p><span class="text-emerald-400 font-bold">switch.sh --mode enrich</span> &mdash; Reads offline scan results, connects to NIST API and correlates CVEs.</p>
+                <p><span class="text-emerald-400 font-bold">switch.sh --status</span> &mdash; Displays current battery charge, CPU temp, and target link state.</p>
             </div>
 
-            <div class="mt-16 pt-8 border-t border-gray-800 flex justify-between items-center">
-                <a href="index.html" class="text-gray-400 hover:text-white transition-colors flex items-center space-x-2">
-                    <i class="fa-solid fa-arrow-left"></i>
-                    <span>Back to Portfolio</span>
-                </a>
-                <a href="https://github.com" target="_blank" class="px-6 py-3 bg-accent/10 text-accent border border-accent/50 rounded hover:bg-accent hover:text-darker transition-all duration-300 font-bold flex items-center space-x-2">
-                    <i class="fa-brands fa-github"></i>
-                    <span>View on GitHub</span>
-                </a>
+            <div class="bg-[#161616] border-l-4 border-emerald-500 p-6 my-8 text-[15px] text-neutral-300 leading-relaxed rounded-r-2xl border-y border-r border-[#262626]">
+                <strong class="text-white font-bold">Project Highlight:</strong> Project Sentinel demonstrates complete mastery of the offensive pipeline: from physical hardware engineering (power conversion, I2C routing) and Linux systems administration to advanced network automation scripting in Python.
             </div>
         </article>
     </main>
 
     <!-- Footer -->
-    <footer class="py-8 bg-darker border-t border-gray-800/50 text-center">
-        <p class="font-mono text-sm text-gray-600">
-            [ <span class="text-accent">&copy; 2024 Portfolio OS</span> ]
-        </p>
+    <footer class="mt-auto py-10 border-t border-[#262626] bg-[#0d0d0d] text-[13px] text-neutral-400 font-sans w-full px-6">
+        <div class="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+            <span>&copy; 2026 Mickaël Van Craenenbroeck</span>
+        </div>
     </footer>
+    <script src="js/components.js"></script>
 </body>
 </html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trek Organizer - Cybersecurity Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+    </style>
+</head>
+<body class="bg-[#0d0d0d] text-[#f5f5f5] min-h-screen selection:bg-neutral-800 flex flex-col">
+    <!-- Minimalist Nav -->
+    <nav class="sticky top-0 z-50 w-full bg-[#0d0d0d]/85 backdrop-blur-md border-b border-[#262626] transition-all duration-300">
+        <div class="max-w-4xl mx-auto w-full px-6 py-4 flex justify-between items-center text-sm font-medium tracking-tight gap-4">
+            <a href="index.html" id="nav-logo" class="flex items-center gap-2.5 hover:opacity-85 transition text-white font-semibold text-[15px]">
+                <div class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </div>
+                <span class="font-mono text-[14px] font-bold text-white tracking-tight">~/portfolio</span>
+            </a>
+            <div class="flex items-center gap-5 text-[13px]" id="nav-links">
+                <a href="about.html" id="nav-about" class="text-neutral-400 hover:text-white transition-colors">About</a>
+                <a href="projects.html" id="nav-projects" class="text-white font-semibold transition-colors">Projects</a>
+                <a href="contact.html" id="nav-contact" class="bg-white text-[#0d0d0d] hover:bg-neutral-200 px-4 py-1.5 rounded-full text-xs font-semibold transition-colors">Contact</a>
+                <span class="text-[#333333]">|</span>
+                <a href="fr/trek.html" id="lang-toggle" class="text-neutral-400 hover:text-white transition-colors font-mono text-[11px] font-semibold border border-[#333333] rounded px-1.5 py-0.5 bg-[#1a1a1a] hover:bg-[#262626] uppercase">FR</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-4xl w-full mx-auto px-6 py-16">
+        <header class="mb-12 border-b border-[#262626] pb-10">
+            <div class="flex items-center gap-2 text-xs font-mono text-neutral-400 mb-4 uppercase">
+                 <span class="text-emerald-400 font-bold tracking-wider">Software Engineering & Architecture</span>
+                 <span class="text-[#333333]">&bull;</span>
+                 <span class="text-neutral-400">Full-Stack &amp; IoT</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight tracking-tight">Trek Organizer: Autonomous Outdoor Management &amp; LoRa Mesh Ecosystem</h1>
+            <p class="text-lg md:text-xl text-neutral-300 font-light leading-relaxed mb-8">
+                A comprehensive web application designed for autonomous mountain trekking, climbing, cycling, and trail running management. Built to demonstrate robust backend architecture, secure database interactions, full-stack deployment capabilities, and off-grid ESP32 LoRa mesh hardware integration.
+            </p>
+
+            <div class="mb-8 flex items-center justify-start gap-4">
+                <a href="https://github.com/Mike00001/trek-organizer" target="_blank" class="px-6 py-3 bg-white hover:bg-neutral-200 text-[#0d0d0d] rounded-full text-sm font-semibold transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] flex items-center gap-2">
+                    View Source on GitHub <span class="font-mono">↗</span>
+                </a>
+            </div>
+            
+            <!-- Writer Card -->
+            <div class="flex items-center gap-3 border border-[#262626] bg-[#161616] p-4 rounded-xl mb-8">
+                <div class="w-10 h-10 rounded-full bg-[#222222] border border-[#333333] flex items-center justify-center font-bold text-emerald-400 font-mono">M</div>
+                <div class="text-xs font-sans">
+                    <div class="font-bold text-white">Mickaël Van Craenenbroeck</div>
+                    <div class="text-neutral-400 mt-0.5">Nov 2024 &bull; 9 min read</div>
+                </div>
+            </div>
+            
+            <!-- Cover Photo -->
+            <figure class="mb-12 border border-[#262626] rounded-2xl p-4 bg-[#161616]">
+                <img src="assets/images/trek/dashboard.png" alt="Trek Organizer Central Dashboard" class="w-full h-auto rounded-xl border border-[#262626]">
+                <figcaption class="text-xs text-neutral-400 mt-3 font-mono text-center">
+                    The central Trek Organizer dashboard providing unified access to gear inventories, GPX itineraries, weather telemetry, community forums, and shared budgets.
+                </figcaption>
+            </figure>
+        </header>
+
+        <!-- Article Prose -->
+        <article class="text-[17px] md:text-[18px] text-neutral-300 leading-relaxed max-w-3xl mx-auto space-y-6">
+            <h3 class="text-2xl font-bold text-white pt-6 border-t border-[#262626]">Project Concept &amp; Architectural Evolution</h3>
+            <p>
+                Preparing autonomous expeditions in mountain environments—whether trekking, climbing, cycling, or trail running—requires coordinating multiple critical variables: equipment weight, GPX routing, localized weather windows, group logistics, and off-grid safety. <strong class="text-white">Trek Organizer</strong> centralizes all of these workflows into a unified full-stack application.
+            </p>
+
+            <div class="bg-[#161616] border-l-4 border-emerald-500 p-6 my-6 text-[15px] text-neutral-300 leading-relaxed rounded-r-2xl border-y border-r border-[#262626]">
+                <strong class="text-white font-bold">Tech Migration Disclaimer:</strong> This project is currently undergoing a major architectural migration to align with modern industry standards and AI integration requirements:
+                <ul class="list-disc pl-6 mt-3 space-y-1 text-neutral-400">
+                    <li><strong class="text-white">Current Stack:</strong> Laravel 10 (Blade, Eloquent ORM, MySQL / SQLite, Laravel Breeze authentication).</li>
+                    <li><strong class="text-white">Future Stack (In Progress):</strong> <strong class="text-emerald-400 font-mono">Next.js 15</strong> (App Router), <strong class="text-emerald-400 font-mono">TypeScript</strong>, <strong class="text-emerald-400 font-mono">Tailwind CSS</strong>, and <strong class="text-emerald-400 font-mono">Prisma ORM</strong> to improve real-time capabilities, strict type safety, and seamless integration with AI SDKs.</li>
+                </ul>
+            </div>
+
+            <h3 class="text-2xl font-bold text-white pt-6 border-t border-[#262626]">Core Application Modules &amp; Features</h3>
+
+            <h4 class="text-xl font-bold text-emerald-400 pt-4 font-mono">&gt; 1. Gear Catalog &amp; Modular Backpacks</h4>
+            <p>
+                The equipment engine allows users to build a granular <strong class="text-white">personal gear catalog</strong>, recording each item's brand, model, weight, volume, price, place of purchase, and category (sleep, eat, clothes, hygiene, equipment) with instant search and filtering.
+            </p>
+            <p>
+                From this inventory, trekkers can compose multiple specialized <strong class="text-white">backpack configurations</strong> (e.g., long GR trek, winter weekend, climbing outing, cycling trip). Each backpack automatically computes total weight and volume in real time, and smart filters highlight the pack best suited to the planned outing duration and shelter type.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+                <figure class="border border-[#262626] rounded-2xl p-4 bg-[#161616]">
+                    <img src="assets/images/trek/backpack1.png" alt="Personal Gear Catalog" class="w-full h-auto rounded-xl border border-[#262626]">
+                    <figcaption class="text-xs text-neutral-400 mt-3 font-mono text-center">
+                        Personal gear catalog with category filters and item metrics.
+                    </figcaption>
+                </figure>
+                <figure class="border border-[#262626] rounded-2xl p-4 bg-[#161616]">
+                    <img src="assets/images/trek/backpackDetails.png" alt="Backpack Weight and Volume Calculation" class="w-full h-auto rounded-xl border border-[#262626]">
+                    <figcaption class="text-xs text-neutral-400 mt-3 font-mono text-center">
+                        Automated total weight and volume breakdown per backpack profile.
+                    </figcaption>
+                </figure>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+                <figure class="border border-[#262626] rounded-2xl p-4 bg-[#161616]">
+                    <img src="assets/images/trek/backpackNewItem.png" alt="Add New Gear Item" class="w-full h-auto rounded-xl border border-[#262626]">
+                    <figcaption class="text-xs text-neutral-400 mt-3 font-mono text-center">
+                        Granular item creation form (weight, volume, price, category).
+                    </figcaption>
+                </figure>
+                <figure class="border border-[#262626] rounded-2xl p-4 bg-[#161616]">
+                    <img src="assets/images/trek/backpackNewBackpack.png" alt="Compose New Backpack" class="w-full h-auto rounded-xl border border-[#262626]">
+                    <figcaption class="text-xs text-neutral-400 mt-3 font-mono text-center">
+                        Composing custom backpack loadouts adapted to specific seasons and activities.
+                    </figcaption>
+                </figure>
+            </div>
+
+            <h4 class="text-xl font-bold text-emerald-400 pt-4 font-mono">&gt; 2. Itineraries &amp; Interactive GPX Mapping</h4>
+            <p>
+                Users can create detailed itineraries (name, dates, location, cover image, description), attach and manage personal <strong class="text-white">GPX files</strong>, and visualize tracks on an interactive fullscreen map with layer toggles. A shared community library also allows hikers to discover and download GPX routes uploaded by other members.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+                <figure class="border border-[#262626] rounded-2xl p-4 bg-[#161616]">
+                    <img src="assets/images/trek/map.png" alt="Interactive GPX Map" class="w-full h-auto rounded-xl border border-[#262626]">
+                    <figcaption class="text-xs text-neutral-400 mt-3 font-mono text-center">
+                        Interactive itinerary map rendering custom GPX tracks.
+                    </figcaption>
+                </figure>
+                <figure class="border border-[#262626] rounded-2xl p-4 bg-[#161616]">
+                    <img src="assets/images/trek/mapCommun.png" alt="Community Shared GPX Library" class="w-full h-auto rounded-xl border border-[#262626]">
+                    <figcaption class="text-xs text-neutral-400 mt-3 font-mono text-center">
+                        Community library of shared GPX tracks and mountain itineraries.
+                    </figcaption>
+                </figure>
+            </div>
+
+            <h4 class="text-xl font-bold text-emerald-400 pt-4 font-mono">&gt; 3. Weather Telemetry &amp; Geocoding</h4>
+            <p>
+                Integrating the <strong class="text-white">Google Maps Geocoding API</strong> and <strong class="text-white">Open-Meteo API</strong>, the weather module enables trekkers to bookmark favorite high-altitude locations and monitor reliable real-time and multi-day meteorological forecasts.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+                <figure class="border border-[#262626] rounded-2xl p-4 bg-[#161616]">
+                    <img src="assets/images/trek/meteo.png" alt="Weather Favorites Overview" class="w-full h-auto rounded-xl border border-[#262626]">
+                    <figcaption class="text-xs text-neutral-400 mt-3 font-mono text-center">
+                        Saved mountain locations with live weather status.
+                    </figcaption>
+                </figure>
+                <figure class="border border-[#262626] rounded-2xl p-4 bg-[#161616]">
+                    <img src="assets/images/trek/meteoDetails.png" alt="Detailed Open-Meteo Forecast" class="w-full h-auto rounded-xl border border-[#262626]">
+                    <figcaption class="text-xs text-neutral-400 mt-3 font-mono text-center">
+                        Detailed daily and hourly Open-Meteo forecast view.
+                    </figcaption>
+                </figure>
+            </div>
+
+            <h4 class="text-xl font-bold text-emerald-400 pt-4 font-mono">&gt; 4. Group Budgets, Community Forum &amp; Outdoor News</h4>
+            <p>
+                To streamline group expeditions, Trek Organizer includes a multi-participant <strong class="text-white">Budget &amp; Expense Splitter</strong> (tracking transactions by amount, type, user, and outing), a collaborative <strong class="text-white">Forum</strong> for trip preparation, and an automated <strong class="text-white">Outdoor News Feed</strong> powered by SimplePie RSS aggregation.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+                <figure class="border border-[#262626] rounded-2xl p-4 bg-[#161616]">
+                    <img src="assets/images/trek/budgetDetail.png" alt="Shared Expedition Budget Details" class="w-full h-auto rounded-xl border border-[#262626]">
+                    <figcaption class="text-xs text-neutral-400 mt-3 font-mono text-center">
+                        Multi-participant outing budget and expense balancing.
+                    </figcaption>
+                </figure>
+                <figure class="border border-[#262626] rounded-2xl p-4 bg-[#161616]">
+                    <img src="assets/images/trek/forum.png" alt="Community Forum and Trip Notes" class="w-full h-auto rounded-xl border border-[#262626]">
+                    <figcaption class="text-xs text-neutral-400 mt-3 font-mono text-center">
+                        Collaborative forum for sharing trail notes and organizing group outings.
+                    </figcaption>
+                </figure>
+            </div>
+
+            <h3 class="text-2xl font-bold text-white pt-6 border-t border-[#262626]">Hardware Integration: ESP32 LoRa Mesh Network</h3>
+            <p>
+                Trek Organizer extends beyond the web with custom-built hardware tags based on <strong class="text-white">ESP32</strong> microcontrollers and the <strong class="text-white">LoRa (Long Range)</strong> radio protocol. These tags are specifically engineered for cellular "white zones", establishing an autonomous local mesh network between trekkers to ensure safety and connectivity.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-8">
+                <figure class="border border-[#262626] rounded-2xl p-3 bg-[#161616]">
+                    <img src="assets/images/trek/esp32Open.jpg" alt="LoRa Tag Internals" class="w-full aspect-square object-cover rounded-xl border border-[#262626]">
+                    <figcaption class="text-xs text-neutral-400 mt-2 font-mono text-center">
+                        Fig 1. Prototype internals showing the ESP32 LoRa board and 1200mAh LiPo battery inside a custom 3D printed case.
+                    </figcaption>
+                </figure>
+                <figure class="border border-[#262626] rounded-2xl p-3 bg-[#161616]">
+                    <img src="assets/images/trek/esp32On.jpg" alt="LoRa Tag OLED Screen" class="w-full aspect-square object-cover rounded-xl border border-[#262626]">
+                    <figcaption class="text-xs text-neutral-400 mt-2 font-mono text-center">
+                        Fig 2. Close-up of the OLED display showing device status during initial testing.
+                    </figcaption>
+                </figure>
+                <figure class="border border-[#262626] rounded-2xl p-3 bg-[#161616]">
+                    <img src="assets/images/trek/esp32.jpg" alt="LoRa Tag Cased Prototype" class="w-full aspect-square object-cover rounded-xl border border-[#262626]">
+                    <figcaption class="text-xs text-neutral-400 mt-2 font-mono text-center">
+                        Fig 3. Final assembled prototype ready for field testing.
+                    </figcaption>
+                </figure>
+            </div>
+
+            <ul class="list-disc pl-6 space-y-3 text-[16px] text-neutral-400 leading-relaxed mb-6">
+                <li><strong class="text-white">Offline Mesh Connectivity:</strong> Enables peer-to-peer chat and GPS coordinate sharing between devices without relying on telecom infrastructure.</li>
+                <li><strong class="text-white">Decentralized SOS System:</strong> Broadcasts emergency distress beacons across nearby mesh nodes.</li>
+                <li><strong class="text-white">Data Mule Architecture:</strong> Collects environmental telemetry offline, buffers packets in non-volatile memory, and synchronizes with the main Trek Organizer platform via the smartphone gateway once Wi-Fi/4G connectivity is restored.</li>
+            </ul>
+
+            <h3 class="text-2xl font-bold text-white pt-6 border-t border-[#262626]">AI &amp; Data Science Vision</h3>
+            <p>
+                The long-term roadmap evolves Trek Organizer from an expedition management platform into an intelligent field assistant and citizen-science data provider:
+            </p>
+            <ul class="list-disc pl-6 space-y-3 text-[16px] text-neutral-400 leading-relaxed mb-6">
+                <li><strong class="text-white">Edge AI (TinyML):</strong> Running lightweight neural networks directly on the ESP32 microcontroller for autonomous <strong class="text-white">fall detection</strong> and predictive battery power management.</li>
+                <li><strong class="text-white">Citizen Science &amp; Environmental Telemetry:</strong> Turning trekkers into mobile sensor stations for high-resolution micro-climate mapping, anomaly detection (Isolation Forests for early-stage wildfire detection), and on-device bioacoustic bird species classification over low-bandwidth LoRa links.</li>
+                <li><strong class="text-white">Predictive Analytics:</strong> Personalized ETA engine learning from historical user pace across varying elevation gradients and terrain types.</li>
+            </ul>
+
+            <h3 class="text-2xl font-bold text-white pt-6 border-t border-[#262626]">Backend Stack &amp; Roadmap</h3>
+            <div class="bg-[#161616] border border-[#262626] rounded-2xl p-6 my-8 font-mono text-[13px] text-neutral-300 leading-relaxed space-y-3">
+                <p><span class="text-emerald-400 font-bold">FRAMEWORK</span> &mdash; Laravel 10 (migrating to Next.js 15 App Router &amp; TypeScript)</p>
+                <p><span class="text-emerald-400 font-bold">DATABASE &amp; ORM</span> &mdash; MySQL / SQLite with Eloquent ORM (migrating to Prisma ORM)</p>
+                <p><span class="text-emerald-400 font-bold">AUTHENTICATION</span> &mdash; Laravel Breeze (session &amp; profile security)</p>
+                <p><span class="text-emerald-400 font-bold">EXTERNAL APIS</span> &mdash; Google Maps Geocoding, Open-Meteo API, SimplePie RSS</p>
+                <p><span class="text-emerald-400 font-bold">HARDWARE NODE</span> &mdash; ESP32 + LoRa transceiver + OLED display + 1200mAh LiPo in 3D-printed enclosure</p>
+            </div>
+
+            <div class="bg-[#161616] border-l-4 border-emerald-500 p-6 my-8 text-[15px] text-neutral-300 leading-relaxed rounded-r-2xl border-y border-r border-[#262626]">
+                <strong class="text-white font-bold">Project Highlight:</strong> Trek Organizer demonstrates end-to-end software architecture skills—combining relational database modeling, MVC backend design in Laravel, third-party API integrations, and embedded ESP32 LoRa hardware prototyping.
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-auto py-10 border-t border-[#262626] bg-[#0d0d0d] text-[13px] text-neutral-400 font-sans w-full px-6">
+        <div class="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+            <span>&copy; 2026 Mickaël Van Craenenbroeck</span>
+        </div>
+    </footer>
+    <script src="js/components.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+# Personal documents & CV
+*.pdf
+Mickaël Van Craenenbroeck - CV.pdf
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.vscode/
+.idea/
+
+# Dependencies & temporary folders
+node_modules/
+vendor/
+.env

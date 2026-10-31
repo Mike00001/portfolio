@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Vova - Cybersecurity Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+    </style>
+</head>
+<body class="bg-[#0d0d0d] text-[#f5f5f5] min-h-screen selection:bg-neutral-800 flex flex-col">
+    <!-- Minimalist Nav -->
+    <nav class="sticky top-0 z-50 w-full bg-[#0d0d0d]/85 backdrop-blur-md border-b border-[#262626] transition-all duration-300">
+        <div class="max-w-4xl mx-auto w-full px-6 py-4 flex justify-between items-center text-sm font-medium tracking-tight gap-4">
+            <a href="index.html" id="nav-logo" class="flex items-center gap-2.5 hover:opacity-85 transition text-white font-semibold text-[15px]">
+                <div class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </div>
+                <span class="font-mono text-[14px] font-bold text-white tracking-tight">~/portfolio</span>
+            </a>
+            <div class="flex items-center gap-5 text-[13px]" id="nav-links">
+                <a href="about.html" id="nav-about" class="text-neutral-400 hover:text-white transition-colors">About</a>
+                <a href="projects.html" id="nav-projects" class="text-white font-semibold transition-colors">Projects</a>
+                <a href="contact.html" id="nav-contact" class="bg-white text-[#0d0d0d] hover:bg-neutral-200 px-4 py-1.5 rounded-full text-xs font-semibold transition-colors">Contact</a>
+                <span class="text-[#333333]">|</span>
+                <a href="fr/vova.html" id="lang-toggle" class="text-neutral-400 hover:text-white transition-colors font-mono text-[11px] font-semibold border border-[#333333] rounded px-1.5 py-0.5 bg-[#1a1a1a] hover:bg-[#262626] uppercase">FR</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-4xl w-full mx-auto px-6 py-16">
+        <header class="mb-12 border-b border-[#262626] pb-10">
+            <div class="flex items-center gap-2 text-xs font-mono text-neutral-400 mb-4 uppercase">
+                 <span class="text-emerald-400 font-bold tracking-wider">Wireless Audit & RPG</span>
+                 <span class="text-[#333333]">&bull;</span>
+                 <span class="text-neutral-400">Case Study</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight tracking-tight">Project Vova: Pwnagotchi Companion Dashboard</h1>
+            <p class="text-lg md:text-xl text-neutral-300 font-light leading-relaxed mb-8">
+                A custom web-based dashboard and low-level PCAP parser written in Python. It auto-detects mounted Pwnagotchi SD cards, parses EAPOL frames, plots GPS coordinates, and provides gamified achievements.
+            </p>
+
+            <div class="mb-8 flex items-center justify-start gap-4">
+                <a href="https://github.com/Mike00001" target="_blank" class="px-6 py-3 bg-white hover:bg-neutral-200 text-[#0d0d0d] rounded-full text-sm font-semibold transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] flex items-center gap-2">
+                    View Source on GitHub <span class="font-mono">↗</span>
+                </a>
+            </div>
+            
+            <!-- Writer Card -->
+            <div class="flex items-center gap-3 border border-[#262626] bg-[#161616] p-4 rounded-xl mb-8">
+                <div class="w-10 h-10 rounded-full bg-[#222222] border border-[#333333] flex items-center justify-center font-bold text-emerald-400 font-mono">M</div>
+                <div class="text-xs font-sans">
+                    <div class="font-bold text-white">Mickaël Van Craenenbroeck</div>
+                    <div class="text-neutral-400 mt-0.5">Jan 2026 &bull; 8 min read</div>
+                </div>
+            </div>
+            
+            <!-- Cover Photo -->
+            <figure class="mb-12 border border-[#262626] rounded-2xl p-4 bg-[#161616]">
+                <img src="assets/images/vova/vova_screen_active.jpg" alt="Finished Vova Device" class="w-full h-auto rounded-xl border border-[#262626]">
+                <figcaption class="text-xs text-neutral-400 mt-3 font-mono text-center">
+                    The finished Project Vova handheld device with the custom cyberpunk enclosure and an active e-ink status screen displaying captured handshakes.
+                </figcaption>
+            </figure>
+        </header>
+
+        <!-- Article Prose -->
+        <article class="text-[17px] md:text-[18px] text-neutral-300 leading-relaxed max-w-3xl mx-auto space-y-6">
+            <h3 class="text-2xl font-bold text-white pt-6 border-t border-[#262626]">Project Concept & Comparison with the Original</h3>
+            <p>
+                The original <strong class="text-white">Pwnagotchi</strong> project (created by Evilsocket) is an A2C-based AI companion for Wi-Fi auditing. It runs by default on a Raspberry Pi Zero W, uses a Waveshare 2.13" e-ink screen to express its emotions, and saves captured handshakes as PCAP files. However, analyzing handshakes on the Pi Zero is slow, and operating it in a mobile setup introduces major stability and time-synchronization challenges.
+            </p>
+            <p>
+                <strong class="text-white">Project Vova</strong> is an advanced two-fold ecosystem upgrade:
+            </p>
+            <ul class="list-disc pl-6 space-y-3 text-[16px] text-neutral-400 leading-relaxed mb-6">
+                <li><strong class="text-white">The Vova Companion Dashboard (<code>pwn_dashboard.py</code>)</strong> : A standalone web-based dashboard designed to run on a Linux host PC. It includes a custom, low-level <strong class="text-white">in-memory PCAP/PCAPNG parser</strong> written in pure Python that decodes IEEE 802.11 and EAPOL handshakes without bulky external dependencies like Scapy. It features an automated mount-crawling system that detects when the Pwnagotchi SD card is plugged into the PC, pulling in configuration, EXP statistics, and handshakes instantly, and gamifies the progress with <strong class="text-white">28 unique achievements</strong> and a detailed <strong class="text-white">military rank hierarchy</strong>.</li>
+                <li><strong class="text-white">Optimized System Plugins</strong> : Tailored low-level system integrations written for the Pwnagotchi physical device to make it run reliably on a larger, more powerful Raspberry Pi 3 host.</li>
+            </ul>
+
+            <!-- Image Grid: Dashboard Screens -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+                <figure class="border border-[#262626] rounded-2xl p-4 bg-[#161616]">
+                    <img src="assets/images/vova/vova_shop_landing.png" alt="Decoy Storefront Landing Page" class="w-full h-auto rounded-xl border border-[#262626]">
+                    <figcaption class="text-xs text-neutral-400 mt-3 font-mono text-center">
+                        The decoy Soviet radio component storefront (Mikhail's shop) hiding the interface.
+                    </figcaption>
+                </figure>
+                <figure class="border border-[#262626] rounded-2xl p-4 bg-[#161616]">
+                    <img src="assets/images/vova/vova_dashboard_interface.png" alt="Project Vova Dashboard Interface" class="w-full h-auto rounded-xl border border-[#262626]">
+                    <figcaption class="text-xs text-neutral-400 mt-3 font-mono text-center">
+                        The active tactical dashboard displaying parsed handshakes, GPS maps, and RPG achievements.
+                    </figcaption>
+                </figure>
+            </div>
+
+            <h3 class="text-2xl font-bold text-white pt-6 border-t border-[#262626]">3D Enclosure Design & Custom Weathered Print</h3>
+            <p>
+                To house the Raspberry Pi 3A+, the screen HAT, the DS3231 RTC, and the GPS module in a compact, portable package, a custom enclosure was designed from scratch in CAD. Designing for the Pi 3A+ presented spatial challenges compared to the Pi Zero. The thermal footprint is larger, requiring passive venting, and the physical components are bulkier.
+            </p>
+            <p>
+                A key architectural highlight of the enclosure is the protruding "snout" compartment. Placing the GPS antenna inside this isolated housing shields it from electromagnetic interference (EMI) generated by the quad-core processor on the Raspberry Pi motherboard, dramatically improving satellite lock times and reception stability.
+            </p>
+            <p>
+                The chassis was printed using white PLA filament on an Anycubic Kobra 3D printer. To match the cyberpunk aesthetic of the Pwnagotchi ecosystem, the raw prints were finished with a weathered industrial look. This involved post-processing steps: sanding, applying a dark green base coat, layering black paint washes, and dry-brushing silver acrylic paint onto the edges to simulate worn metallic weathering. Finally, the "VOVA 3000" badge lettering was detailed in red acrylic paint.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-8">
+                <figure class="border border-[#262626] rounded-2xl p-3 bg-[#161616]">
+                    <img src="assets/images/vova/vova_3d_printer_bed.jpg" alt="3D Printing on Anycubic Kobra" class="w-full h-auto rounded-xl border border-[#262626]">
+                    <figcaption class="text-xs text-neutral-400 mt-2 font-mono text-center">
+                        Anycubic Kobra 3D printing.
+                    </figcaption>
+                </figure>
+                <figure class="border border-[#262626] rounded-2xl p-3 bg-[#161616]">
+                    <img src="assets/images/vova/vova_3d_printed_parts.jpg" alt="Raw 3D Printed Parts" class="w-full h-auto rounded-xl border border-[#262626]">
+                    <figcaption class="text-xs text-neutral-400 mt-2 font-mono text-center">
+                        Raw white PLA parts.
+                    </figcaption>
+                </figure>
+                <figure class="border border-[#262626] rounded-2xl p-3 bg-[#161616]">
+                    <img src="assets/images/vova/vova_finished_device.jpg" alt="Finished Enclosure Paint Job" class="w-full h-auto rounded-xl border border-[#262626]">
+                    <figcaption class="text-xs text-neutral-400 mt-2 font-mono text-center">
+                        Cyberpunk weathering effect.
+                    </figcaption>
+                </figure>
+            </div>
+
+            <h3 class="text-2xl font-bold text-white pt-6 border-t border-[#262626]">Hardware Adaptations: Taming the Raspberry Pi 3</h3>
+            <p>
+                Migrating Pwnagotchi to a Raspberry Pi 3 host introduces critical challenges regarding power draw, offline time tracking, and peripheral stability. The following custom solutions were built to address these bottlenecks:
+            </p>
+
+            <h4 class="text-xl font-bold text-emerald-400 pt-4 font-mono">&gt; 1. Power Optimization: The Raspberry Pi 3A+ Advantage</h4>
+            <p>
+                A standard Raspberry Pi 3B or 3B+ draws substantial current (between 500mA and 1.2A+), causing rapid battery drain and frequent under-voltage warnings on portable power packs. To circumvent this, a <strong class="text-white">Raspberry Pi 3A+</strong> was selected. By omitting the power-hungry USB hub and Ethernet controller chip present on the Model B, the 3A+ cuts power consumption in half (averaging 200–350mA) while still offering the quad-core processing power of the Pi 3 series.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
+                <figure class="border border-[#262626] rounded-2xl p-4 bg-[#161616]">
+                    <img src="assets/images/vova/vova_hardware_wiring.jpg" alt="Hardware Wiring on Workbench" class="w-full h-auto rounded-xl border border-[#262626]">
+                    <figcaption class="text-xs text-neutral-400 mt-3 font-mono text-center">
+                        Soldering and wiring the Raspberry Pi 3A+ and WaveShare screen.
+                    </figcaption>
+                </figure>
+                <figure class="border border-[#262626] rounded-2xl p-4 bg-[#161616]">
+                    <img src="assets/images/vova/vova_internal_assembly.jpg" alt="Internal Component Assembly" class="w-full h-auto rounded-xl border border-[#262626]">
+                    <figcaption class="text-xs text-neutral-400 mt-3 font-mono text-center">
+                        Assembly inside the custom cyberpunk case.
+                    </figcaption>
+                </figure>
+            </div>
+            
+            <figure class="my-8 border border-[#262626] rounded-2xl p-4 bg-[#161616] text-center">
+                <img src="assets/images/vova/vova_pi3ap_powered.jpg" alt="Vova Powered Device" class="w-full h-auto rounded-xl border border-[#262626] mx-auto">
+                <figcaption class="text-xs text-neutral-400 mt-3 font-mono">
+                    The Pi 3A+ powered on inside the case, showing active status LEDs and the isolated GPS snout layout.
+                </figcaption>
+            </figure>
+
+            <h4 class="text-xl font-bold text-emerald-400 pt-4 font-mono">&gt; 3. GPS Stability: Direct NMEA Serial Parsing vs gpsd</h4>
+            <p>
+                The standard Pwnagotchi GPS plugins depend on the Linux <code>gpsd</code> system daemon. However, <code>gpsd</code> is bloated and notoriously unstable on custom embedded configurations, often losing communication with USB GPS dongles (such as the u-blox 7).
+            </p>
+            <p>
+                The solution was a custom plugin, <strong class="text-white font-mono">gps_display.py</strong>, built to bypass <code>gpsd</code> entirely. Using <code>pySerial</code>, it reads raw sentences directly from <code>/dev/ttyACM0</code> and parses NMEA sentences (<code>$GPRMC</code>, <code>$GPGGA</code>, <code>$GPGSA</code>, <code>$GPGSV</code>) in Python. It tracks satellite fixes, counts satellites in use, and calculates a rolling average of the last 20 Signal-to-Noise Ratio (SNR) values in dB to measure raw reception quality.
+            </p>
+            <p>
+                Furthermore, the plugin executes an automated troubleshooting diagnostic routine at startup (checking active <code>/dev/</code> nodes, running <code>lsusb</code>, scanning kernel events in <code>dmesg</code>, and taking a 3-second serial sample) and outputs the results to <code>/boot/gps_diagnostic.txt</code>.
+            </p>
+
+            <h4 class="text-xl font-bold text-emerald-400 pt-4 font-mono">&gt; 4. E-Ink Display Coordinate Alignment</h4>
+            <p>
+                Integrating the telemetry feed on the Waveshare 2.13" e-ink display requires precise coordinate placement to prevent overlap with standard Pwnagotchi graphics. The GPS status element coordinates were shifted and anchored at <code>130, 74</code>, aligning it with the built-in level-up interface divider line to ensure a clean, readable layout without overlapping the face or core status text.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-8">
+                <figure class="border border-[#262626] rounded-2xl p-3 bg-[#161616]">
+                    <img src="assets/images/vova/vova_screen_waiting.jpg" alt="E-ink Screen Boot-Up" class="w-full h-auto rounded-xl border border-[#262626]">
+                    <figcaption class="text-xs text-neutral-400 mt-2 font-mono text-center">
+                        Screen waiting for GPS lock.
+                    </figcaption>
+                </figure>
+                <figure class="border border-[#262626] rounded-2xl p-3 bg-[#161616]">
+                    <img src="assets/images/vova/vova_screen_searching.jpg" alt="E-ink Screen Scan" class="w-full h-auto rounded-xl border border-[#262626]">
+                    <figcaption class="text-xs text-neutral-400 mt-2 font-mono text-center">
+                        Screen scanning active channels.
+                    </figcaption>
+                </figure>
+                <figure class="border border-[#262626] rounded-2xl p-3 bg-[#161616]">
+                    <img src="assets/images/vova/vova_screen_active.jpg" alt="E-ink Screen Capture" class="w-full h-auto rounded-xl border border-[#262626]">
+                    <figcaption class="text-xs text-neutral-400 mt-2 font-mono text-center">
+                        Captured handshake notification.
+                    </figcaption>
+                </figure>
+            </div>
+
+            <h3 class="text-2xl font-bold text-white pt-6 border-t border-[#262626]">Software Architecture and Core Features</h3>
+            
+            <h4 class="text-xl font-bold text-emerald-400 pt-4 font-mono">&gt; 1. Low-Level In-Memory PCAP/PCAPNG Parser</h4>
+            <p>
+                Instead of relying on heavy security libraries like Scapy, Vova implements a custom binary parser in pure Python to read the raw file bytes of <code>.pcap</code> and <code>.pcapng</code> structures:
+            </p>
+            <ul class="list-disc pl-6 space-y-3 text-[16px] text-neutral-400 leading-relaxed mb-6">
+                <li><strong class="text-white">PCAP Global Headers</strong> : magic numbers, endianness, IEEE 802.11 link layer resolution.</li>
+                <li><strong class="text-white">PCAPNG Block Structures</strong> : Section Header Blocks, Enhanced Packet Blocks.</li>
+                <li><strong class="text-white">802.11 Frame Controls</strong> : BSSIDs, Client MACs, Beacon SSIDs, and EAPOL packet isolation.</li>
+                <li><strong class="text-white">Hexadecimal dump</strong> for interactive debugging.</li>
+            </ul>
+
+            <h4 class="text-xl font-bold text-emerald-400 pt-4 font-mono">&gt; 2. Auto-Detection of Pwnagotchi Storage</h4>
+            <p>
+                The dashboard server crawls system media mount paths (like <code>/media/mike/rootfs</code>) automatically to locate active Pwnagotchi SD cards and parse <code>config.toml</code>, <code>exp_stats.json</code>, and handshakes.
+            </p>
+
+            <h4 class="text-xl font-bold text-emerald-400 pt-4 font-mono">&gt; 3. Gamification Engine & Ranks</h4>
+            <p>
+                To make security testing more engaging, the dashboard translates raw XP stats into a detailed military hierarchy and tracks <strong class="text-white">28 unique achievements</strong> (Private to Fleet Admiral).
+            </p>
+
+            <h4 class="text-xl font-bold text-emerald-400 pt-4 font-mono">&gt; 4. Decoy Storefront & Temporal Decryption Key</h4>
+            <p>
+                To prevent unauthorized access during physical security audits, the root path (<code>/</code>) serves a decoy storefront styled as a 1990s Russian radio electronics shop ("РадиоДетали у Михаила"). Typing the passphrase <strong class="text-white">"vova"</strong> triggers an interactive MS-DOS terminal overlay and unlocks the modern tactical dashboard.
+            </p>
+
+            <h3 class="text-2xl font-bold text-white pt-6 border-t border-[#262626]">API Endpoint Reference</h3>
+            <div class="bg-[#161616] border border-[#262626] rounded-2xl p-6 my-8 font-mono text-[13px] text-neutral-300 leading-relaxed space-y-3">
+                <p><span class="text-emerald-400 font-bold">GET</span> /api/data &mdash; Returns general system statistics, ranks, and logs.</p>
+                <p><span class="text-emerald-400 font-bold">GET</span> /api/pcap_detail?file=X &mdash; Decodes and displays handshakes details & hex dump.</p>
+                <p><span class="text-emerald-400 font-bold">GET</span> /api/backup/handshakes &mdash; Generates and downloads a .zip archive of all PCAPs.</p>
+                <p><span class="text-emerald-400 font-bold">GET</span> /api/backup/config &mdash; Downloads the device config.toml file.</p>
+            </div>
+
+            <div class="bg-[#161616] border-l-4 border-emerald-500 p-6 my-8 text-[15px] text-neutral-300 leading-relaxed rounded-r-2xl border-y border-r border-[#262626]">
+                <strong class="text-white font-bold">Project Highlight:</strong> Project Vova demonstrates advanced network protocol knowledge (IEEE 802.11 MAC headers, EAPOL authentication, PCAP block schemas) combined with clean backend API development in Python.
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-auto py-10 border-t border-[#262626] bg-[#0d0d0d] text-[13px] text-neutral-400 font-sans w-full px-6">
+        <div class="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+            <span>&copy; 2026 Mickaël Van Craenenbroeck</span>
+        </div>
+    </footer>
+    <script src="js/components.js"></script>
+</body>
+</html>
